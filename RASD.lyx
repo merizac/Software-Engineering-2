@@ -4,9 +4,10 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass article
+\textclass book
 \begin_preamble
 \date{}
+\@addtoreset{sezione}{parte*}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -74,9 +75,11 @@
 
 \begin_body
 
-\begin_layout Title
+\begin_layout Standard
+\align center
 
 \series bold
+\size larger
 Requirements Analysis and Specifications Document
 \end_layout
 
@@ -87,9 +90,10 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename C:/Users/Riccardo/Desktop/Senza titolo-1.jpg
-	scale 29
+	scale 30
 
 \end_inset
 
@@ -115,14 +119,14 @@ Logo Politecnico di Milano
 
 \begin_layout Standard
 Versione 1
-\begin_inset VSpace defskip
+\begin_inset VSpace bigskip
 \end_inset
 
 
 \end_layout
 
 \begin_layout Itemize
-Mariachiara Zaccardi
+Maria Chiara Zaccardi
 \end_layout
 
 \begin_layout Itemize
@@ -156,53 +160,68 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Chapter
 Introduction
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Description of the given problem
 \end_layout
 
-\begin_layout Standard
-We will project and implement PowerEnjoy, which is a car-sharing service
- that offers only electric cars.
- The price varies just depending on the real use of each individual rental
- of the car.
- (app? web site? ) The system provide the functionality normally provided
- by car-sharing services.
- Indeed the system let the registered users to see cars location through
- the city and to reserve a car until one hour before.
- Moreover, PowerEnjoy wants to incentivize the virtuous behaviors of the
- users through discounts for those users that park in power grid station,
- charge the car and travel with more than two passengers, and penalties
- for those who leave the car with more than 80% of battery empty or far
- away from a power grid station.
-\end_layout
-
-\begin_layout Standard
-The system offers also a money saving option that users can enable inside
- the car, which provides information about the station where to leave the
- car to get a discount.
- This station is determined to ensure a uniform distribution of cars in
- the city and depends both on destination of the user and on the availability
- of power plugs at the selected station.
-\end_layout
-
-\begin_layout Standard
-PowerEnjoy, a differenza degli altri servizi di car-sharing […] 
-\end_layout
-
-\begin_layout Subsection
+\begin_layout Section
 Actors
 \end_layout
 
-\begin_layout Subsubsection
-coap
+\begin_layout Section
+Goals
 \end_layout
 
-\begin_layout Subsubsection
-come 
+\begin_layout Subsection
+Visitor
+\end_layout
+
+\begin_layout Subsection
+Client
+\end_layout
+
+\begin_layout Subsection
+Operator
+\end_layout
+
+\begin_layout Section
+Domain properties
+\end_layout
+
+\begin_layout Section
+Glossary
+\end_layout
+
+\begin_layout Section
+Text assumptions
+\end_layout
+
+\begin_layout Section
+Constrains
+\end_layout
+
+\begin_layout Subsection
+Regulatory policies
+\end_layout
+
+\begin_layout Subsection
+....
+\end_layout
+
+\begin_layout Section
+Proposed system
+\end_layout
+
+\begin_layout Section
+Identifying stakeholders
+\end_layout
+
+\begin_layout Section
+Reference documents
 \end_layout
 
 \begin_layout Standard
@@ -212,16 +231,162 @@ come
 
 \end_layout
 
-\begin_layout Part
-capitolo 2
+\begin_layout Chapter
+Requirements
 \end_layout
 
 \begin_layout Section
-icdic
+Functional requirements
 \end_layout
 
 \begin_layout Subsection
-adad
+Visitor
+\end_layout
+
+\begin_layout Subsection
+Client
+\end_layout
+
+\begin_layout Subsection
+Operator
+\end_layout
+
+\begin_layout Section
+Non-functional requirements
+\end_layout
+
+\begin_layout Subsection
+Interface
+\end_layout
+
+\begin_layout Subsection
+Visitor interface
+\end_layout
+
+\begin_layout Subsection
+Client interface
+\end_layout
+
+\begin_layout Subsection
+Operator interface
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Scenario identifying
+\end_layout
+
+\begin_layout Section
+Scenario 1
+\end_layout
+
+\begin_layout Section
+Scenario 2
+\end_layout
+
+\begin_layout Section
+Scenario 3
+\end_layout
+
+\begin_layout Section
+Scenario 4
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+UML models
+\end_layout
+
+\begin_layout Section
+Use case diagram
+\end_layout
+
+\begin_layout Section
+Use case description
+\end_layout
+
+\begin_layout Section
+Class diagram
+\end_layout
+
+\begin_layout Section
+Sequence diagrams
+\end_layout
+
+\begin_layout Section
+Activity diagrams
+\end_layout
+
+\begin_layout Section
+State diagrams
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Alloy modeling
+\end_layout
+
+\begin_layout Section
+Model
+\end_layout
+
+\begin_layout Section
+Alloy result
+\end_layout
+
+\begin_layout Section
+World generated
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Future development
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Used tools
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Changelog
 \end_layout
 
 \end_body
