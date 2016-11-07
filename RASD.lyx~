@@ -156,11 +156,11 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Part
 Introduction
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Description of the given problem
 \end_layout
 
@@ -194,14 +194,10 @@ PowerEnjoy, a differenza degli altri servizi di car-sharing […]
 \end_layout
 
 \begin_layout Subsection
-Actors
-\end_layout
-
-\begin_layout Subsubsection
 coap
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 come 
 \end_layout
 
