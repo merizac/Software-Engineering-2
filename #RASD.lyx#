@@ -573,6 +573,10 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename immagini/client web/available car.png
 	lyxscale 10
@@ -589,6 +593,10 @@ Available car
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -629,11 +637,11 @@ Available car power
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename immagini/client web/your reserved car.png
+	filename immagini/client web/available car power.png
 	lyxscale 10
 	width 8cm
 
@@ -660,11 +668,11 @@ Your reserved car
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename immagini/client web/safe areas.png
+	filename immagini/client web/available car power.png
 	lyxscale 10
 	width 8cm
 
@@ -688,11 +696,11 @@ Safe areas
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename immagini/client web/power grid station.png
+	filename immagini/client web/available car power.png
 	lyxscale 10
 	width 8cm
 
