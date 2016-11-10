@@ -93,11 +93,12 @@ Requirements Analysis and Specifications Document
 \end_layout
 
 \begin_layout Standard
+\noindent
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -166,6 +167,70 @@ Nicola Sosio
 
 \begin_layout Itemize
 Riccardo Redaelli
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/Cattu5ra.JPG
+	lyxscale 10
+	scale 60
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Logo PowerEnjoy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -335,7 +400,15 @@ Regulatory policies
 \end_layout
 
 \begin_layout Subsection
-....
+Hardware limitation
+\end_layout
+
+\begin_layout Subsection
+Interfaces to other applications
+\end_layout
+
+\begin_layout Subsection
+Parallel operation
 \end_layout
 
 \begin_layout Section
@@ -396,16 +469,29 @@ Functional requirements
 Visitor
 \end_layout
 
-\begin_layout Standard
-Web and mobile view
+\begin_layout Subsection
+Client
+\end_layout
+
+\begin_layout Subsection
+Operator
+\end_layout
+
+\begin_layout Section
+Non-functional requirements
+\end_layout
+
+\begin_layout Subsection
+Visitor interface
 \end_layout
 
 \begin_layout Standard
+\noindent
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -457,12 +543,15 @@ Web view for visitors
 \end_layout
 
 \begin_layout Standard
+\noindent
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
+\noindent
 \begin_inset ERT
 status open
 
@@ -506,33 +595,21 @@ Mobile view for visitors
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Subsection
-Client
-\end_layout
-
-\begin_layout Standard
-Web and mobile view
+Client interface
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -560,10 +637,14 @@ Sign in
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
 
-\end_layout
 
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset space \thinspace{}
 \end_inset
 
 
@@ -626,6 +707,14 @@ Available car power
 \end_inset
 
 
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
 \begin_inset Float figure
 wide false
 sideways false
@@ -685,6 +774,14 @@ Safe areas
 \end_inset
 
 
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
 \begin_inset Float figure
 wide false
 sideways false
@@ -713,9 +810,122 @@ Power grid stations
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+Client web view
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename immagini/client app/login.png
+	lyxscale 10
+	width 3.3cm
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sign in
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename immagini/client app/available cars.png
+	lyxscale 10
+	width 3.3cm
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Available car
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename immagini/client app/available cars power.png
+	lyxscale 10
+	width 3.3cm
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Available car power
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -725,7 +935,24 @@ Power grid stations
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
 
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename immagini/client app/your reserved car.png
+	lyxscale 10
+	width 3.3cm
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Your reserved car
 \end_layout
 
 \end_inset
@@ -733,24 +960,243 @@ Power grid stations
 
 \end_layout
 
-\begin_layout Subsection
-Operator
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename immagini/client app/safe areas.png
+	lyxscale 10
+	width 3.3cm
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Safe areas
 \end_layout
 
-\begin_layout Section
-Non-functional requirements
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsection
-Visitor interface
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename immagini/client app/power grid station.png
+	lyxscale 10
+	width 3.3cm
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Power grid stations
 \end_layout
 
-\begin_layout Subsection
-Client interface
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Client mobile view
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 Operator interface
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename immagini/operator app/Sign in operator.png
+	lyxscale 10
+	width 3.3cm
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sign in
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename immagini/operator app/cars.png
+	lyxscale 10
+	width 3.3cm
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+All cars
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename immagini/operator app/car.png
+	lyxscale 10
+	width 3.3cm
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Single car
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename immagini/operator app/specific car.png
+	lyxscale 10
+	width 3.3cm
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Report operation done
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Client mobile view
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -800,11 +1246,7 @@ Use case diagram
 placement H
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -2055,7 +2497,7 @@ Balsamiq: for mockup
 \end_layout
 
 \begin_layout Itemize
-Draw.io (online): for class diagram
+Draw.io (online): for Class Diagram
 \end_layout
 
 \begin_layout Itemize
@@ -2071,7 +2513,7 @@ Lyx: to write
 \end_layout
 
 \begin_layout Itemize
-blablablablala............................................finire elenco software!!!!!!!!!!!!!!!!!!!!
+Astah: to create the Sequence Diagram and the Use Case Diagram
 \end_layout
 
 \begin_layout Standard
