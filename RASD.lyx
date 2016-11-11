@@ -383,12 +383,243 @@ Operator
 Domain properties
 \end_layout
 
+\begin_layout Standard
+We suppose that these properties hold in the analyzed world: 
+\end_layout
+
+\begin_layout Itemize
+[D1] All the GPS car always give the right position 
+\end_layout
+
+\begin_layout Itemize
+[D2] The GPS of cars cannot be switched off 
+\end_layout
+
+\begin_layout Itemize
+[D3] Each car has a maximum number of passenger 
+\end_layout
+
+\begin_layout Itemize
+[D5] Sensors detect that the user took at least other two passengers if
+ and only if passengers are really onto the car 
+\end_layout
+
+\begin_layout Itemize
+[D6] Operators will take care of all the requests that they receive through
+ notifications 
+\end_layout
+
+\begin_layout Itemize
+[D7] A car can be in only one position at the same time 
+\end_layout
+
+\begin_layout Itemize
+[D8] Operators GPS must be always on 
+\end_layout
+
+\begin_layout Itemize
+[D9] The company is supported by an external payments service (es.
+ Paypal) 
+\end_layout
+
+\begin_layout Itemize
+[D10] If the user hasn’t enough money on the credit card the external payments
+ service takes care of it
+\end_layout
+
+\begin_layout Itemize
+[D11] We assume that each ride has a fixed price per minute [D12] An user
+ report a damage of a car if and only if the car really has a damage [D13]
+ For every maintenance services, details about the operation are correctly
+ encoded [D14] Operators already have credentials for login which are given
+ by PowerEnjoy when they were hired [D15] Car codes are unique.
+ [D16] Email address used for registration must be a valid address [D17]
+ Payment information must be formally correct [D18] The car’s code must
+ be readable [D19] The car’s code can’t be hidden [D20] We assume that the
+ operators during their working hours are always available 
+\end_layout
+
 \begin_layout Section
 Glossary
 \end_layout
 
+\begin_layout Itemize
+User: a person already registered in the system.
+ A user has a profile that includes all these information: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Name 
+\end_layout
+
+\begin_layout Itemize
+Surname 
+\end_layout
+
+\begin_layout Itemize
+Email 
+\end_layout
+
+\begin_layout Itemize
+Phone number 
+\end_layout
+
+\begin_layout Itemize
+Username 
+\end_layout
+
+\begin_layout Itemize
+Password 
+\end_layout
+
+\begin_layout Itemize
+Address 
+\end_layout
+
+\begin_layout Itemize
+Number of credit card (with deadline and CVV) 
+\end_layout
+
+\begin_layout Itemize
+Number of Driving Licence 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Operator: an employee of society.
+ The system gave him references to access to their page where they find
+ their assignment.
+ Operator has a profile that includes this information: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Name 
+\end_layout
+
+\begin_layout Itemize
+Surname 
+\end_layout
+
+\begin_layout Itemize
+IDNumber 
+\end_layout
+
+\begin_layout Itemize
+Password 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Visitors: a visitor is a person who hasn’t signed up yet.
+ Visitors have less power in the system then user, they don’t have the user
+ skills, and the only function they can use is to sign up and read a description
+ of the service.
+ 
+\end_layout
+
+\begin_layout Itemize
+Passengers: a passenger is a person travelling in the car but not controlling
+ it, that not need to sign in or sign up in the system.
+ They had no power 
+\end_layout
+
+\begin_layout Itemize
+Available car: a car that isn’t reserved by another user, and it’s charge
+ must be more than 50% and it isn’t plug in 
+\end_layout
+
+\begin_layout Itemize
+GPS: abbreviation for global positioning system: a system that uses satellites
+ (devices that move around the earth) to show the position of a person or
+ thing anywhere in the world 
+\end_layout
+
+\begin_layout Itemize
+Reservation: only users can use cars.
+ One user can reserve a single car for up to one hour before they pick it
+ up.
+ If a car is not picked-up within one hour from the reservation, the system
+ tags the car as available again, and the reservation expires.
+ Now user pays a fee of 1€ 
+\end_layout
+
+\begin_layout Itemize
+Safe Area: it is an area where user must park cars and they don’t pay any
+ fee.
+ This area belongs or has a partnership with the society 
+\end_layout
+
+\begin_layout Itemize
+Power grid station: special areas with electricity station where people
+ could park cars and recharge it 
+\end_layout
+
+\begin_layout Itemize
+Operator notification: is the notification that the system sends to the
+ nearest operator to the car that needs the operator.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ride: it starts when the user starts the engine and ends when the user leaves
+ the car in a safe area.
+\end_layout
+
 \begin_layout Section
 Text assumptions
+\end_layout
+
+\begin_layout Itemize
+We should develop a mobile application able to use its own position through
+ a GPS or asking it to the client 
+\end_layout
+
+\begin_layout Itemize
+We assume that there is a fixed price per minute 
+\end_layout
+
+\begin_layout Itemize
+We assume that once the user unlock the car, he/she didn’t need to stay
+ logged
+\end_layout
+
+\begin_layout Itemize
+We assume that operators must stay logged during their working hours.
+ Only in this way they can receive notifications from the system.
+ 
+\end_layout
+
+\begin_layout Itemize
+We assume that for unlock a reserved car the user has to insert through
+ the app, the car’s code that is unique and it’s in the front of the car
+\end_layout
+
+\begin_layout Itemize
+We assume that discounts are not cumulative and if a user is entitled to
+ more than only one discount, the system will calculate the highest one.
+ 
+\end_layout
+
+\begin_layout Itemize
+If a car is left with no more than 20% of battery we assume that an operator
+ take care of it, so no one user can pick a car with more than 80% of empty
+ battery
+\end_layout
+
+\begin_layout Itemize
+We assume that if a car is left by some user at more than 3 km from the
+ nearest power grid station, the nearest operator will move the car to a
+ power grid station in order to ensure a uniform distribution of cars in
+ the city.
+ This wasn’t specified in the assignments but we think it’s more reasonable
+ to move the car in a more popular and central area.
+\end_layout
+
+\begin_layout Itemize
+We assume that if a user couldn't pay last ride the payment society notify
+ the system who block the user's account until he/she could pay
 \end_layout
 
 \begin_layout Section
@@ -399,16 +630,54 @@ Constrains
 Regulatory policies
 \end_layout
 
+\begin_layout Standard
+The system must require to clients and operators the permission to get their
+ gps positions and they have to manage sensible data (position, phone number,
+ credit cards information) respecting the privacy law.
+ Furthermore the systems must not use notifications to send SPAM to operators
+ respecting the privacy law.
+\end_layout
+
 \begin_layout Subsection
 Hardware limitation
+\end_layout
+
+\begin_layout Standard
+Cars have a on-board desktop where users can see safe areas and power grid
+ stations.
+ Cars have also a GPS always available that cannot be remove.
+ Operators and users need to have a phone with installed the respective
+ mobile app; the minimum technical characteristic of the phone are a GPS
+ and an internet connection.
+ If users use the web app they must have a modern browser with AJAX support.
+ 
 \end_layout
 
 \begin_layout Subsection
 Interfaces to other applications
 \end_layout
 
+\begin_layout Itemize
+Our system needs to interface with the push service(s) via own APIs to send
+ push notifications to operators.
+ Often we need an interface for each platform: android, iOS and windows.
+ 
+\end_layout
+
+\begin_layout Itemize
+Our system needs also to interface with the external payment service.
+ PayPal is an online payment service that allows individuals and business
+ to transfer funds electronically.
+ 
+\end_layout
+
 \begin_layout Subsection
 Parallel operation
+\end_layout
+
+\begin_layout Standard
+The server allow and support parallel operations from different clients
+ and different operators.
 \end_layout
 
 \begin_layout Section
@@ -419,10 +688,39 @@ Proposed system
 Identifying stakeholders
 \end_layout
 
+\begin_layout Standard
+We have only one stakeholder: the government of the city who wants to improve
+ pollution and traffic promoting green cars.
+ We could adapt this system to other cities, just changing the safe areas
+ and the power grid station because they must be modified for each different
+ cities.
+ 
+\end_layout
+
 \begin_layout Section
 Reference documents
 \end_layout
 
+\begin_layout Itemize
+Specification Document: Assignments AA 2016-2017.pdf 
+\end_layout
+
+\begin_layout Itemize
+IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements Specificat
+ions 
+\end_layout
+
+\begin_layout Itemize
+Examples document: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+RASD sample from Oct.
+ 20 lecture.pdf 
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
@@ -1614,7 +1912,7 @@ User click on
 \begin_inset Quotes eld
 \end_inset
 
-Ok
+Sign in
 \begin_inset Quotes erd
 \end_inset
 
@@ -2078,7 +2376,7 @@ status collapsed
 \begin_inset Text
 
 \begin_layout Plain Layout
-Unlock a car
+Unlock a car and start a ride
 \end_layout
 
 \end_inset
@@ -2186,6 +2484,10 @@ The system checks if the car that the user want to unlock has been reserved
 If the code inserted is correct the system will unlock the car.
 \end_layout
 
+\begin_layout Enumerate
+User start a ride.
+\end_layout
+
 \end_inset
 </cell>
 </row>
@@ -2203,7 +2505,7 @@ Output condition
 \begin_inset Text
 
 \begin_layout Plain Layout
-User can start the ride.
+The system start counting the amount
 \end_layout
 
 \end_inset
@@ -2250,6 +2552,537 @@ If the code inserted doesn’t match the car reserved by the user the system
 
 \begin_layout Standard
 \noindent
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="2.5cm">
+<column alignment="left" valignment="middle" width="8cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Enable money saving option
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Goal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+G8
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Input condition
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User must have unlocked a car.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Event flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+User selects the money saving option.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The system shows a form for the destination of the ride.
+ 
+\end_layout
+
+\begin_layout Enumerate
+User has to insert the final destination.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The system shows the station where the user has to leave the car to get
+ a discount.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Output condition
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No output condition
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Exception
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The destination address is not correct.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="2.5cm">
+<column alignment="left" valignment="middle" width="8cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Report a damage
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Goal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+G10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Input condition
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User must have reserved a car.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Event flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User reports a damage of the car that he/she has reserved.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Output condition
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The system notifies the nearest operator the damage of the car.
+ The system tags the car as not available.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Exception
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No exception
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="2.5cm">
+<column alignment="left" valignment="middle" width="8cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cancel a reservation
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Goal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+G11
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Input condition
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+User must have reserved a car.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Event flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+User goes to the personal page in the section of reserved car.
+ 
+\end_layout
+
+\begin_layout Enumerate
+User clicks on “Delete reservation”.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The system deletes the reservation.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The system tags the car as available.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Output condition
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The reservation has been deleted and the car is available.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Exception
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No exception
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset Float table
 placement H
 wide false

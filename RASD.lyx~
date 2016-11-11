@@ -93,11 +93,12 @@ Requirements Analysis and Specifications Document
 \end_layout
 
 \begin_layout Standard
+\noindent
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -166,6 +167,70 @@ Nicola Sosio
 
 \begin_layout Itemize
 Riccardo Redaelli
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/Cattu5ra.JPG
+	lyxscale 10
+	scale 60
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Logo PowerEnjoy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -322,8 +387,178 @@ Domain properties
 Glossary
 \end_layout
 
+\begin_layout Itemize
+User: a person already registered in the system.
+ A user has a profile that includes all these information: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Name 
+\end_layout
+
+\begin_layout Itemize
+Surname 
+\end_layout
+
+\begin_layout Itemize
+Email 
+\end_layout
+
+\begin_layout Itemize
+Phone number 
+\end_layout
+
+\begin_layout Itemize
+Username 
+\end_layout
+
+\begin_layout Itemize
+Password 
+\end_layout
+
+\begin_layout Itemize
+Address 
+\end_layout
+
+\begin_layout Itemize
+Number of credit card (with deadline and CVV) 
+\end_layout
+
+\begin_layout Itemize
+Number of Driving Licence 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Operator: an employee of society.
+ The system gave him references to access to their page where they find
+ their assignment.
+ Operator has a profile that includes this information: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Name 
+\end_layout
+
+\begin_layout Itemize
+Surname 
+\end_layout
+
+\begin_layout Itemize
+IDNumber 
+\end_layout
+
+\begin_layout Itemize
+Password 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Visitors: a visitor is a person who hasn’t signed up yet.
+ Visitors have less power in the system then user, they don’t have the user
+ skills, and the only function they can use is to sign up and read a description
+ of the service.
+ 
+\end_layout
+
+\begin_layout Itemize
+Passengers: a passenger is a person travelling in the car but not controlling
+ it, that not need to sign in or sign up in the system.
+ They had no power 
+\end_layout
+
+\begin_layout Itemize
+Available car: a car that isn’t reserved by another user, and it’s charge
+ must be more than 50% and it isn’t plug in 
+\end_layout
+
+\begin_layout Itemize
+GPS: abbreviation for global positioning system: a system that uses satellites
+ (devices that move around the earth) to show the position of a person or
+ thing anywhere in the world 
+\end_layout
+
+\begin_layout Itemize
+Reservation: only users can use cars.
+ One user can reserve a single car for up to one hour before they pick it
+ up.
+ If a car is not picked-up within one hour from the reservation, the system
+ tags the car as available again, and the reservation expires.
+ Now user pays a fee of 1€ 
+\end_layout
+
+\begin_layout Itemize
+Safe Area: it is an area where user must park cars and they don’t pay any
+ fee.
+ This area belongs or has a partnership with the society 
+\end_layout
+
+\begin_layout Itemize
+Power grid station: special areas with electricity station where people
+ could park cars and recharge it 
+\end_layout
+
+\begin_layout Itemize
+Operator notification: is the notification that the system sends to the
+ nearest operator to the car that needs the operator.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ride: it starts when the user starts the engine and ends when the user leaves
+ the car in a safe area.
+\end_layout
+
 \begin_layout Section
 Text assumptions
+\end_layout
+
+\begin_layout Itemize
+We should develop a mobile application able to use its own position through
+ a GPS or asking it to the client 
+\end_layout
+
+\begin_layout Itemize
+We assume that there is a fixed price per minute 
+\end_layout
+
+\begin_layout Itemize
+We assume that once the user unlock the car, he/she didn’t need to stay
+ logged
+\end_layout
+
+\begin_layout Itemize
+We assume that operators must stay logged during their working hours.
+ Only in this way they can receive notifications from the system.
+ 
+\end_layout
+
+\begin_layout Itemize
+We assume that for unlock a reserved car the user has to insert through
+ the app, the car’s code that is unique and it’s in the front of the car
+\end_layout
+
+\begin_layout Itemize
+We assume that discounts are not cumulative and if a user is entitled to
+ more than only one discount, the system will calculate the highest one.
+ 
+\end_layout
+
+\begin_layout Itemize
+If a car is left with no more than 20% of battery we assume that an operator
+ take care of it, so no one user can pick a car with more than 80% of empty
+ battery
+\end_layout
+
+\begin_layout Itemize
+We assume that if a car is left by some user at more than 3 km from the
+ nearest power grid station, the nearest operator will move the car to a
+ power grid station in order to ensure a uniform distribution of cars in
+ the city.
+ This wasn’t specified in the assignments but we think it’s more reasonable
+ to move the car in a more popular and central area.
 \end_layout
 
 \begin_layout Section
@@ -334,8 +569,46 @@ Constrains
 Regulatory policies
 \end_layout
 
+\begin_layout Standard
+The system must require to clients and operators the permission to get their
+ gps positions and they have to manage sensible data (position, phone number,
+ credit cards information) respecting the privacy law.
+ Furthermore the systems must not use notifications to send SPAM to operators
+ respecting the privacy law.
+\end_layout
+
 \begin_layout Subsection
-....
+Hardware limitation
+\end_layout
+
+\begin_layout Standard
+Cars have a on-board desktop where users can see safe areas and power grid
+ stations.
+ Cars have also a GPS always available that cannot be remove.
+ Operators and users need to have a phone with installed the respective
+ mobile app; the minimum technical characteristic of the phone are a GPS
+ and an internet connection.
+ If users use the web app they must have a modern browser with AJAX support.
+ 
+\end_layout
+
+\begin_layout Subsection
+Interfaces to other applications
+\end_layout
+
+\begin_layout Standard
+Our system needs to interface with the push service(s) via own APIs to send
+ push notifications to operators.
+ Often we need an interface for each platform: android, iOS and windows.
+\end_layout
+
+\begin_layout Subsection
+Parallel operation
+\end_layout
+
+\begin_layout Standard
+The server allow and support parallel operations from different clients
+ and different operators.
 \end_layout
 
 \begin_layout Section
@@ -2424,7 +2697,7 @@ Balsamiq: for mockup
 \end_layout
 
 \begin_layout Itemize
-Draw.io (online): for class diagram
+Draw.io (online): for Class Diagram
 \end_layout
 
 \begin_layout Itemize
@@ -2440,7 +2713,7 @@ Lyx: to write
 \end_layout
 
 \begin_layout Itemize
-blablablablala............................................finire elenco software!!!!!!!!!!!!!!!!!!!!
+Astah: to create the Sequence Diagram and the Use Case Diagram
 \end_layout
 
 \begin_layout Standard
