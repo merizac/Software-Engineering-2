@@ -6,15 +6,13 @@ sig Code{}
  
 sig Position{}
 
-sig User{
-//	reservation: set Reservation controllo incrociato??
-}
+sig User{}
 
 abstract sig BatteryLevel{}
 
-one sig LowLevel extends BatteryLevel{}
-one sig MediumLevel extends BatteryLevel{}
-one sig HighLevel extends BatteryLevel{}
+one sig LowLevel extends BatteryLevel{} // battery level between 0% and 20%
+one sig MediumLevel extends BatteryLevel{} // battery level between 21% and 99%
+one sig HighLevel extends BatteryLevel{} // battery level equal to 100%
 
 sig Car{
 	code: Code,
@@ -23,11 +21,35 @@ sig Car{
 	batteryLevel: BatteryLevel,
 	inCharge: Bool
 }{
-	available=True => inCharge=False and
 	inCharge=True => batteryLevel!=HighLevel
 }
 
-//available cars must have the battery level isn't low
+//cars in a power grid station are in charge or have just been charged
+fact carInAPowerGridStation{
+	all p:PowerGridStation | all c:Car | c in p.cars and (c.inCharge=True or c.inCharge=False and c.batteryLevel=HighLevel)
+}
+
+//one car could be at most in one power grid station
+fact carInPowerGridStation{
+	all c:Car | lone p:PowerGridStation | c in p.cars	
+}
+
+//available cars must not be involved in an operation or in a ride or in charge
+fact availableCars{
+	all c:Car |	c.available=True => 
+			c.inCharge=False and (no o: Operation | c=o.car and o.ended=False)
+				and (no r: Ride | c= r.car and r.ended=False)
+}
+
+//unavailable cars 
+fact unavailableCars{
+	all c:Car| c.available=False =>
+		(c.inCharge=True => (no o: Operation | c=o.car and o.ended=False) and (no r: Ride | c= r.car and r.ended=False)) and
+		((one o: Operation | c=o.car and o.ended=False) => c.inCharge=False and (no r: Ride | c= r.car and r.ended=False)) and
+		((one r: Ride | c= r.car and r.ended=False) =>c.inCharge=False and (no o: Operation | c=o.car and o.ended=False))
+}
+
+//available cars must have the battery level that isn't low
 fact batteryLevelAvailableCars{
 	all c: Car | (c.available=True) => c.batteryLevel!=LowLevel
 }
@@ -133,10 +155,15 @@ fact oneOperationNotEnded{
 //each not ended operation must have different operator and different car
 fact differentOperatorAndCars{
 	no o1,o2:Operation | o1.ended=False and o2.ended=False and o1!=o2 and o1.operator=o2.operator and o1.car=o2.car
-
 }
 
-pred show{}
+// one car could have at most one operation that is not ended
+fact oneCareOneOperationNotEnded{
+	all c:Car | lone o: Operation | o.car=c and o.ended=False
+}
+
+pred show{
+}
 run show
 
 //predicates
