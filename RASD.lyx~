@@ -293,7 +293,7 @@ Visitor
 \end_layout
 
 \begin_layout Subsection
-Client
+User
 \end_layout
 
 \begin_layout Itemize
@@ -428,15 +428,47 @@ We suppose that these properties hold in the analyzed world:
 \end_layout
 
 \begin_layout Itemize
-[D11] We assume that each ride has a fixed price per minute [D12] An user
- report a damage of a car if and only if the car really has a damage [D13]
- For every maintenance services, details about the operation are correctly
- encoded [D14] Operators already have credentials for login which are given
- by PowerEnjoy when they were hired [D15] Car codes are unique.
- [D16] Email address used for registration must be a valid address [D17]
- Payment information must be formally correct [D18] The car’s code must
- be readable [D19] The car’s code can’t be hidden [D20] We assume that the
- operators during their working hours are always available 
+[D11] We assume that each ride has a fixed price per minute 
+\end_layout
+
+\begin_layout Itemize
+[D12] An user report a damage of a car if and only if the car really has
+ a damage 
+\end_layout
+
+\begin_layout Itemize
+[D13] For every maintenance services, details about the operation are correctly
+ encoded 
+\end_layout
+
+\begin_layout Itemize
+[D14] Operators already have credentials for login which are given by PowerEnjoy
+ when they were hired 
+\end_layout
+
+\begin_layout Itemize
+[D15] Car codes are unique
+\end_layout
+
+\begin_layout Itemize
+[D16] Email address used for registration must be a valid address 
+\end_layout
+
+\begin_layout Itemize
+[D17] Payment information must be formally correct 
+\end_layout
+
+\begin_layout Itemize
+[D18] The car’s code must be readable 
+\end_layout
+
+\begin_layout Itemize
+[D19] The car’s code can’t be hidden 
+\end_layout
+
+\begin_layout Itemize
+[D20] We assume that the operators during their working hours are always
+ available 
 \end_layout
 
 \begin_layout Section
@@ -618,6 +650,15 @@ We assume that if a car is left by some user at more than 3 km from the
 \end_layout
 
 \begin_layout Itemize
+As soon as the engine ignites, the system start charging the user, meaning
+ that the system start counting the amount of money per minute that the
+ external payment service has to charge to the user at the end of the ride.
+ PayPal will actually charge the user when the ride is ended and the system
+ notify to PayPal the final total cost of the rent.
+ 
+\end_layout
+
+\begin_layout Itemize
 We assume that if a user couldn't pay last ride the payment society notify
  the system who block the user's account until he/she could pay
 \end_layout
@@ -749,6 +790,12 @@ Operator: after the login, all these people can see all cars position and
  their condition (power and maintenance).
  They can also open and turn on cars.
  
+\end_layout
+
+\begin_layout Itemize
+PayPal : it’s not a proactive actor.
+ Our system collaborate with PayPal for the payment process.
+ 
 \begin_inset Newpage pagebreak
 \end_inset
 
@@ -799,6 +846,10 @@ Visitor
 \paragraph_spacing single
 \noindent
 [R4] Visitors can register themselves only with a credit card
+\end_layout
+
+\begin_layout Subsection
+User
 \end_layout
 
 \end_deeper
@@ -914,14 +965,351 @@ n
 \end_layout
 
 \end_deeper
-\begin_layout Subsection
-Client
+\begin_layout Itemize
+[G6] Allows users to know the current battery level of each available cars
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] User must be already logged 
+\end_layout
+
+\begin_layout Itemize
+[R2] The system must show the battery level of the car 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G7] Allows users to know which are the “safe area” 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] User must be already logged or inside the car 
+\end_layout
+
+\begin_layout Itemize
+[R2] The system must show which are the set of safe area in which the user
+ can park and take the car
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G8] Users should enable the money saving option in the car 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] User must be inside the car 
+\end_layout
+
+\begin_layout Itemize
+[R2] User must be able to input his/her final destination 
+\end_layout
+
+\begin_layout Itemize
+[R3] The system must be able to provides information about the station where
+ to leave the car to get a discount 
+\end_layout
+
+\begin_layout Itemize
+[R4] The system must know the availability of power plugs at each station
+ 
+\end_layout
+
+\begin_layout Itemize
+[R5] The system must be able to suggest the user the final station in order
+ to ensure a uniform distribution of cars in the city 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G9] Users should know where the power grid stations are 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] User must be already logged or inside the car 
+\end_layout
+
+\begin_layout Itemize
+[R2] The system must be able to show the user where the power grid station
+ are and if there are available power plugs
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G10] Users can report if the reserved car has damage 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] User must be already logged 
+\end_layout
+
+\begin_layout Itemize
+[R2] User must be able to report the damage of the car 
+\end_layout
+
+\begin_layout Itemize
+[R3] The system must take care of the damage car and notify it to an available
+ maintenance operator 
+\end_layout
+
+\begin_layout Itemize
+[R4] As soon as the system receives the damage notify, it must let disappear
+ the car from the list of the availables ones 
+\end_layout
+
+\begin_layout Itemize
+[R5] The system must delete the reservation of the car by the user that
+ notify the damage 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G11] Allows users to cancel a reservation 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] User must be already logged 
+\end_layout
+
+\begin_layout Itemize
+[R2] User must already done a reservation for a car 
+\end_layout
+
+\begin_layout Itemize
+[R3] User must be able to cancel the reservation 
+\end_layout
+
+\begin_layout Itemize
+[R4] The system must be able to reinsert the car in the list of the availables
+ ones 
+\end_layout
+
+\begin_layout Itemize
+[R5] User must cancel reservation within one hour from the reservation
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G12] Allows users to have discount 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] User must be already registered 
+\end_layout
+
+\begin_layout Itemize
+[R2] The system apply a discount of 10% when sensors on seats of the car
+ pick up that there are more than two other passengers 
+\end_layout
+
+\begin_layout Itemize
+[R3] The system apply a discount of 20% when the car is left with no more
+ of 50% of the battery empty 
+\end_layout
+
+\begin_layout Itemize
+[R4] The system apply a discount of 30% when the car is left at special
+ parking areas and the user takes care of plugging the car into the power
+ grid 
+\end_layout
+
+\begin_layout Itemize
+[R5] The system must know if a car is plugged into the power grid 
+\end_layout
+
+\begin_layout Itemize
+[R6] The system must know the percentage of battery of each car 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G13] Allows users to end the ride 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] User must be already registered 
+\end_layout
+
+\begin_layout Itemize
+[R2] User can end the ride if and only if the car is inside the safe area,
+ otherwise he/she cannot lock the car 
+\end_layout
+
+\begin_layout Itemize
+[R3] As soon as the user end the ride and lock the car, the system reinsert
+ the car in the list of available car 
+\end_layout
+
+\begin_layout Itemize
+[R4] When the ride is correctly end, the system stop to charge the user
 \end_layout
 
 \begin_layout Subsection
 Operator
 \end_layout
 
+\end_deeper
+\begin_layout Itemize
+[G14] Allows operators to login in the system 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] Operator must enter the username and password that they receive after
+ their hire to complete successfully the login process 
+\end_layout
+
+\begin_layout Itemize
+[R2] Username and password insert during the login process must be correct
+ 
+\end_layout
+
+\begin_layout Itemize
+[R3] Wrong credentials will not let the operators enter in their account
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G15] Allows operators to know all the informations of cars 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] Operator must be already logged 
+\end_layout
+
+\begin_layout Itemize
+[R2] The system must be able to show all the cars location in the city and
+ the informations related 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G16] Allows operators to unlock cars 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] Operators must be logged 
+\end_layout
+
+\begin_layout Itemize
+[R2] The system must be able to recognize the origin of the request of unlocking
+ 
+\end_layout
+
+\begin_layout Itemize
+[R3] Operator must be next to the car
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G17] Operators should receive a notification for incoming request of reparation
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] Operators must be logged 
+\end_layout
+
+\begin_layout Itemize
+[R2] The system must send a notification to the nearest operator after a
+ user report a damaged car 
+\end_layout
+
+\begin_layout Itemize
+[R3] The nearest operator must take care of repairing the damaged car
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G18] Operators must be able to report the done reparation 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] Operators must be logged 
+\end_layout
+
+\begin_layout Itemize
+[R2] The system must be able to reinsert the car in the list of available
+ car 
+\end_layout
+
+\begin_layout Itemize
+[R3] The system should charge a fee to the last user which used the car
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G19] Operators should receive a notification for moving car 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] Operators must be logged 
+\end_layout
+
+\begin_layout Itemize
+[R2] The system must send a notification to the nearest operator after some
+ user leaves the car at more than 3 km from the nearest power grid station
+ 
+\end_layout
+
+\begin_layout Itemize
+[R3] The system should charge 30% more on the last ride at the last user
+ that used the car 
+\end_layout
+
+\begin_layout Itemize
+[R4] The nearest operator must take care of moving the car 
+\end_layout
+
+\begin_layout Itemize
+[R5] The car must be moved to a power grid station according to ensure a
+ uniform distribution of cars in the city 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G20] Operators should receive a notification for charging a car 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] Operators must be logged 
+\end_layout
+
+\begin_layout Itemize
+[R2] The system must send a notification to the nearest operator after some
+ user leaves the car with more than 80% of the battery empty.
+\end_layout
+
+\begin_layout Itemize
+[R3] The system should charge 30% more on the last ride at the last user
+ that used the car 
+\end_layout
+
+\begin_layout Itemize
+[R4] The nearest operator must take care of re-charge the car on-site
+\end_layout
+
+\begin_layout Itemize
+[R5] When a car is in charge, as soon as its battery is full, it appear
+ with the available cars.
+ 
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Non-functional requirements
 \end_layout
@@ -1046,7 +1434,7 @@ Mobile view for visitors
 \end_layout
 
 \begin_layout Subsection
-Client interface
+User interface
 \end_layout
 
 \begin_layout Standard
@@ -1261,7 +1649,7 @@ Power grid stations
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Client web view
+User web view
 \end_layout
 
 \end_inset
@@ -1477,7 +1865,7 @@ Power grid stations
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Client mobile view
+User mobile view
 \end_layout
 
 \end_inset
