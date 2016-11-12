@@ -1,6 +1,6 @@
 open util/boolean
 
-//Signatures
+//SIGNATURES
 
 sig Code{}
  
@@ -16,13 +16,49 @@ one sig HighLevel extends BatteryLevel{} // battery level equal to 100%
 
 sig Car{
 	code: Code,
-	position: one Position,
+	position: Position,
 	available: Bool, 
 	batteryLevel: BatteryLevel,
 	inCharge: Bool
 }{
 	inCharge=True => batteryLevel!=HighLevel
 }
+
+sig Ride{
+	reservation: Reservation,
+	driver: User,
+	car: Car,
+	ended: Bool
+}
+
+sig Reservation{
+	car: Car,
+	user: User,
+	timerEnded: Bool,
+	deleted: Bool
+}
+
+sig Availability{}
+
+sig PowerGridStation{
+	position: Position,
+	cars: set Car, 
+	availability: Availability
+}
+
+one sig SafeArea{
+	area: set Position
+}
+
+sig Operator{}
+
+sig Operation{
+	operator: Operator,
+	car: Car,
+	ended: Bool
+}
+
+//FACTS
 
 //cars in a power grid station are in charge or have just been charged
 fact carInAPowerGridStation{
@@ -76,23 +112,9 @@ fact carsInCharging{
 			(one p:PowerGridStation | c in p.cars)
 }
 
-sig Ride{
-	reservation: one Reservation,
-	driver: one User,
-	car: one Car,
-	ended: Bool
-}
-
 //for each user exists at most one ride that is not ended
 fact oneRideNotEnded{
 	all u:User | lone r:Ride | r.driver=u and r.ended=False
-}
-
-sig Reservation{
-	car: one Car,
-	user: one User,
-	timerEnded: Bool,
-	deleted: Bool
 }
 
 //each reservation has at most one ride
@@ -116,14 +138,6 @@ fact sameCarUser{
 	all r: Ride | r.driver=r.reservation.user  and r.car=r.reservation.car
 }
 
-sig Availability{}
-
-sig PowerGridStation{
-	position: one Position,
-	cars: set Car, 
-	availability: Availability
-}
-
 //each power grid station is in a safe area
 fact powerGridStationInASafeArea{
 	all p:PowerGridStation |
@@ -133,18 +147,6 @@ fact powerGridStationInASafeArea{
 //two power grid stations cannot have the same position
 fact twoPowerGridStationWithSamePosition{
 	all p1,p2: PowerGridStation | (p1!=p2) => p1.position!=p2.position 
-}
-
-one sig SafeArea{
-	area: set Position
-}
-
-sig Operator{}
-
-sig Operation{
-	operator: Operator,
-	car: Car,
-	ended: Bool
 }
 
 //each operator could have at most one operation that is not ended
@@ -162,9 +164,10 @@ fact oneCareOneOperationNotEnded{
 	all c:Car | lone o: Operation | o.car=c and o.ended=False
 }
 
-pred show{
-}
+//PREDICATES
+
+pred show{}
 run show
 
-//predicates
+
 
