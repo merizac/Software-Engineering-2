@@ -767,6 +767,153 @@ Functional requirements
 Visitor
 \end_layout
 
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+[G1] Allow visitors to register in the system
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+[R1] Visitors must not be already registered to perform registration process
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+[R2] Visitors must provide in the registration form their credentials and
+ payment information.
+ They receive back a password that can be used to access the system
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+[R3] Visitors can only see login page with also the registration form and
+ a short description of the service
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+\noindent
+[R4] Visitors can register themselves only with a credit card
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G2] Allow users to log in in the system
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] User must be already registered
+\end_layout
+
+\begin_layout Itemize
+[R2] User must enter the email address used during the registration and
+ password that they receive back, to success login
+\end_layout
+
+\begin_layout Itemize
+[R3] Email and password insert during the login process must be correct
+\end_layout
+
+\begin_layout Itemize
+[R4] Wrong credentials will not let the users enter in their account 
+\end_layout
+
+\begin_layout Itemize
+[R5] Visitors can’t see available cars before registration
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G3] Users must be able to find the locations of available cars
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] User must be already logged 
+\end_layout
+
+\begin_layout Itemize
+[R2] The system must be able to check the GPS position of the user or receive
+ an address from the user and show him the nearest available car
+\end_layout
+
+\begin_layout Itemize
+[R3] User must insert a correct address
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G4] Allows users to request for the reservation of a car at least one hour
+ in advance 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] User must be already logged
+\end_layout
+
+\begin_layout Itemize
+[R2] The system must be able to recognize the origin of reservation 
+\end_layout
+
+\begin_layout Itemize
+[R3] As soon as the user reserve the car, the system delete the car from
+ the list of available car 
+\end_layout
+
+\begin_layout Itemize
+[R4] User can reserved just one car 
+\end_layout
+
+\begin_layout Itemize
+[R5] Car can be reserved only by one user
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G5] Allows users to unlock the reserved car and to ignite the engine 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[R1] User must be already logged 
+\end_layout
+
+\begin_layout Itemize
+[R2] The system must be able to recognize that the user that unlock the
+ car is the same that reserve the car 
+\end_layout
+
+\begin_layout Itemize
+[R3] User must unlock the car within one hour from the reservation 
+\end_layout
+
+\begin_layout Itemize
+[R4] User must be next to the car and able to read and insert the car’s
+ code in the app in order to unlock the car 
+\end_layout
+
+\begin_layout Itemize
+[R5] As soon as the engine ignites, the system starts charging the user
+ 
+\end_layout
+
+\begin_layout Itemize
+[R6] The system must show the current charge on the onboard desktop 
+\end_layout
+
+\begin_layout Itemize
+[R7] The car must be driven only by the registered user that take the reservatio
+n
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 Client
 \end_layout
@@ -1508,20 +1655,168 @@ Client mobile view
 Scenario identifying
 \end_layout
 
+\begin_layout Standard
+Here some possible scenarios of usage of this service
+\end_layout
+
 \begin_layout Section
 Scenario 1
+\end_layout
+
+\begin_layout Standard
+Bill is coming back home and he finds a PowerEnjoy car near his home.
+ He get some information about the service and he decides to sign up himself
+ and inserts him credentials.
+ After registration process, he receives an email with the password that
+ will use for the login.
+ Therefore Bill login into the system with the right credentials, enables
+ the gps and reserves the car that he saw before.
+ Then Bill goes to the car, unlocks it and joins his friends in city centre.
 \end_layout
 
 \begin_layout Section
 Scenario 2
 \end_layout
 
+\begin_layout Standard
+Paolo is going shopping, when he arrives at the supermarket he sees a PowerEnjoy
+ car.
+ Paolo is already registered at the service, so he login in the app, enables
+ the gps and reserve the car for the return trip.
+ Meanwhile Paolo goes shopping but he has to queued up at the till.
+ One hour from the reservation has already passed when Paolo exits the supermark
+et, so he has to pay a fee of 1 EUR and the system tags the car as available
+ again and the reservation expires.
+ Paolo has to look for another car.
+\end_layout
+
 \begin_layout Section
 Scenario 3
 \end_layout
 
+\begin_layout Standard
+Riccardo, after login into the system, reserved a car near his home.
+ He goes to the reserved car but he finds out that it’s damage! Riccardo
+ has to notify the damage (from the previous user) at the system through
+ the application.
+ The system will notify the damage car at the nearest operator and will
+ let disappear the car from the list of available car.
+ Riccardo has to look for another car
+\end_layout
+
 \begin_layout Section
 Scenario 4
+\end_layout
+
+\begin_layout Standard
+Nicola goes out to dinner with friends of him.
+ All Nicola’s friends live in the same neighborhood, that it’s some bus
+ station far away from the restaurant.
+ Instead Nicola lives in another district, so he decides to go with friends
+ till their home and then reserve a PowerEnjoy car there.
+ Therefore Nicola login into the system through the application, insert
+ the position of his friends home and reserves a car.
+ Nicola has to reach the car within one hour from the reservation.
+\end_layout
+
+\begin_layout Section
+Scenario 5
+\end_layout
+
+\begin_layout Standard
+Filippo has to reserve a PowerEnjoy car for a quite long trip inside the
+ city.
+ He login into the system with his credentials through the web site and
+ he finds out that there is an availablecar in proximity.
+ But when he sees the law battery level, then he decides to reserve another
+ car.
+\end_layout
+
+\begin_layout Section
+Scenario 6
+\end_layout
+
+\begin_layout Standard
+Maria Chiara and her friends goes out in the night.
+ It’s late and public transportations are infrequents.
+ So, Maria Chiara and her friends decide to rent a PowerEnjoy car to come
+ back home.
+ Since they are more than two passengers, system sensor detect them and
+ the system will applies a 10% of discount on the last Maria Chiara’s ride.
+\end_layout
+
+\begin_layout Section
+Scenario 7
+\end_layout
+
+\begin_layout Standard
+Matteo has to go to the stadium to see a football match.
+ He wants to go in a cheap way.
+ So Matteo login into the system through the PowerEnjoy app and reserves
+ a car.
+ He reach the car and as soon as he engine ignites he selects on the car
+ screen the money saving option and key the final address destination.
+ The system provides informations about the station where to leave the car
+ to get discount.
+\end_layout
+
+\begin_layout Section
+Scenario 8
+\end_layout
+
+\begin_layout Standard
+Sara has to come back home and she lives at more than 3 km from the nearest
+ power grid station.
+ Sara uses PowerEnjoy to come back home and she park near her home.
+ The system will charge 30% more on her last ride.
+\end_layout
+
+\begin_layout Section
+Scenario 9
+\end_layout
+
+\begin_layout Standard
+Francesco rent a PowerEnjoy car to go to work.
+ He’s late, so Francesco parks the car with more than 80% of the battery
+ empty because he has no time to put in charge the car.
+ The system will charge 30% more on his last ride to compensate for the
+ cost required to re-charge the car on site by an operator.
+\end_layout
+
+\begin_layout Section
+Scenario 10
+\end_layout
+
+\begin_layout Standard
+Stefania is at the University and when she has to come back home, starts
+ rain.
+ She decides to rent a PowerEnjoy car.
+ When she arrives at her home, she parks the car with more than 50% of battery.
+ For this reason, the system will apply a discount of 20% on her last ride.
+\end_layout
+
+\begin_layout Section
+Scenario 11
+\end_layout
+
+\begin_layout Standard
+Marco has to go to visit a friend and he decides to go with PowerEnjoy service.
+ Marco left the car at special parking areas and he takes care of plugging
+ the car into the power grid.
+ The system will apply a discount of 30% on his last ride.
+\end_layout
+
+\begin_layout Section
+Scenario 12
+\end_layout
+
+\begin_layout Standard
+Luca is an operator.
+ When he starts his work schedule he logs the system and looks if there
+ are any cars that need reparations.
+ At this moment he receives a notification from the system that there is
+ a car which need to be recharged.
+ Luca reaches the car, then he unlocks the car and charges it.
 \end_layout
 
 \begin_layout Standard
@@ -2908,7 +3203,7 @@ No exception
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3083,6 +3378,10 @@ No exception
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\noindent
 \begin_inset Float table
 placement H
 wide false
@@ -3101,7 +3400,7 @@ status collapsed
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+End ride
 \end_layout
 
 \end_inset
@@ -3130,7 +3429,7 @@ Actor
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+User
 \end_layout
 
 \end_inset
@@ -3150,7 +3449,7 @@ Goal
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+G13
 \end_layout
 
 \end_inset
@@ -3170,7 +3469,7 @@ Input condition
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+No input condition.
 \end_layout
 
 \end_inset
@@ -3189,8 +3488,20 @@ Event flow
 <cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Plain Layout
+\begin_layout Enumerate
+User parks the car in a safe area.
+\end_layout
 
+\begin_layout Enumerate
+The system stops counting the amount.
+\end_layout
+
+\begin_layout Enumerate
+The system locks the car.
+\end_layout
+
+\begin_layout Enumerate
+The system tags the car as available.
 \end_layout
 
 \end_inset
@@ -3210,7 +3521,11 @@ Output condition
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+The system, through the external payment gateway, charges the user with
+ the total cost of the ride taking care of eventual discounts.
+ If the system detects that the car is parked at more than 3km from the
+ nearest power grid station, it sends a notification to the nearest operator
+ and charges 30% more the user.
 \end_layout
 
 \end_inset
@@ -3230,7 +3545,185 @@ Exception
 \begin_inset Text
 
 \begin_layout Plain Layout
+No exception
+\end_layout
 
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="2.5cm">
+<column alignment="left" valignment="middle" width="8cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Operation
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Operator
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Goal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+G17, G19, G20
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Input condition
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The operator has to be logged
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Event flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+The system sends a notification to the nearest operator with the operation
+ that he has to do.
+\end_layout
+
+\begin_layout Enumerate
+The operator as soon as receives the notification reaches the car and unlocks
+ it for doing the operation.
+\end_layout
+
+\begin_layout Enumerate
+As soon as the operator finishes the operation notifies the system that
+ the operation has been done.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Output condition
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The car is added to the available cars
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Exception
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No exception
 \end_layout
 
 \end_inset
