@@ -13,6 +13,7 @@ abstract sig BatteryLevel{}
 one sig LowLevel extends BatteryLevel{} // battery level between 0% and 20%
 one sig MediumLevel extends BatteryLevel{} // battery level between 21% and 99%
 one sig HighLevel extends BatteryLevel{} // battery level equal to 100%
+one sig MaxLevel extends BatteryLevel{} // battery level equal to 100%
 
 sig Car{
 	code: Code,
@@ -21,14 +22,23 @@ sig Car{
 	batteryLevel: BatteryLevel,
 	inCharge: Bool
 }{
-	inCharge=True => batteryLevel!=HighLevel
+	inCharge=True => batteryLevel!=MaxLevel
 }
 
 sig Ride{
 	reservation: Reservation,
 	driver: User,
 	car: Car,
-	ended: Bool
+	numberPassenger: Int,
+	ended: Bool,
+	moreThan3km: Bool,
+	inCharge: Bool,
+	endBatteryLevel: BatteryLevel
+}
+{
+	inCharge=True => moreThan3km=False
+	moreThan3km=True =>	inCharge=False
+ 	numberPassenger>=0 and numberPassenger<=4
 }
 
 sig Reservation{
@@ -60,9 +70,15 @@ sig Operation{
 
 //FACTS
 
+//
+fact carInPowerGridStationSafeArea{
+	  all c:Car | one p:PowerGridStation | c in p.cars => one s:SafeArea | c.position in s.area
+}
+
+
 //cars in a power grid station are in charge or have just been charged
 fact carInAPowerGridStation{
-	all p:PowerGridStation | all c:Car | c in p.cars and (c.inCharge=True or c.inCharge=False and c.batteryLevel=HighLevel)
+	all p:PowerGridStation | all c:Car | c in p.cars => ((c.inCharge=True or (c.inCharge=False and c.batteryLevel=MaxLevel)))
 }
 
 //one car could be at most in one power grid station
@@ -233,6 +249,10 @@ check NoRideWithDeletedReservation
 // user reserved a car but the timer is ended, and so make another reservation
 pred timerEndedAndRide{
 	one u:User | some r:Reservation | u=r.user and r.timerEnded=True and (one r1:Ride| r1.driver=u )
+	#Ride=1
+	#Reservation=2
+	#User=1
+	#Operator=0
 }
 
 run timerEndedAndRide 
@@ -240,26 +260,54 @@ run timerEndedAndRide
 //user deletes a reservation
 pred deleteReservation{
 	one u:User | one r:Reservation | r.user=u and r.deleted=True
+	#Ride=1
+	#Reservation=2
+	#User=1
+	#Operator=0
 }
 
 run deleteReservation
 
-// user takes a car which has been already reapaired
-
-pred carRepaired{
-	one u:User | one r:Ride | r.driver=u and one o:Operation | o.car=r.car and o.ended=True
-	#Operation=1
+//when users can have 30% of discount
+pred  ThirtyPercentDiscount{
+	one r:Ride | (r.ended=True and r.inCharge=True) 
 	#User=1
 	#Ride=1
 }
 
-run carRepaired
+run ThirtyPercentDiscount
 
-
-pred show{
-	one r:Reservation | r.timerEnded=True
+//when users can have 20% of discount
+pred  TwentyPercentDiscount{
+	one r:Ride | (r.ended=True and (r.car.batteryLevel=HighLevel or r.car.batteryLevel=MaxLevel)
+					and r.inCharge=False)
 	#User=1
 	#Ride=1
+}
+
+run TwentyPercentDiscount
+
+//when users can have 10% of discount
+pred  TenPercentDiscount{
+	all r:Ride | (r.ended=True and r.numberPassenger>=2 and 
+	(r.endBatteryLevel!=HighLevel and r.endBatteryLevel!=MaxLevel)
+					and  r.inCharge=False)
+	#User=1
+	#Ride=1
+}
+
+run TenPercentDiscount
+
+pred ThirtyPercentFee{
+	all r:Ride | (r.ended=True and (r.endBatteryLevel=LowLevel or r.moreThan3km=True))
+	#User=1
+	#Ride=1
+}
+
+run ThirtyPercentFee
+
+pred show{
+#PowerGridStation=2
 }
 
 run show
