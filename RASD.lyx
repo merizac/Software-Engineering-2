@@ -158,20 +158,8 @@ Logo Politecnico di Milano
 
 \end_layout
 
-\begin_layout Itemize
-Maria Chiara Zaccardi
-\end_layout
-
-\begin_layout Itemize
-Nicola Sosio
-\end_layout
-
-\begin_layout Itemize
-Riccardo Redaelli
-\end_layout
-
 \begin_layout Standard
-\begin_inset VSpace 1cm
+\begin_inset VSpace 0.5cm
 \end_inset
 
 
@@ -183,7 +171,7 @@ Riccardo Redaelli
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -235,6 +223,25 @@ Logo PowerEnjoy
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Maria Chiara Zaccardi
+\end_layout
+
+\begin_layout Itemize
+Nicola Sosio
+\end_layout
+
+\begin_layout Itemize
+Riccardo Redaelli
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
@@ -256,7 +263,10 @@ We will project and implement PowerEnjoy, which is a car-sharing service
  that offers only electric cars.
  The price varies just depending on the real use of each individual rental
  of the car.
- The system allows clients to reserve a car via mobile or web app, using
+\end_layout
+
+\begin_layout Standard
+The system allows clients to reserve a car via mobile or web app, using
  GPS or an address to identify client’s zone and find a car in the same
  zone.
  On the other side the mobile app allows operators to know what they must
@@ -725,10 +735,6 @@ Parallel operation
 \begin_layout Standard
 The server allow and support parallel operations from different clients
  and different operators.
-\end_layout
-
-\begin_layout Section
-Proposed system
 \end_layout
 
 \begin_layout Section
@@ -1448,7 +1454,7 @@ User interface
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -5112,29 +5118,6 @@ World generated
 \end_layout
 
 \begin_layout Chapter
-Future development
-\end_layout
-
-\begin_layout Standard
-All user could become operator for a 
-\begin_inset Quotes eld
-\end_inset
-
-viaggio
-\begin_inset Quotes erd
-\end_inset
-
-, ..........................gli user possono 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Chapter
 Used tools
 \end_layout
 
@@ -5159,7 +5142,7 @@ Github: for version controller
 \end_layout
 
 \begin_layout Itemize
-Lyx: to write
+Lyx: to format this document
 \end_layout
 
 \begin_layout Itemize
@@ -5167,14 +5150,7 @@ Astah: to create the Sequence Diagram and the Use Case Diagram
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
 
-
-\end_layout
-
-\begin_layout Chapter
-Changelog
 \end_layout
 
 \end_body
