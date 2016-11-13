@@ -451,23 +451,28 @@ We suppose that these properties hold in the analyzed world:
 \end_layout
 
 \begin_layout Itemize
-[D16] Email address used for registration must be a valid address 
+[D16] If a car is in charge, it will become available as soon as its battery
+ is fully charged
 \end_layout
 
 \begin_layout Itemize
-[D17] Payment information must be formally correct 
+[D17] Email address used for registration must be a valid address 
 \end_layout
 
 \begin_layout Itemize
-[D18] The car’s code must be readable 
+[D18] Payment information must be formally correct 
 \end_layout
 
 \begin_layout Itemize
-[D19] The car’s code can’t be hidden 
+[D19] The car’s code must be readable 
 \end_layout
 
 \begin_layout Itemize
-[D20] We assume that the operators during their working hours are always
+[D20] The car’s code can’t be hidden 
+\end_layout
+
+\begin_layout Itemize
+[D21] We assume that the operators during their working hours are always
  available 
 \end_layout
 
@@ -2581,18 +2586,18 @@ Event flow
 
 \begin_layout Enumerate
 \noindent
-User go on the webpage and click on login.
+User goes on the webpage and clicks on login.
  
 \end_layout
 
 \begin_layout Enumerate
 \noindent
-User insert email and password.
+User inserts email and password.
  
 \end_layout
 
 \begin_layout Enumerate
-User click on 
+User clicks on 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2620,8 +2625,8 @@ Output condition
 \begin_inset Text
 
 \begin_layout Plain Layout
-The system verify the credential and if correct redirect the user the personal
- page.
+The system verifies the credential and if correct redirect the user the
+ personal page.
 \end_layout
 
 \end_inset
@@ -2662,7 +2667,7 @@ The credential are not correct and the system shows an error message.
 \begin_layout Standard
 \noindent
 \begin_inset Float table
-placement H
+placement h
 wide false
 sideways false
 status collapsed
@@ -2769,8 +2774,8 @@ Event flow
 
 \begin_layout Enumerate
 \noindent
-The system let the registered user choose between searching available cars
- by inserting an address or by using the GPS position.
+The system let the user choose between searching available cars by inserting
+ an address or by using the GPS position.
 \end_layout
 
 \begin_layout Enumerate
@@ -2798,8 +2803,8 @@ Output condition
 \begin_layout Plain Layout
 The system shows a page in which there is a map with all the available car
  near the position chosen.
- At that point registered user could see the current battery level of each
- car after clicks on a specific car.
+ At that point the user could see the current battery level of each car
+ after clicks on a specific car.
  
 \end_layout
 
@@ -2847,7 +2852,7 @@ User decides to use the GPS position without enabling the GPS.
 \begin_layout Standard
 \noindent
 \begin_inset Float table
-placement H
+placement h
 wide false
 sideways false
 status collapsed
@@ -2955,19 +2960,18 @@ Event flow
 \begin_layout Enumerate
 Before select a car, user could filter available cars by position as descripted
  in “Search a car”.
- In this case the system show him/her the nearest cars.
+ In this case the system shows him/her the nearest cars.
  
 \end_layout
 
 \begin_layout Enumerate
-User select a car from the list of available car.
+User selects a car from the list of available car.
  
 \end_layout
 
 \begin_layout Enumerate
-The system show to the user all the information about the car like the level
- of the battery.
- 
+The system shows to the user all the information about the car like the
+ battery level.
 \end_layout
 
 \begin_layout Enumerate
@@ -3043,7 +3047,7 @@ If a car is not picked-up within one hour from the reservation the user
 \begin_layout Standard
 \noindent
 \begin_inset Float table
-placement H
+placement h
 wide false
 sideways false
 status collapsed
@@ -3169,7 +3173,7 @@ If the code inserted is correct the system will unlock the car.
 \end_layout
 
 \begin_layout Enumerate
-User start a ride.
+User starts a ride.
 \end_layout
 
 \end_inset
@@ -3189,7 +3193,7 @@ Output condition
 \begin_inset Text
 
 \begin_layout Plain Layout
-The system start counting the amount
+The system starts counting the amount.
 \end_layout
 
 \end_inset
@@ -3237,7 +3241,7 @@ If the code inserted doesn’t match the car reserved by the user the system
 \begin_layout Standard
 \noindent
 \begin_inset Float table
-placement H
+placement h
 wide false
 sideways false
 status collapsed
@@ -3955,6 +3959,195 @@ No exception
 \begin_layout Standard
 \noindent
 \begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2.5cm">
+<column alignment="left" valignment="top" width="8cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Login
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Operator
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Goal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+G14
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Input condition
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No input condition
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Evelnt flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+Operator goes on the webpage and clicks on login.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Operator inserts email and password.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Oputput condition
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The system verify the credential and if correct redirect the registered
+ user the personal page.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Exception
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The credential are not correct and the system notify it to operator and
+ shows the login page.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float table
 placement H
 wide false
 sideways false
@@ -4021,7 +4214,7 @@ Goal
 \begin_inset Text
 
 \begin_layout Plain Layout
-G17, G19, G20
+G16, G18
 \end_layout
 
 \end_inset
