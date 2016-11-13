@@ -60,11 +60,6 @@ sig Operation{
 
 //FACTS
 
-//if a user deletes a reservation the car involved becomes available
-fact reservationDeleted{
-	
-}
-
 //cars in a power grid station are in charge or have just been charged
 fact carInAPowerGridStation{
 	all p:PowerGridStation | all c:Car | c in p.cars and (c.inCharge=True or c.inCharge=False and c.batteryLevel=HighLevel)
@@ -156,6 +151,21 @@ fact twoPowerGridStationWithSamePosition{
 	all p1,p2: PowerGridStation | (p1!=p2) => p1.position!=p2.position 
 }
 
+//no operator without operation
+fact NoOperationWithoutOperator{
+	all o:Operator | one o2:Operation | o2.operator=o
+}
+
+//no availability without power grid station
+fact NoAvailabilityWithoutPowerStation{
+	all a:Availability| one  p:PowerGridStation  | a=p.availability
+}
+
+//no user without reservation
+fact noUserWithoutReservation{
+	all u:User | one r:Reservation | r.user=u
+}
+
 //each operator could have at most one operation that is not ended
 fact oneOperationNotEnded{
 	all o:Operator | lone o1:Operation | o1.operator=o and o1.ended=False
@@ -194,10 +204,52 @@ pred carRepaired{
 	#Ride=1
 }
 
+
+
 pred show{
-one o:Operation | one r:Ride | o.ended=False and r.ended=False and o.car=r.car
+
 }
-run show for 2
+
+
+//ASSERTION
+
+//check if different ride not already ended has different car
+assert DifferentCarsForReservation{
+	no r1,r2:Ride | ( r1.ended=False and r2.ended=False and r1.car=r2.car and r1!=r2)
+}
+//check DifferentCarsForReservation
+
+//check if different operation not already ended has different operator
+assert DifferentOperationForOperator{
+	no o1,o2:Operation | (o1!=o2 and o1.ended=False and o2.ended=False and o1.operator=o2.operator)
+}
+//check DifferentOperationForOperator
+
+//check if different operation not already ended has different cars
+assert DifferentCarsForOperation{
+	no o1,o2:Operation | (o1!=o2 and o1.ended=False and o2.ended=False and o1.car=o2.car)
+}
+//check DifferentCarsForOperation
+
+// check if all available cars are in the safe area
+assert allCarInSafeArea{
+	no c:Car | c.available=True and one s:SafeArea | c.position not in s.area
+}
+//check allCarInSafeArea
+
+//check that eac car has a unique code
+assert noSameCode{
+	no c1,c2:Car | c1!=c2 and c1.code=c2.code
+}
+//check noSameCode
+
+//check that doesn't exists a ride if the associated reservation is deleted
+assert NoRideWithDeletedReservation{
+	no r:Ride | r.reservation.deleted=True
+}
+check NoRideWithDeletedReservation
+
+run show for 2 
 
 
 
