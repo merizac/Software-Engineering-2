@@ -70,12 +70,6 @@ sig Operation{
 
 //FACTS
 
-//
-fact carInPowerGridStationSafeArea{
-	  all c:Car | one p:PowerGridStation | c in p.cars => one s:SafeArea | c.position in s.area
-}
-
-
 //cars in a power grid station are in charge or have just been charged
 fact carInAPowerGridStation{
 	all p:PowerGridStation | all c:Car | c in p.cars => ((c.inCharge=True or (c.inCharge=False and c.batteryLevel=MaxLevel)))
@@ -199,7 +193,7 @@ fact oneCareOneOperationNotEnded{
 
 //cars in a power grid station are in a safe are
 fact carPowerGridSafeArea{
-	all c:Car | one p:PowerGridStation | c in p.cars => (one s:SafeArea | c.position in s.area)
+	all c:Car | all p:PowerGridStation | c in p.cars => (one s:SafeArea | c.position in s.area)
 }
 
 //ASSERTION
@@ -296,7 +290,7 @@ pred  TenPercentDiscount{
 	#Ride=1
 }
 
-run TenPercentDiscount
+//run TenPercentDiscount
 
 pred ThirtyPercentFee{
 	all r:Ride | (r.ended=True and (r.endBatteryLevel=LowLevel or r.moreThan3km=True))
@@ -304,12 +298,12 @@ pred ThirtyPercentFee{
 	#Ride=1
 }
 
-run ThirtyPercentFee
+//run ThirtyPercentFee
 
 pred show{
-#PowerGridStation=2
+
 }
 
-run show
+//run show
 
 
