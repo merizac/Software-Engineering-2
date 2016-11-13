@@ -4076,17 +4076,13 @@ No exception
 
 \end_layout
 
-\begin_layout Subsection
-Operator
-\end_layout
-
 \begin_layout Standard
 \noindent
 \begin_inset Float table
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -4276,7 +4272,7 @@ The credential are not correct and the system notify it to operator and
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center

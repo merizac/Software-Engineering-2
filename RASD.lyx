@@ -182,7 +182,7 @@ Riccardo Redaelli
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1454,7 +1454,7 @@ status collapsed
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1476,10 +1476,6 @@ Sign in
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset space \thinspace{}
 \end_inset
 
 
@@ -1550,10 +1546,6 @@ Available car power
 \end_inset
 
 
-\begin_inset space \thinspace{}
-\end_inset
-
-
 \begin_inset Float figure
 wide false
 sideways false
@@ -1610,10 +1602,6 @@ Safe areas
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset space \thinspace{}
 \end_inset
 
 
@@ -2228,6 +2216,10 @@ UML models
 Use case diagram
 \end_layout
 
+\begin_layout Subsection
+Visitor
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float figure
 placement H
@@ -2250,9 +2242,9 @@ centerline{
 
 
 \begin_inset Graphics
-	filename immagini/Use case.png
+	filename immagini/diagrams/useCase/Visitor.jpg
 	lyxscale 30
-	scale 50
+	width 12cm
 
 \end_inset
 
@@ -2271,7 +2263,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Use case diagram
+Visitor use case diagram
 \end_layout
 
 \end_inset
@@ -2279,6 +2271,133 @@ Use case diagram
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+User
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/diagrams/useCase/User.jpg
+	lyxscale 30
+	width 12cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+User use case diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Operator
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/diagrams/useCase/Operator.jpg
+	lyxscale 30
+	width 12cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Operator use case diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -2286,6 +2405,10 @@ Use case diagram
 
 \begin_layout Section
 Use case description
+\end_layout
+
+\begin_layout Subsection
+Visitor
 \end_layout
 
 \begin_layout Standard
@@ -2474,6 +2597,10 @@ At least one field is not correct.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+User
 \end_layout
 
 \begin_layout Standard
@@ -3956,9 +4083,14 @@ No exception
 
 \end_layout
 
+\begin_layout Subsection
+Operator
+\end_layout
+
 \begin_layout Standard
 \noindent
 \begin_inset Float table
+placement h
 wide false
 sideways false
 status collapsed
@@ -4329,6 +4461,348 @@ Class diagram
 
 \begin_layout Section
 Sequence diagrams
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/diagrams/sequenceDiagrams/Sign up.jpg
+	lyxscale 10
+	width 12cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sign up sequence diagrams
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/diagrams/sequenceDiagrams/Login.jpg
+	lyxscale 10
+	width 12cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Login sequence diagrams
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/diagrams/sequenceDiagrams/See available cars.jpg
+	lyxscale 10
+	width 12cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+See available cars sequence diagrams
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/diagrams/sequenceDiagrams/Reserve a car.jpg
+	lyxscale 10
+	width 12cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Reserve a car sequence diagrams
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/diagrams/sequenceDiagrams/Start a ride.jpg
+	lyxscale 10
+	width 12cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Start a ride sequence diagrams
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/diagrams/sequenceDiagrams/Enable money saving .jpg
+	lyxscale 10
+	width 12cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Enable money saving sequence diagrams
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
