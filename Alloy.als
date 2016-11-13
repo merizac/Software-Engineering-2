@@ -127,7 +127,7 @@ fact reservationOneRide{
 //each deleted reservation has not a ride and his timer is not ended
 fact deletedReservation{
 	all r: Reservation | (r.timerEnded=False and
-				(no r1: Ride | r in r1.reservation)) <=> r.deleted=True
+				(no r1: Ride | r=r1.reservation)) <=> r.deleted=True
 }
 
 //each ride has a reservation whose timer is not ended
@@ -163,7 +163,7 @@ fact NoAvailabilityWithoutPowerStation{
 
 //no user without reservation
 fact noUserWithoutReservation{
-	all u:User | one r:Reservation | r.user=u
+	all u:User | some r:Reservation | r.user=u
 }
 
 //each operator could have at most one operation that is not ended
@@ -181,19 +181,68 @@ fact oneCareOneOperationNotEnded{
 	all c:Car | lone o: Operation | o.car=c and o.ended=False
 }
 
+//cars in a power grid station are in a safe are
+fact carPowerGridSafeArea{
+	all c:Car | one p:PowerGridStation | c in p.cars => (one s:SafeArea | c.position in s.area)
+}
+
+//ASSERTION
+
+//check if different ride not already ended has different car
+assert DifferentCarsForReservation{
+	no r1,r2:Ride | ( r1.ended=False and r2.ended=False and r1.car=r2.car and r1!=r2)
+}
+
+check DifferentCarsForReservation
+
+//check if different operation not already ended has different operator
+assert DifferentOperationForOperator{
+	no o1,o2:Operation | (o1!=o2 and o1.ended=False and o2.ended=False and o1.operator=o2.operator)
+}
+
+check DifferentOperationForOperator
+
+//check if different operation not already ended has different cars
+assert DifferentCarsForOperation{
+	no o1,o2:Operation | (o1!=o2 and o1.ended=False and o2.ended=False and o1.car=o2.car)
+}
+
+check DifferentCarsForOperation
+
+// check if all available cars are in the safe area
+assert allCarInSafeArea{
+	no c:Car | c.available=True and one s:SafeArea | c.position not in s.area
+}
+check allCarInSafeArea
+
+//check that eac car has a unique code
+assert noSameCode{
+	no c1,c2:Car | c1!=c2 and c1.code=c2.code
+}
+check noSameCode
+
+//check that doesn't exists a ride if the associated reservation is deleted
+assert NoRideWithDeletedReservation{
+	no r:Ride | r.reservation.deleted=True
+}
+check NoRideWithDeletedReservation
+
+
 //PREDICATES
 
 // user reserved a car but the timer is ended, and so make another reservation
 pred timerEndedAndRide{
-	one u:User | 
-			(one r:Reservation | r.timerEnded=True and r.user=u) and
-			(one r1:Ride | r1.driver=u) 
+	one u:User | some r:Reservation | u=r.user and r.timerEnded=True and (one r1:Ride| r1.driver=u )
 }
+
+run timerEndedAndRide 
 
 //user deletes a reservation
 pred deleteReservation{
 	one u:User | one r:Reservation | r.user=u and r.deleted=True
 }
+
+run deleteReservation
 
 // user takes a car which has been already reapaired
 
@@ -204,53 +253,15 @@ pred carRepaired{
 	#Ride=1
 }
 
+run carRepaired
 
 
 pred show{
-
+	one r:Reservation | r.timerEnded=True
+	#User=1
+	#Ride=1
 }
 
-
-//ASSERTION
-
-//check if different ride not already ended has different car
-assert DifferentCarsForReservation{
-	no r1,r2:Ride | ( r1.ended=False and r2.ended=False and r1.car=r2.car and r1!=r2)
-}
-//check DifferentCarsForReservation
-
-//check if different operation not already ended has different operator
-assert DifferentOperationForOperator{
-	no o1,o2:Operation | (o1!=o2 and o1.ended=False and o2.ended=False and o1.operator=o2.operator)
-}
-//check DifferentOperationForOperator
-
-//check if different operation not already ended has different cars
-assert DifferentCarsForOperation{
-	no o1,o2:Operation | (o1!=o2 and o1.ended=False and o2.ended=False and o1.car=o2.car)
-}
-//check DifferentCarsForOperation
-
-// check if all available cars are in the safe area
-assert allCarInSafeArea{
-	no c:Car | c.available=True and one s:SafeArea | c.position not in s.area
-}
-//check allCarInSafeArea
-
-//check that eac car has a unique code
-assert noSameCode{
-	no c1,c2:Car | c1!=c2 and c1.code=c2.code
-}
-//check noSameCode
-
-//check that doesn't exists a ride if the associated reservation is deleted
-assert NoRideWithDeletedReservation{
-	no r:Ride | r.reservation.deleted=True
-}
-check NoRideWithDeletedReservation
-
-run show for 2 
-
-
+run show
 
 
