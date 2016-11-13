@@ -60,6 +60,11 @@ sig Operation{
 
 //FACTS
 
+//if a user deletes a reservation the car involved becomes available
+fact reservationDeleted{
+	
+}
+
 //cars in a power grid station are in charge or have just been charged
 fact carInAPowerGridStation{
 	all p:PowerGridStation | all c:Car | c in p.cars and (c.inCharge=True or c.inCharge=False and c.batteryLevel=HighLevel)
@@ -80,10 +85,12 @@ fact availableCars{
 //unavailable cars 
 fact unavailableCars{
 	all c:Car| c.available=False =>
-		(c.inCharge=True => (no o: Operation | c=o.car and o.ended=False) and (no r: Ride | c= r.car and r.ended=False)) and
-		((one o: Operation | c=o.car and o.ended=False) => c.inCharge=False and (no r: Ride | c= r.car and r.ended=False)) and
-		((one r: Ride | c= r.car and r.ended=False) =>c.inCharge=False and (no o: Operation | c=o.car and o.ended=False))
+		(c.inCharge=True and ((no o: Operation | c=o.car and o.ended=False) and (no r: Ride | c= r.car and r.ended=False))) or 
+		((one o: Operation | c=o.car and o.ended=False) and (c.inCharge=False and (no r: Ride | c= r.car and r.ended=False))) or
+		((one r: Ride | c= r.car and r.ended=False) and (c.inCharge=False and (no o: Operation | c=o.car and o.ended=False)))
 }
+
+
 
 //available cars must have the battery level that isn't low
 fact batteryLevelAvailableCars{
@@ -166,8 +173,32 @@ fact oneCareOneOperationNotEnded{
 
 //PREDICATES
 
-pred show{}
-run show
+// user reserved a car but the timer is ended, and so make another reservation
+pred timerEndedAndRide{
+	one u:User | 
+			(one r:Reservation | r.timerEnded=True and r.user=u) and
+			(one r1:Ride | r1.driver=u) 
+}
+
+//user deletes a reservation
+pred deleteReservation{
+	one u:User | one r:Reservation | r.user=u and r.deleted=True
+}
+
+// user takes a car which has been already reapaired
+
+pred carRepaired{
+	one u:User | one r:Ride | r.driver=u and one o:Operation | o.car=r.car and o.ended=True
+	#Operation=1
+	#User=1
+	#Ride=1
+}
+
+pred show{
+one o:Operation | one r:Ride | o.ended=False and r.ended=False and o.car=r.car
+}
+run show for 2
+
 
 
 
