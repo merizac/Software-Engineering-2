@@ -183,7 +183,7 @@ Riccardo Redaelli
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1444,12 +1444,35 @@ User interface
 \end_layout
 
 \begin_layout Standard
-\align center
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status collapsed
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -1461,7 +1484,7 @@ status collapsed
 \begin_inset Graphics
 	filename immagini/client web/home.png
 	lyxscale 10
-	width 8cm
+	width 7.4cm
 
 \end_inset
 
@@ -1480,10 +1503,14 @@ Sign in
 \end_inset
 
 
-\begin_inset space \thinspace{}
+\end_layout
+
 \end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
-
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -1493,7 +1520,7 @@ status collapsed
 \begin_inset Graphics
 	filename immagini/client web/available car.png
 	lyxscale 10
-	width 8cm
+	width 7.4cm
 
 \end_inset
 
@@ -1514,6 +1541,13 @@ Available car
 
 \end_layout
 
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
 \begin_layout Plain Layout
 \begin_inset Float figure
 wide false
@@ -1524,7 +1558,7 @@ status collapsed
 \begin_inset Graphics
 	filename immagini/client web/available car power.png
 	lyxscale 10
-	width 8cm
+	width 7.4cm
 
 \end_inset
 
@@ -1543,10 +1577,14 @@ Available car power
 \end_inset
 
 
-\begin_inset space \thinspace{}
+\end_layout
+
 \end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
-
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -1556,7 +1594,7 @@ status collapsed
 \begin_inset Graphics
 	filename immagini/client web/your reserved car.png
 	lyxscale 10
-	width 8cm
+	width 7.4cm
 
 \end_inset
 
@@ -1577,6 +1615,13 @@ Your reserved car
 
 \end_layout
 
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
 \begin_layout Plain Layout
 \begin_inset Float figure
 wide false
@@ -1587,7 +1632,7 @@ status collapsed
 \begin_inset Graphics
 	filename immagini/client web/safe areas.png
 	lyxscale 10
-	width 8cm
+	width 7.4cm
 
 \end_inset
 
@@ -1606,10 +1651,14 @@ Safe areas
 \end_inset
 
 
-\begin_inset space \thinspace{}
+\end_layout
+
 \end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
-
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -1619,7 +1668,7 @@ status collapsed
 \begin_inset Graphics
 	filename immagini/client web/power grid station.png
 	lyxscale 10
-	width 8cm
+	width 7.4cm
 
 \end_inset
 
@@ -1640,7 +1689,25 @@ Power grid stations
 
 \end_layout
 
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
 \begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1649,6 +1716,10 @@ User web view
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1989,10 +2060,34 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
 	filename immagini/operator app/specific car.png
 	lyxscale 10
 	width 3.3cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
 
 \end_inset
 
@@ -4461,105 +4556,12 @@ Class diagram
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{landscape}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \noindent
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centerline{
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename immagini/diagrams/classDiagram.png
-	lyxscale 10
-	width 19cm
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Class diagram
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{landscape}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Class diagram
-\end_layout
-
-\begin_layout Standard
-\noindent
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -4962,7 +4964,64 @@ Activity diagrams
 \end_layout
 
 \begin_layout Section
-State diagrams
+State chart diagram 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/diagrams/stateChartDiagram(car).jpg
+	lyxscale 10
+	width 12cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Car state chart diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
