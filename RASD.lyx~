@@ -5996,5 +5996,16 @@ Lyx: to format this document
 Astah: to create the Sequence Diagram and the Use Case Diagram
 \end_layout
 
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For redacting and writing this document we spent 30 hours per person
+\end_layout
+
 \end_body
 \end_document
