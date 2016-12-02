@@ -31,14 +31,16 @@ sig Ride{
 	car: Car,
 	numberPassenger: Int,
 	ended: Bool,
-	moreThan3km: Bool,
-	inCharge: Bool,
-	endBatteryLevel: BatteryLevel
+	moreThan3km: lone Bool,
+	inCharge: lone Bool,
+	endBatteryLevel: lone BatteryLevel
 }
 {
 	inCharge=True => moreThan3km=False
 	moreThan3km=True =>	inCharge=False
  	numberPassenger>=0 and numberPassenger<=4
+	ended=False => moreThan3km=none and inCharge=none and endBatteryLevel=none
+	ended=True => moreThan3km!=none and inCharge!=none and endBatteryLevel!=none
 }
 
 sig Reservation{
@@ -72,12 +74,16 @@ sig Operation{
 
 //cars in a power grid station are in charge or have just been charged
 fact carInAPowerGridStation{
-	all p:PowerGridStation | all c:Car | c in p.cars => ((c.inCharge=True or (c.inCharge=False and c.batteryLevel=MaxLevel)))
+	all p:PowerGridStation | all c:Car | c in p.cars => (((c.inCharge=True or (c.inCharge=False and c.batteryLevel=MaxLevel))) and c.position=p.position)
 }
 
 //one car could be at most in one power grid station
 fact carInPowerGridStation{
 	all c:Car | lone p:PowerGridStation | c in p.cars	
+}
+
+fact v{
+	all p:PowerGridStation | all c:Car | c.position=p.position iff c in p.cars
 }
 
 //available cars must not be involved in an operation or in a ride or in charge
@@ -113,9 +119,11 @@ fact uniqueCodes{
 	all c1,c2: Car | (c1 != c2) => c1.code != c2.code
 }
 
-// two cars cannot have the same position
+// two cars cannot have the same position except they are in a power grid station
 fact twoCarWithSamePosition{
-	all c1,c2: Car | (c1!=c2) => c1.position!=c2.position 
+	all c1,c2: Car | (c1!=c2) => ((c1.position!=c2.position) or 
+			(one p:PowerGridStation | c1 in p.cars and c2 in p.cars and c1.position=p.position and
+													 c2.position=p.position and c1.position=c2.position))
 }
 
 // if a car is in charge, it exists one power grid station that contains the car
@@ -290,7 +298,7 @@ pred  TenPercentDiscount{
 	#Ride=1
 }
 
-//run TenPercentDiscount
+run TenPercentDiscount
 
 pred ThirtyPercentFee{
 	all r:Ride | (r.ended=True and (r.endBatteryLevel=LowLevel or r.moreThan3km=True))
@@ -298,12 +306,9 @@ pred ThirtyPercentFee{
 	#Ride=1
 }
 
-//run ThirtyPercentFee
+run ThirtyPercentFee
 
 pred show{
-
 }
 
-//run show
-
-
+run show
