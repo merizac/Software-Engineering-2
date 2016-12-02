@@ -1960,7 +1960,7 @@ Operator interface
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -1999,7 +1999,7 @@ Sign in
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -2013,7 +2013,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-All cars
+Personal page
 \end_layout
 
 \end_inset
@@ -3084,7 +3084,7 @@ User decides to use the GPS position without enabling the GPS.
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -3279,7 +3279,7 @@ If a car is not picked-up within one hour from the reservation the user
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -3473,7 +3473,7 @@ If the code inserted doesn’t match the car reserved by the user the system
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
