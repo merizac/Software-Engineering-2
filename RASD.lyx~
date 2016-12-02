@@ -2115,7 +2115,7 @@ Report operation done
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Client mobile view
+Operator mobile view
 \end_layout
 
 \end_inset
@@ -4567,7 +4567,7 @@ Class diagram
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -4587,7 +4587,7 @@ centerline{
 	filename immagini/diagrams/classDiagram.png
 	lyxscale 10
 	height 17cm
-	rotateAngle 90
+	rotateAngle 270
 
 \end_inset
 
