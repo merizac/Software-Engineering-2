@@ -1,0 +1,6 @@
+- descrizioni
+- capitolo 5
+- component interfaces
+- protocols and design pattern
+- algoritmi
+- database
