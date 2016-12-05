@@ -2013,7 +2013,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-All cars
+Personal page
 \end_layout
 
 \end_inset
@@ -4567,7 +4567,7 @@ Class diagram
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -5390,102 +5390,6 @@ status open
 
 \end_layout
 
-\begin_layout Standard
-\noindent
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centerline{
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename immagini/alloy/code/7.png
-	lyxscale 10
-	width 12cm
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centerline{
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename immagini/alloy/code/8.png
-	lyxscale 10
-	width 12cm
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Alloy result
 \end_layout
@@ -6007,5 +5911,58 @@ Astah: to create the Sequence Diagram and the Use Case Diagram
 For redacting and writing this document we spent 30 hours per person
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Changelog
+\end_layout
+
+\begin_layout Itemize
+v1.1
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Use case diagram: user and operator fix
+\end_layout
+
+\begin_layout Itemize
+Mockup: operator interface fix
+\end_layout
+
+\begin_layout Itemize
+Use case description (user): table 
+\begin_inset Quotes eld
+\end_inset
+
+End ride
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+input condition
+\begin_inset Quotes erd
+\end_inset
+
+ fix
+\end_layout
+
+\begin_layout Itemize
+Class diagram fix
+\end_layout
+
+\begin_layout Itemize
+Alloy fix
+\end_layout
+
+\end_deeper
 \end_body
 \end_document

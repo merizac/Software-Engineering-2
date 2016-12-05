@@ -293,6 +293,377 @@ Overview
 High level components and their interaction
 \end_layout
 
+\begin_layout Section
+Component view
+\end_layout
+
+\begin_layout Section
+Deploying view
+\end_layout
+
+\begin_layout Section
+Runtime view
+\end_layout
+
+\begin_layout Section
+Component interfaces
+\end_layout
+
+\begin_layout Section
+Selected architectural styles and patterns
+\end_layout
+
+\begin_layout Subsection
+Overall Architecture
+\end_layout
+
+\begin_layout Subsection
+Protocols
+\end_layout
+
+\begin_layout Subsection
+Design patterns
+\end_layout
+
+\begin_layout Section
+Other design decision
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Algorithm design
+\end_layout
+
+\begin_layout Section
+........................
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+User incerface design
+\end_layout
+
+\begin_layout Section
+Mockups
+\end_layout
+
+\begin_layout Standard
+We have already done mockups in RASD document.
+\end_layout
+
+\begin_layout Section
+UX diagrams 
+\end_layout
+
+\begin_layout Standard
+We insert UX (user experience) to show how our user performs his actions
+ and how interacts with the system
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/ux/uxvisitor.png
+	lyxscale 10
+	width 10cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+UX visitor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/ux/uxuser.png
+	lyxscale 10
+	width 10cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+UX user
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/ux/uxoperator.png
+	lyxscale 10
+	width 10cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+UX operator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/ux/uxcar.png
+	lyxscale 10
+	width 10cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+UX car
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+BCE diagrams
+\end_layout
+
+\begin_layout Standard
+BCE diagrams shows how user and operator actions are managed internally
+ from the system manager and how that managers interact with the database.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Requirements traceability
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+References
+\end_layout
+
+\begin_layout Section
+Used tools
+\end_layout
+
+\begin_layout Standard
+The tools we used to create this DD document are:
+\end_layout
+
+\begin_layout Itemize
+Github: for version controller
+\end_layout
+
+\begin_layout Itemize
+Lyx: to format this document
+\end_layout
+
+\begin_layout Itemize
+Astah: to create the Sequence Diagram and the Use Case Diagram
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For redacting and writing this document we spent ___________________________
+ hours per person
+\end_layout
+
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
