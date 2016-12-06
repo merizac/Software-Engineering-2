@@ -735,6 +735,461 @@ BCE operator
 Requirements traceability
 \end_layout
 
+\begin_layout Section
+Visitor
+\end_layout
+
+\begin_layout Itemize
+[G1] Allow visitors to register in the system
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientView
+\end_layout
+
+\begin_layout Itemize
+AccountManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Section
+User
+\end_layout
+
+\begin_layout Itemize
+[G2] Allows users to login in the system 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientView
+\end_layout
+
+\begin_layout Itemize
+AccountManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G3] Users must be able to find the locations of available cars 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientView
+\end_layout
+
+\begin_layout Itemize
+CarManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G4] Allows users to request for the reservation of a car until one hour
+ before
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientView
+\end_layout
+
+\begin_layout Itemize
+ReservationManager
+\end_layout
+
+\begin_layout Itemize
+CarManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G5] Allows users to unlock the reserved car 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+CleintView
+\end_layout
+
+\begin_layout Itemize
+ReservationManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G6] Allows users to know the current battery level of each available cars
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientView
+\end_layout
+
+\begin_layout Itemize
+CarManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G7] Allows users to know which are the “safe area” 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientView
+\end_layout
+
+\begin_layout Itemize
+CityManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G8] Users should enable the money saving option in the car 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientView
+\end_layout
+
+\begin_layout Itemize
+ReservationManager
+\end_layout
+
+\begin_layout Itemize
+RideManager
+\end_layout
+
+\begin_layout Itemize
+...................................
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G9] Users should know where the power grid stations are 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientView
+\end_layout
+
+\begin_layout Itemize
+CityManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G10] Users can report if the reserved car has damage 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientView
+\end_layout
+
+\begin_layout Itemize
+OperationManager
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G11] Allows users to cancel a reservation 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientView
+\end_layout
+
+\begin_layout Itemize
+ReservationManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G12] Allows users to have discount 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+RideManager
+\end_layout
+
+\begin_layout Itemize
+PaymentManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G13] Allows users to end the ride 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CarServiceView
+\end_layout
+
+\begin_layout Itemize
+RideManager
+\end_layout
+
+\begin_layout Itemize
+PaymentManager
+\end_layout
+
+\begin_layout Itemize
+Database
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Operator
+\end_layout
+
+\begin_layout Itemize
+[G14] Allows operators to login in the system 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OperatorServiceView
+\end_layout
+
+\begin_layout Itemize
+AccountManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G15] Allows operators to know all the informations of damnage car
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OperatorServiceView
+\end_layout
+
+\begin_layout Itemize
+CarManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G16] Allows operators to unlock cars 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OperatorServiceView
+\end_layout
+
+\begin_layout Itemize
+OperationManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G17] Operators should receive a notification for incoming request of reparation
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OperatorServiceView
+\end_layout
+
+\begin_layout Itemize
+OperationManager
+\end_layout
+
+\begin_layout Itemize
+Operation ............................................
+\end_layout
+
+\begin_layout Itemize
+NotificationManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G18] Operators must be able to report the operation they have done 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OperatorServiceView
+\end_layout
+
+\begin_layout Itemize
+OperationManager
+\end_layout
+
+\begin_layout Itemize
+Operation...............................
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G19] Operators should receive a notification for moving a car ù
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OperatorServiceView
+\end_layout
+
+\begin_layout Itemize
+OperationManager
+\end_layout
+
+\begin_layout Itemize
+Operation ............................................
+\end_layout
+
+\begin_layout Itemize
+NotificationManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G20] Operators should receive a notification for charging a car 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OperatorServiceView
+\end_layout
+
+\begin_layout Itemize
+OperationManager
+\end_layout
+
+\begin_layout Itemize
+Operation ............................................
+\end_layout
+
+\begin_layout Itemize
+NotificationManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset

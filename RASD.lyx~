@@ -366,7 +366,7 @@ Operator
 \end_layout
 
 \begin_layout Itemize
-[G15] Allows operators to know all the information of cars 
+[G15] Allows operators to know all the informations of damnage car
 \end_layout
 
 \begin_layout Itemize
@@ -1190,7 +1190,7 @@ Operator
 
 \end_deeper
 \begin_layout Itemize
-[G15] Allows operators to know all the informations of cars 
+[G15] Allows operators to know all the informations of damnage car
 \end_layout
 
 \begin_deeper
@@ -1199,8 +1199,8 @@ Operator
 \end_layout
 
 \begin_layout Itemize
-[R2] The system must be able to show all the cars location in the city and
- the informations related 
+[R2] The system must be able to show car location in the city and the informatio
+ns related 
 \end_layout
 
 \end_deeper
@@ -4562,7 +4562,6 @@ Class diagram
 \end_layout
 
 \begin_layout Standard
-\noindent
 \begin_inset Float figure
 placement H
 wide false
@@ -4585,9 +4584,8 @@ centerline{
 
 \begin_inset Graphics
 	filename immagini/diagrams/classDiagram.png
-	lyxscale 10
-	height 17cm
-	rotateAngle 270
+	lyxscale 30
+	width 16cm
 
 \end_inset
 
@@ -5125,7 +5123,7 @@ centerline{
 
 
 \begin_inset Graphics
-	filename immagini/alloy/code/1.png
+	filename immagini/alloy/code/1.PNG
 	lyxscale 10
 	width 12cm
 
@@ -5173,7 +5171,7 @@ centerline{
 
 
 \begin_inset Graphics
-	filename immagini/alloy/code/2.png
+	filename immagini/alloy/code/2.PNG
 	lyxscale 10
 	width 12cm
 
@@ -5221,7 +5219,7 @@ centerline{
 
 
 \begin_inset Graphics
-	filename immagini/alloy/code/3.png
+	filename immagini/alloy/code/3.PNG
 	lyxscale 10
 	width 12cm
 
@@ -5269,7 +5267,7 @@ centerline{
 
 
 \begin_inset Graphics
-	filename immagini/alloy/code/4.png
+	filename immagini/alloy/code/4.PNG
 	lyxscale 10
 	width 12cm
 
@@ -5317,7 +5315,7 @@ centerline{
 
 
 \begin_inset Graphics
-	filename immagini/alloy/code/5.png
+	filename immagini/alloy/code/5.PNG
 	lyxscale 10
 	width 12cm
 
@@ -5365,7 +5363,7 @@ centerline{
 
 
 \begin_inset Graphics
-	filename immagini/alloy/code/6.png
+	filename immagini/alloy/code/6.PNG
 	lyxscale 10
 	width 12cm
 

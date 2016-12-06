@@ -766,6 +766,10 @@ Lyx: to format this document
 Astah: to create the Sequence Diagram and the Use Case Diagram
 \end_layout
 
+\begin_layout Itemize
+Google Doc: for write the document
+\end_layout
+
 \begin_layout Standard
 \begin_inset VSpace 4cm
 \end_inset
