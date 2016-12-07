@@ -171,7 +171,7 @@ Logo Politecnico di Milano
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -188,7 +188,7 @@ centerline{
 
 
 \begin_inset Graphics
-	filename immagini/Cattu5ra.JPG
+	filename immagini/logo.JPG
 	lyxscale 10
 	scale 60
 
@@ -1104,6 +1104,10 @@ OperationManager
 \end_layout
 
 \begin_layout Itemize
+Operation ............................................
+\end_layout
+
+\begin_layout Itemize
 NotificationManager
 \end_layout
 
@@ -1116,14 +1120,76 @@ DataBase
 [G18] Operators must be able to report the operation they have done 
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
-[G19] Operators should receive a notification for moving a car 
+OperatorServiceView
 \end_layout
 
+\begin_layout Itemize
+OperationManager
+\end_layout
+
+\begin_layout Itemize
+Operation...............................
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G19] Operators should receive a notification for moving a car ù
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OperatorServiceView
+\end_layout
+
+\begin_layout Itemize
+OperationManager
+\end_layout
+
+\begin_layout Itemize
+Operation ............................................
+\end_layout
+
+\begin_layout Itemize
+NotificationManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 [G20] Operators should receive a notification for charging a car 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+OperatorServiceView
+\end_layout
+
+\begin_layout Itemize
+OperationManager
+\end_layout
+
+\begin_layout Itemize
+Operation ............................................
+\end_layout
+
+\begin_layout Itemize
+NotificationManager
+\end_layout
+
+\begin_layout Itemize
+DataBase
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
