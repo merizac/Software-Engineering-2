@@ -171,7 +171,7 @@ Logo Politecnico di Milano
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -188,7 +188,7 @@ centerline{
 
 
 \begin_inset Graphics
-	filename immagini/Cattu5ra.JPG
+	filename immagini/logo.JPG
 	lyxscale 10
 	scale 60
 
