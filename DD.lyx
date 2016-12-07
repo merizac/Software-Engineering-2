@@ -653,7 +653,7 @@ While the communication between server and operator start from the server
 
 \begin_layout Standard
 \noindent
-Furthermore the server communicates with the DataBase to extract data needed.
+Furthermore the server communicates with the DBMS to extract data needed.
  
 \end_layout
 
@@ -1691,7 +1691,7 @@ ClientApplication
 \end_layout
 
 \begin_layout Itemize
-ClientView
+ClientHandler
 \end_layout
 
 \begin_layout Itemize
@@ -1699,7 +1699,7 @@ AccountManager
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
@@ -1717,7 +1717,7 @@ ClientApplication
 \end_layout
 
 \begin_layout Itemize
-ClientView
+ClientHandler
 \end_layout
 
 \begin_layout Itemize
@@ -1725,7 +1725,7 @@ AccountManager
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
@@ -1739,7 +1739,7 @@ ClientApplication
 \end_layout
 
 \begin_layout Itemize
-ClientView
+ClientHandler
 \end_layout
 
 \begin_layout Itemize
@@ -1747,7 +1747,7 @@ CarManager
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
@@ -1762,7 +1762,7 @@ ClientApplication
 \end_layout
 
 \begin_layout Itemize
-ClientView
+ClientHandler
 \end_layout
 
 \begin_layout Itemize
@@ -1774,7 +1774,7 @@ CarManager
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
@@ -1796,7 +1796,7 @@ ReservationManager
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
@@ -1811,7 +1811,7 @@ ClientApplication
 \end_layout
 
 \begin_layout Itemize
-ClientView
+ClientHandler
 \end_layout
 
 \begin_layout Itemize
@@ -1819,7 +1819,7 @@ CarManager
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
@@ -1833,7 +1833,7 @@ ClientApplication
 \end_layout
 
 \begin_layout Itemize
-ClientView
+ClientHandler
 \end_layout
 
 \begin_layout Itemize
@@ -1841,7 +1841,7 @@ CityManager
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
@@ -1855,7 +1855,7 @@ ClientApplication
 \end_layout
 
 \begin_layout Itemize
-ClientView
+ClientHandler
 \end_layout
 
 \begin_layout Itemize
@@ -1881,7 +1881,7 @@ ClientApplication
 \end_layout
 
 \begin_layout Itemize
-ClientView
+ClientHandler
 \end_layout
 
 \begin_layout Itemize
@@ -1889,7 +1889,7 @@ CityManager
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
@@ -1903,7 +1903,7 @@ ClientApplication
 \end_layout
 
 \begin_layout Itemize
-ClientView
+ClientHandler
 \end_layout
 
 \begin_layout Itemize
@@ -1921,7 +1921,7 @@ ClientApplication
 \end_layout
 
 \begin_layout Itemize
-ClientView
+ClientHandler
 \end_layout
 
 \begin_layout Itemize
@@ -1929,7 +1929,7 @@ ReservationManager
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
@@ -1947,7 +1947,7 @@ PaymentManager
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
@@ -1969,7 +1969,7 @@ PaymentManager
 \end_layout
 
 \begin_layout Itemize
-Database
+DBMS
 \end_layout
 
 \end_deeper
@@ -1983,7 +1983,7 @@ Operator
 
 \begin_deeper
 \begin_layout Itemize
-OperatorServiceView
+OperatorHandler
 \end_layout
 
 \begin_layout Itemize
@@ -1991,7 +1991,7 @@ AccountManager
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
@@ -2001,7 +2001,7 @@ DataBase
 
 \begin_deeper
 \begin_layout Itemize
-OperatorServiceView
+OperatorHandler
 \end_layout
 
 \begin_layout Itemize
@@ -2009,7 +2009,7 @@ CarManager
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
@@ -2019,7 +2019,7 @@ DataBase
 
 \begin_deeper
 \begin_layout Itemize
-OperatorServiceView
+OperatorHandler
 \end_layout
 
 \begin_layout Itemize
@@ -2027,7 +2027,7 @@ OperationManager
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
@@ -2038,7 +2038,7 @@ DataBase
 
 \begin_deeper
 \begin_layout Itemize
-OperatorServiceView
+OperatorHandler
 \end_layout
 
 \begin_layout Itemize
@@ -2050,11 +2050,11 @@ Operation ............................................
 \end_layout
 
 \begin_layout Itemize
-NotificationManager
+NotificationGateway
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
@@ -2064,7 +2064,7 @@ DataBase
 
 \begin_deeper
 \begin_layout Itemize
-OperatorServiceView
+OperatorHandler
 \end_layout
 
 \begin_layout Itemize
@@ -2076,17 +2076,17 @@ Operation...............................
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-[G19] Operators should receive a notification for moving a car ù
+[G19] Operators should receive a notification for moving a car
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-OperatorServiceView
+OperatorHandler
 \end_layout
 
 \begin_layout Itemize
@@ -2098,11 +2098,11 @@ Operation ............................................
 \end_layout
 
 \begin_layout Itemize
-NotificationManager
+NotificationGateway
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
@@ -2112,7 +2112,7 @@ DataBase
 
 \begin_deeper
 \begin_layout Itemize
-OperatorServiceView
+OperatorHandler
 \end_layout
 
 \begin_layout Itemize
@@ -2124,11 +2124,11 @@ Operation ............................................
 \end_layout
 
 \begin_layout Itemize
-NotificationManager
+NotificationGateway
 \end_layout
 
 \begin_layout Itemize
-DataBase
+DBMS
 \end_layout
 
 \end_deeper
