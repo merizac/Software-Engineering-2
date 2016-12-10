@@ -278,11 +278,11 @@ The design patterns
 \end_layout
 
 \begin_layout Itemize
-The main components and their interfaces provided one for another 
+The main components and their interfaces provided
 \end_layout
 
 \begin_layout Itemize
-The runtime behaviour 
+The runtime behavior 
 \end_layout
 
 \begin_layout Section
@@ -292,12 +292,16 @@ Scope
 \begin_layout Standard
 \noindent
 The service PowerEnjoy is based both on mobile application and web application
- and has two different targets of people: 
+ and has three different targets of people: 
 \end_layout
 
 \begin_layout Itemize
 \noindent
-Client 
+Visitor
+\end_layout
+
+\begin_layout Itemize
+User
 \end_layout
 
 \begin_layout Itemize
@@ -307,27 +311,18 @@ Operator
 
 \begin_layout Standard
 \noindent
-The system allows clients to reserve a car via mobile or web app, using
- GPS or  inserting an address.
- 
-\end_layout
-
-\begin_layout Standard
-\noindent
-Furthermore the mobile app allows operators to know the operation that they
- have to do through a push notification.
+The system allows user to reserve a car via mobile or web app, using GPS
+ or inserting an address.
+ Furthermore the mobile app allows operators to know the operation that
+ they have to do through a notification.
  As soon as operation has been done, the operator via mobile app could report
  the completed operation.
- Clients has to sign up for the service, while operators have already credential
-s assigned by PowerEnjoy.
+ Visitor has to sign up for the service and then login as user, while operators
+ already have credentials assigned by PowerEnjoy.
+ The system offers also a money saving option that users can enable inside
+ the car and the mobile app provides information about the power grid station
+ where to leave the car to get a discount.
  
-\end_layout
-
-\begin_layout Standard
-\noindent
-The system offers also a money saving option that users can enable inside
- the car and the mobile app provides information about the station where
- to leave the car to get a discount.
 \end_layout
 
 \begin_layout Section
@@ -400,7 +395,25 @@ Design Part I.pdf
 Design Part II.pdf 
 \end_layout
 
+\begin_layout Itemize
+Architecture and Design in Practice.pdf
+\end_layout
+
+\begin_layout Itemize
+Examples of architectures.pdf 
+\end_layout
+
+\begin_layout Itemize
+Reasoning on design through an example.pdf
+\end_layout
+
 \end_deeper
+\begin_layout Itemize
+“Relocation Strategies and Algorithms for Free-Floating Car Sharing Systems”,
+ Simone Weikl, Klaus Bogenberger , IEEE Intelligent Transportation Systems
+ Magazine, Volume: 5, 2013 
+\end_layout
+
 \begin_layout Section
 Document Structure 
 \end_layout
@@ -408,12 +421,11 @@ Document Structure
 \begin_layout Itemize
 
 \series bold
-Introduction
+Introduction: 
 \series default
-: This section aim to explain the scope and the purpose of this document.
+This section aim to explain the scope and the purpose of this document.
  Why it’s important and which parts are covered that are not covered by
  RASD document.
- 
 \end_layout
 
 \begin_layout Itemize
@@ -487,6 +499,14 @@ Selected architectural styles and patterns
 \shape default
 : This section shows the architectural choices taken during the creation
  of the application
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Other design decision:
+\emph default
+ In this section we talk about other decisions taken.
 \end_layout
 
 \end_deeper
@@ -628,22 +648,44 @@ High level components and their interaction
 \begin_layout Standard
 \noindent
 The high level component architecture is composed of five different components.
- The server component receives several types of request from clients (users
- and visitors) operators and cars system.
- These components interact with the server through an interface for each
+ The server component receives several types of request from: 
+\end_layout
+
+\begin_layout Itemize
+\noindent
+users
+\end_layout
+
+\begin_layout Itemize
+\noindent
+visitors
+\end_layout
+
+\begin_layout Itemize
+\noindent
+operators
+\end_layout
+
+\begin_layout Itemize
+\noindent
+car systems
+\end_layout
+
+\begin_layout Standard
+\noindent
+These components interact with the server through an interface for each
  different component.
  
 \end_layout
 
 \begin_layout Standard
-\noindent
-Client communicate with the server by sending requests from his/her mobile
- application or web application.
- In addition client communicate through the CarSystem during the ride.
+Users and visitors communicate with the server by sending requests from
+ his/her mobile application or web application.
+ In addition users communicate through the CarSystem during the ride.
+ 
 \end_layout
 
 \begin_layout Standard
-\noindent
 While the communication between server and operator start from the server
  that sends notification of operation through a PushGateway, and operators
  reply with an operation report from their mobile application as soon as
@@ -652,8 +694,7 @@ While the communication between server and operator start from the server
 \end_layout
 
 \begin_layout Standard
-\noindent
-Furthermore the server communicates with the DBMS to extract data needed.
+Furthermore the server communicates with the DataBase to extract data needed.
  
 \end_layout
 
@@ -714,8 +755,35 @@ High level components
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Component view
+\end_layout
+
+\begin_layout Standard
+\noindent
+As described above the server is the central component of the system, so
+ we decide to describe with a more detailed description this component.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The server is mainly composed of different controllers which cover the functiona
+lities provided through interfaces to the high level component.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+The three different view handle the respective request and route them to
+ the right controller.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -840,26 +908,6 @@ PaymentManager
  
 \end_layout
 
-\begin_layout Standard
-\noindent
-As described above the server is the central component of the system, so
- we decide to describe with a more detailed description this component.
-\end_layout
-
-\begin_layout Standard
-\noindent
-The server is mainly composed of different controllers which cover the functiona
-lities provided through interfaces to the high level component.
- 
-\end_layout
-
-\begin_layout Standard
-\noindent
-The three differents view handle the respective request and route them to
- the right controller.
- 
-\end_layout
-
 \begin_layout Section
 Database structure
 \end_layout
@@ -926,6 +974,13 @@ Database structure
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Deploying view
 \end_layout
@@ -936,17 +991,14 @@ This section shows how the system is composed in terms of hardware and software,
  In the first tier, user can access to the service through mobile phone
  or personal computer.
  Operators uses the same application of users, but when they effectuate
- the login they have more functionalities thanks to the dynamic GUI.
+ the login they have different functionalities thanks to the dynamic GUI.
  Computer needs a Web Server to run the Web Browser, so they are in communicatio
 n.
  Furthermore all devices of the first tier need to communicate with the
  PowerEnJoy Server, in which there is the application logic.
-\end_layout
-
-\begin_layout Standard
-\noindent
-PowerEnJoy Server communicates with the database Server in order to collect
+ PowerEnJoy Server communicates with the database Server in order to collect
  data and have access to the database.
+ Devices communicate among them using TCP/IP protocol.
  
 \end_layout
 
@@ -1007,39 +1059,34 @@ Deployment view
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Runtime view
 \end_layout
 
 \begin_layout Subsection
-Revervation
+Reservation
 \end_layout
 
 \begin_layout Standard
-This sequence diagram describes how  user can reserve an available car.
- First of all, user has to select a Car from the available car that system
+This sequence diagram describes how user can reserve an available car.
+ First of all, user has to select a car from the available car that system
  shows him.
- Car informations request is sent to car manager, from user application
- through user service view, and the car manager perform a query to the database
- and return the informations at the user.
+ Car informations request is sent to CarManager, from ClientApplication
+ through ClientHandler, and CarManager retrieves informations from the DataBase.
  If car information satisfy user expectation, then user confirm the reservation:
- user application send the request to the user service view that transfer
- the request at the reservation manager and car manager and at the end DBMS
+ ClientApplication sends the request to the ClientHandler that transfer
+ the request at the ReservationManager and CarManager and at the end DBMS
  set car as unavailable.
  After that, reservation manager send a request to the DBMS for create a
- new tuple of reservation in the DBMS.
-\end_layout
-
-\begin_layout Standard
-TIMER____________________________________________...............................
-\end_layout
-
-\begin_layout Standard
-_________________-
-\end_layout
-
-\begin_layout Standard
-_________________________::::_:_::_:_:
+ new tuple of reservation in the DBMS and start the timer of 1 hour.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1096,7 +1143,7 @@ See available car
 \end_layout
 
 \begin_layout Standard
-This sequence diagram shows how user can see available cars near     him.
+This sequence diagram shows how user can see available cars near him.
  When user choose to see available cars, user application shows him a form,
  in which the user has to choose if finds car by inserting an address or
  by enabling gps.
@@ -1104,20 +1151,26 @@ This sequence diagram shows how user can see available cars near     him.
 \end_layout
 
 \begin_layout Itemize
-If user choose to insert an address, user application check if the insert
- address is a validate one.
- If the user insert a wrong address, the user application shows him an error
- message.
- Otherwise user application forwards the request to see available car till
- the DBMS, passing through user service view and car manager.
- User application show to the user the available cars near him.
- 
+If user choose to 
+\series bold
+insert an address
+\series default
+, ClientApplication checks if the inserted address is a correct one.
+ If the user has inserted a wrong address, the ClientApplication shows him
+ an error message.
+ Otherwise ClientApplication forwards the request to the DBMS, passing through
+ ClientHandler and CarManager.
+ User application shows to the user the available cars near him.
 \end_layout
 
 \begin_layout Itemize
-If user choose to enable GPS, user application forwards the request to see
- available car till DBMS, passing through user service view and car manager.
- User application show to the user the available car near him.
+If user chooses to 
+\series bold
+enable GPS
+\series default
+, ClientApplication forwards the request to DBMS, passing through ClientApplicat
+ion and CarManager.
+ ClientApplication shows to the user the available cars near him.
 \end_layout
 
 \begin_layout Standard
@@ -1174,22 +1227,21 @@ Start a ride
 \end_layout
 
 \begin_layout Standard
-This sequence diagram shows how user start a ride.
- A ride start when the user insert the car code in the app, the user application
- send a request to unlock a car to the user service view and user service
- view send a validate request to reservation manager, in the end reservation
- manager send the request to the DBMS which return the reservation.
+This sequence diagram shows how user starts a ride.
+ A ride starts when the user inserts the car code in the app, the ClientApplicat
+ion sends a request to unlock a car to the ClientHandler and ClientHandler
+ sends a validate request to ReservationManager, at the end ReservationManager
+ sends the request to the DBMS which return the reservation.
+ If the user insert a wrong car code or the reservation doesn’t exist, ClientApp
+lication shows an error message.
+ Otherwise the ReservationManager check if the timer is ended or not.
+ If the timer is ended the ReservationManager reject the request of unlocking
+ the car and the ClientApplication shows an error message.
+ Otherwise the ReservationManager unlocks the car and as soon as the user
+ start the engine the ride starts.
+ Once the ride is started, the ReservationManager through the DBMS creates
+ the ride tuple.
  
-\end_layout
-
-\begin_layout Itemize
-If the user insert a wrong car code, user application shows an error message
-\end_layout
-
-\begin_layout Itemize
-Otherwise the reservation manager unlock the car and let the ride starts.
- Once the ride is started, DBMS set to false the timerEnded value in the
- Reservation tuple and create the Ride instance.
 \end_layout
 
 \begin_layout Standard
@@ -1247,13 +1299,14 @@ Report a damage
 
 \begin_layout Standard
 This sequence diagram describes how user can report a damage of a car.
- He has to click on the ‘report damage’ button and user application send
- the request to user service view.
- User service view send a request for create an operation to the operation
- manager, which answer finding the nearest operator to the damage car.
- Then operation manager send a request to the DBMS, which create an operation
- tuple and notification manager take care of send notification to the operator
- that operation manager has selected before.
+ He/She has to click on the ‘report damage’ button and ClientApplication
+ sends the request to ClienHandler.
+ ClientHandler sends a request for create an operation to the OperationManager.
+ As soon as the OperationManager receives the request finds the nearest
+ operator to the damaged car.
+ Then OperationManager sends a request to the DBMS, which create an operation
+ tuple and NotificationManager take care of sending a notification to the
+ operator that the OperationManager has selected before.
  
 \end_layout
 
@@ -1311,8 +1364,28 @@ End ride
 \end_layout
 
 \begin_layout Standard
-????????????????????????????????????????????????????????????????????????????????
-??????????????
+This sequence diagram shows how end ride functionality works.
+ User has to click on the ‘end ride’ button on the car screen and the CarSystem
+ will send a request of ending the ride to the RideManager passing through
+ CarHandler.
+ RideManager, through the DBMS, checks if the car position is inside of
+ a safearea.
+ 
+\end_layout
+
+\begin_layout Itemize
+if the car is not in a safearea, CarSystem shows to the user an error message
+ 
+\end_layout
+
+\begin_layout Itemize
+if the car is in the safearea, DBMS set the value of RideEnded equal to
+ true.
+ RideManager asks to PaymentManager to calculate the total cost of the ride.
+ PaymentManager will send this information to the payment gateway which
+ has to charge the user.
+ CarSystem shows the total cost to the user.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1543,20 +1616,126 @@ Car interface
 Selected architectural styles and patterns
 \end_layout
 
-\begin_layout Subsection
-Overall Architecture
+\begin_layout Standard
+
+\series bold
+Client-Server
 \end_layout
 
-\begin_layout Subsection
-Protocols
+\begin_layout Standard
+Our application is based on a client-server communication model.
+ User’s mobile application, user’s web browser, operator’s mobile application
+ and car application are clients.
+ There is a thin-client in order to let the application run on low-resources
+ devices.
+ We choose for client-server communication model because: 
 \end_layout
 
-\begin_layout Subsection
-Design patterns
+\begin_layout Itemize
+Data synchronization: there is only one application that manage datas 
+\end_layout
+
+\begin_layout Itemize
+Having one unique server application improves the maintainability of our
+ system
+\end_layout
+
+\begin_layout Itemize
+The application is independent from the number of clients connected.
+ Servers can play different roles for different clients.
+\end_layout
+
+\begin_layout Itemize
+Upgradation and scalability: changes can be made easily by just upgrading
+ the server.
+ Also new resources and systems can be added by making necessary changes
+ in server 
+\end_layout
+
+\begin_layout Itemize
+Improves the security between clients
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Three-tiers application
+\end_layout
+
+\begin_layout Standard
+Our architecture is divided in three tiers: 
+\end_layout
+
+\begin_layout Itemize
+Thin-client
+\end_layout
+
+\begin_layout Itemize
+Application Logic
+\end_layout
+
+\begin_layout Itemize
+Database
+\end_layout
+
+\begin_layout Standard
+Physical tiers are about where the code runs.
+ Three tiers architecture allows to each tier to be updated and replaced
+ independently of requirements or technology changes.
+ Each tier corresponds to a specific layer: 
+\end_layout
+
+\begin_layout Itemize
+Client → Presentation Layer
+\end_layout
+
+\begin_layout Itemize
+Application Logic → Application Logic Layer
+\end_layout
+
+\begin_layout Itemize
+Database → Resource Management Layer 
+\end_layout
+
+\begin_layout Standard
+Logical layers are about the organization of the code.
+ We choose a three-tiers architecture because of its numerous advantages,
+ such as : 
+\end_layout
+
+\begin_layout Itemize
+Layers are completely distinguished
+\end_layout
+
+\begin_layout Itemize
+Allows more scalability: in fact it’s possible to integrate more than one
+ server and manage more users at the same time 
+\end_layout
+
+\begin_layout Itemize
+Allows more portability 
+\end_layout
+
+\begin_layout Itemize
+Easier maintenance
+\end_layout
+
+\begin_layout Itemize
+More flexibility
+\end_layout
+
+\begin_layout Itemize
+More security 
 \end_layout
 
 \begin_layout Section
 Other design decision
+\end_layout
+
+\begin_layout Standard
+We integrate web application, mobile application and the car system with
+ a map service, and we choose to integrate with an open-map service.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1571,7 +1750,46 @@ Algorithm design
 \end_layout
 
 \begin_layout Section
-........................
+Relocation strategies
+\end_layout
+
+\begin_layout Standard
+The system that we are going to develop belongs to free-floating Car Sharing
+ Systems.
+ These system allow users to pick up a car and drop it off wherever the
+ user wants.
+ The main issue of those new systems is that vehicles sometimes could get
+ stuck in areas of lower demand while required in zones of higher demand.
+ There are different relocation strategies to solve this problem which could
+ be divided into operator-based strategies and user-based strategies.
+ Operator-based strategies are based on interventions made by an operator
+ while in user-based strategies the relocation process is carried out by
+ users.
+ The money saving option tries to relocate cars through an user-based strategies
+ encouraging users with discounts.
+ In 
+\begin_inset Quotes eld
+\end_inset
+
+Relocation Strategies and Algorithms for Free-Floating Car Sharing Systems
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Simone Weikl, Klaus Bogenberger , “Relocation Strategies and Algorithms
+ for Free-Floating Car Sharing Systems”, IEEE Intelligent Transportation
+ Systems Magazine, Volume: 5, 2013.
+\end_layout
+
+\end_inset
+
+ is presented a two-step model for the relocation of vehicles within free-floati
+ng Car Sharing Systems.
+ 
 \end_layout
 
 \begin_layout LyX-Code
@@ -1582,7 +1800,7 @@ Algorithm design
 \end_layout
 
 \begin_layout Chapter
-User incerface design
+User interface design
 \end_layout
 
 \begin_layout Section
@@ -2083,7 +2301,7 @@ ClientApplication
 \end_layout
 
 \begin_layout Itemize
-CleintView
+ClientHandler
 \end_layout
 
 \begin_layout Itemize
@@ -2291,7 +2509,7 @@ DBMS
 
 \end_deeper
 \begin_layout Itemize
-[G15] Allows operators to know all the informations of damnage car
+[G15] Allows operators to know all the informations of damaged car
 \end_layout
 
 \begin_deeper
@@ -2460,6 +2678,10 @@ Astah: for uml models
 
 \begin_layout Itemize
 Google Doc: for write the document
+\end_layout
+
+\begin_layout Itemize
+Draw.io: for diagrams
 \end_layout
 
 \begin_layout Standard

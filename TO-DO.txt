@@ -1,9 +1,2 @@
-- descrizioni
-- capitolo 5
-- component interfaces
-- protocols and design pattern
-- algoritmi
-- database
-
-G15 sistemare - fix in rasd.lyx
-descrizioni sequence cmbio nome metodi
+- overview
+-G15 sistemare - fix in rasd.lyx
