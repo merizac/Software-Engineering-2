@@ -2345,7 +2345,7 @@ Operation ............................................
 \end_layout
 
 \begin_layout Itemize
-NotificationGateway
+PushGateway
 \end_layout
 
 \begin_layout Itemize
@@ -2393,7 +2393,7 @@ Operation ............................................
 \end_layout
 
 \begin_layout Itemize
-NotificationGateway
+PushGateway
 \end_layout
 
 \begin_layout Itemize
@@ -2419,7 +2419,7 @@ Operation ............................................
 \end_layout
 
 \begin_layout Itemize
-NotificationGateway
+PushGateway
 \end_layout
 
 \begin_layout Itemize
