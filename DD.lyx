@@ -331,27 +331,53 @@ Definitions, Acronyms, Abbreviations
 
 \begin_layout Itemize
 \noindent
-RASD: Requirements analysis and specification 
+RASD: Requirements Analysis and Specification Document
 \end_layout
 
 \begin_layout Itemize
 \noindent
-DD: design document 
+DD: Design Document
 \end_layout
 
 \begin_layout Itemize
 \noindent
-UX: user experience design 
+UX: User experience design
 \end_layout
 
 \begin_layout Itemize
 \noindent
-BCE: boundary controller entity 
+BCE: Boundary-Controller-Entity 
 \end_layout
 
 \begin_layout Itemize
 \noindent
 API: Application Programming Interface 
+\end_layout
+
+\begin_layout Itemize
+Client: application program that establish a connection in order to send
+ ‘request’ 
+\end_layout
+
+\begin_layout Itemize
+Server: application program that accept connections in order to receive
+ ‘request’ and to send specific ‘response’
+\end_layout
+
+\begin_layout Itemize
+TCP: Transmission Control Protocol is a standard that defines how to establish
+ and maintain a network conversation via which application programs can
+ exchange data
+\end_layout
+
+\begin_layout Itemize
+IP: Internet Protocol is the method or protocol by which data is sent from
+ one computer to another on the internet.
+\end_layout
+
+\begin_layout Itemize
+GUI: Graphical User Interface is a user interface that includes graphical
+ elements, such as windows, icons and buttons.
 \end_layout
 
 \begin_layout Section
@@ -412,6 +438,13 @@ Reasoning on design through an example.pdf
 “Relocation Strategies and Algorithms for Free-Floating Car Sharing Systems”,
  Simone Weikl, Klaus Bogenberger , IEEE Intelligent Transportation Systems
  Magazine, Volume: 5, 2013 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1792,13 +1825,6 @@ ng Car Sharing Systems.
  
 \end_layout
 
-\begin_layout LyX-Code
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 User interface design
 \end_layout
@@ -2043,6 +2069,13 @@ UX car
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
