@@ -477,16 +477,16 @@ Runtime view
 \shape slanted
 Component interfaces
 \shape default
-: Shows the interfaces between the components 
+: This section shows the interfaces between the components 
 \end_layout
 
 \begin_layout Itemize
 
 \shape slanted
-G.
- Selected architectural styles and patterns
+Selected architectural styles and patterns
 \shape default
-: ...................................................................................................................................................................................................................................
+: This section shows the architectural choices taken during the creation
+ of the application
 \end_layout
 
 \end_deeper
@@ -570,7 +570,7 @@ On the client there is a dynamic GUI, that’s means that user can see only
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -663,7 +663,7 @@ Furthermore the server communicates with the DBMS to extract data needed.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -680,7 +680,7 @@ centerline{
 
 
 \begin_inset Graphics
-	filename immagini/DD/High level components.jpg
+	filename immagini/DD/HighLevel Component.png
 	lyxscale 10
 	width 14cm
 
@@ -741,7 +741,7 @@ centerline{
 
 
 \begin_inset Graphics
-	filename immagini/DD/3Tiers.png
+	filename immagini/DD/Component View.png
 	lyxscale 10
 	width 14cm
 
@@ -858,6 +858,72 @@ lities provided through interfaces to the high level component.
 The three differents view handle the respective request and route them to
  the right controller.
  
+\end_layout
+
+\begin_layout Section
+Database structure
+\end_layout
+
+\begin_layout Standard
+The following diagram show the database of PowerEnjoy, it contains the data
+ that the application need to know and modify.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/Component View.png
+	lyxscale 10
+	width 14cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Database structure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
