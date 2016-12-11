@@ -396,12 +396,7 @@ Specification Document: Assignments AA 2016-2017.pdf
 
 \begin_layout Itemize
 \noindent
-Example from last year: 
-\end_layout
-
-\begin_layout Itemize
-\noindent
-Sample Design Deliverable Discussed on Nov.
+Example from last year: Sample Design Deliverable Discussed on Nov.
  2.pdf 
 \end_layout
 
@@ -593,28 +588,7 @@ PowerEnJoy has a three tier architecture.
 
 \begin_layout Standard
 \noindent
-This architecture choice allows a faster possible migration to new graphical
- environment and disallows to clients to have direct access to the database,
- this guarantee more security.
- 
-\end_layout
-
-\begin_layout Standard
-\noindent
 Client is a thin Client, because the majority of the logic is on the server.
- 
-\end_layout
-
-\begin_layout Standard
-\noindent
-On the client there is a dynamic GUI, that’s means that user can see only
- the available button at the moment.
- After some action, buttons may appear or disappear.
- Dynamic GUI is also relevant because the operator section is hide in the
- user interface.
- By hiding the operator section, there is no confusion and user interface
- never interact with the hidden interface elements.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1023,8 +997,8 @@ This section shows how the system is composed in terms of hardware and software,
  and how components communicate each other.
  In the first tier, user can access to the service through mobile phone
  or personal computer.
- Operators uses the same application of users, but when they effectuate
- the login they have different functionalities thanks to the dynamic GUI.
+ PowerEnJoy provide to each operators a smartphone, where the Operator App
+ is preinstalled and they access from there.
  Computer needs a Web Server to run the Web Browser, so they are in communicatio
 n.
  Furthermore all devices of the first tier need to communicate with the
