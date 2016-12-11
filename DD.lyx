@@ -583,12 +583,28 @@ Overview
 \begin_layout Standard
 \noindent
 PowerEnJoy has a three tier architecture.
+ Three tiers are: client, server and database.
+ To each tier corresponds a logical layer that offers functionality to the
+ user.
  
 \end_layout
 
 \begin_layout Standard
-\noindent
-Client is a thin Client, because the majority of the logic is on the server.
+The system provide two different user interfaces: one from the web app and
+ one from the mobile application.
+ Users can log theirself from both interfaces, while operators have their
+ ad hoc application.
+ Operators uses mobile phone which are provided from the company and they
+ log in from the mobile phone.
+\end_layout
+
+\begin_layout Standard
+In the server there is the application logic, because of that the client
+ is a thin-client.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
@@ -597,7 +613,7 @@ Client is a thin Client, because the majority of the logic is on the server.
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -997,7 +1013,7 @@ This section shows how the system is composed in terms of hardware and software,
  and how components communicate each other.
  In the first tier, user can access to the service through mobile phone
  or personal computer.
- PowerEnJoy provide to each operators a smartphone, where the Operator App
+ PowerEnJoy provide to each operator a smartphone, where the Operator App
  is preinstalled and they access from there.
  Computer needs a Web Server to run the Web Browser, so they are in communicatio
 n.
