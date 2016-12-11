@@ -726,6 +726,12 @@ Our system needs to interface with the push service(s) via own APIs to send
 \end_layout
 
 \begin_layout Itemize
+Our system needs to interface with the map service via own APIs to allow
+ user and operator to see their position, power grid station, safe areas
+ and the car position.
+\end_layout
+
+\begin_layout Itemize
 Our system needs also to interface with the external payment service.
  PayPal is an online payment service that allows individuals and business
  to transfer funds electronically.
@@ -1205,6 +1211,11 @@ Operator
 \begin_layout Itemize
 [R2] The system must be able to show car location in the city and the informatio
 ns related 
+\end_layout
+
+\begin_layout Itemize
+[R3] Operator must have received a notification for the operation on the
+ damaged car
 \end_layout
 
 \end_deeper
@@ -5963,6 +5974,22 @@ Class diagram fix
 
 \begin_layout Itemize
 Alloy fix
+\end_layout
+
+\begin_layout Itemize
+[G15] modified, reduced operator's privileges
+\end_layout
+
+\begin_layout Itemize
+Added map API in 
+\begin_inset Quotes eld
+\end_inset
+
+Interfaces to other applications
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_deeper

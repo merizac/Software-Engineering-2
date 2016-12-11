@@ -2405,7 +2405,11 @@ ClientHandler
 \end_layout
 
 \begin_layout Itemize
-ReservationManager
+CarSystem
+\end_layout
+
+\begin_layout Itemize
+CarHandler
 \end_layout
 
 \begin_layout Itemize
@@ -2413,7 +2417,7 @@ RideManager
 \end_layout
 
 \begin_layout Itemize
-...................................
+DBMS
 \end_layout
 
 \end_deeper
@@ -2454,6 +2458,14 @@ ClientHandler
 
 \begin_layout Itemize
 OperationManager
+\end_layout
+
+\begin_layout Itemize
+PushGateway
+\end_layout
+
+\begin_layout Itemize
+DBMS
 \end_layout
 
 \end_deeper
@@ -2503,7 +2515,11 @@ DBMS
 
 \begin_deeper
 \begin_layout Itemize
-CarServiceView
+CarSystem
+\end_layout
+
+\begin_layout Itemize
+CarHandler
 \end_layout
 
 \begin_layout Itemize
@@ -2529,6 +2545,10 @@ Operator
 
 \begin_deeper
 \begin_layout Itemize
+OperatorApplication
+\end_layout
+
+\begin_layout Itemize
 OperatorHandler
 \end_layout
 
@@ -2547,6 +2567,10 @@ DBMS
 
 \begin_deeper
 \begin_layout Itemize
+OperatorApplication
+\end_layout
+
+\begin_layout Itemize
 OperatorHandler
 \end_layout
 
@@ -2564,6 +2588,10 @@ DBMS
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+OperatorApplication
+\end_layout
+
 \begin_layout Itemize
 OperatorHandler
 \end_layout
@@ -2584,15 +2612,15 @@ DBMS
 
 \begin_deeper
 \begin_layout Itemize
+OperatorApplication
+\end_layout
+
+\begin_layout Itemize
 OperatorHandler
 \end_layout
 
 \begin_layout Itemize
 OperationManager
-\end_layout
-
-\begin_layout Itemize
-Operation ............................................
 \end_layout
 
 \begin_layout Itemize
@@ -2610,15 +2638,15 @@ DBMS
 
 \begin_deeper
 \begin_layout Itemize
+OperatorApplication
+\end_layout
+
+\begin_layout Itemize
 OperatorHandler
 \end_layout
 
 \begin_layout Itemize
 OperationManager
-\end_layout
-
-\begin_layout Itemize
-Operation...............................
 \end_layout
 
 \begin_layout Itemize
@@ -2632,15 +2660,15 @@ DBMS
 
 \begin_deeper
 \begin_layout Itemize
+OperatorApplication
+\end_layout
+
+\begin_layout Itemize
 OperatorHandler
 \end_layout
 
 \begin_layout Itemize
 OperationManager
-\end_layout
-
-\begin_layout Itemize
-Operation ............................................
 \end_layout
 
 \begin_layout Itemize
@@ -2658,15 +2686,15 @@ DBMS
 
 \begin_deeper
 \begin_layout Itemize
+OperatorApplication
+\end_layout
+
+\begin_layout Itemize
 OperatorHandler
 \end_layout
 
 \begin_layout Itemize
 OperationManager
-\end_layout
-
-\begin_layout Itemize
-Operation ............................................
 \end_layout
 
 \begin_layout Itemize
