@@ -682,7 +682,7 @@ Manager
 \series default
  and then with 
 \series bold
-CarManager
+CarManager, ReservationManager
 \series default
  and 
 \series bold
@@ -1224,7 +1224,7 @@ OperatorHandler
 \series default
  we need to integrate to the 
 \series bold
-OperationManager
+OperationManager, CityManager
 \series default
  and 
 \series bold
@@ -1239,7 +1239,7 @@ AccountManager
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
