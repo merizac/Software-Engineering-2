@@ -500,10 +500,6 @@ Notice that the DBMS is a commercial that have been already developed and
 Sequence of Component/Function Integration
 \end_layout
 
-\begin_layout Subsection
-Software Integration Sequence
-\end_layout
-
 \begin_layout Standard
 In this section we’re going to describe the order of integration (and integratio
 n testing) of the various components and subsystems of PowerEnJoy.
@@ -514,6 +510,10 @@ n testing) of the various components and subsystems of PowerEnJoy.
 As a notation, an arrow going from component C1 to component C2 means that
  C2 is necessary for C2 to function and so it must have already been implemented.
  
+\end_layout
+
+\begin_layout Subsection
+Software Integration Sequence
 \end_layout
 
 \begin_layout Standard
@@ -1350,8 +1350,65 @@ Subsystem Integration Sequence
 \end_layout
 
 \begin_layout Standard
-Identify the order in which subsystems will be integrated; if you have a
- single subsystem, 2.4.1 and 2.4.2 are to be merged in a single section.
+The PowerEnJoy application designed is divided in different sub-system.
+ From the “High Level Component” (Design Document, figure 2.2 page 8) we
+ can recognize five different sub-system: 
+\end_layout
+
+\begin_layout Itemize
+Operator Application
+\end_layout
+
+\begin_layout Itemize
+Client Application 
+\end_layout
+
+\begin_layout Itemize
+Car System
+\end_layout
+
+\begin_layout Itemize
+Server 
+\end_layout
+
+\begin_layout Itemize
+DBMS 
+\end_layout
+
+\begin_layout Standard
+The Operator Application subsystem, the Client Application subsystem, the
+ Car System subsystem and the DBMS subsystem are atomic subsystem, for this
+ reason we do not enter in more details.
+ 
+\end_layout
+
+\begin_layout Standard
+The central component of the system is the server, which is mainly composed
+ of different controllers, and also of three differents view handle.
+ More detailed description is on Design Document, at paragraph 2.3.
+ 
+\end_layout
+
+\begin_layout Standard
+Only the server component is composed of different subcomponents, and only
+ the components of the server subsystem need to be tested.
+ The order of integration of the component of the server subsystem is explained
+ in the previous paragraph.
+ 
+\end_layout
+
+\begin_layout Standard
+Concerning the order of integration of subsystem, the server has to be integrate
+d to the DBMS at first.
+ In specific the DBMS Manager subcomponent of the server subsystem has to
+ be integrated to the DBMS.
+ 
+\end_layout
+
+\begin_layout Standard
+Once the server is fully integrated, the Operator Application, Client Applicatio
+n and Car System will be integrate with the server component.
+ The order is not significant.
  
 \end_layout
 
@@ -6599,17 +6656,6 @@ return the nearest available power grid station.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-<<<<<<<<<<<<<<<<<<Ride Manager City Manager>>>>>>>>>>>>>>>>>>>>>>>
 \end_layout
 
 \begin_layout Subsection
