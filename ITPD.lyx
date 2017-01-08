@@ -269,23 +269,6 @@ This section provides definitions for common terms used in the document.
  
 \end_layout
 
-\begin_layout Standard
-\noindent
-Definitions: 
-\end_layout
-
-\begin_layout Itemize
-ggyg
-\end_layout
-
-\begin_layout Itemize
-hu 
-\end_layout
-
-\begin_layout Standard
-Abbreviations: 
-\end_layout
-
 \begin_layout Itemize
 DD: Design Document 
 \end_layout
@@ -496,6 +479,13 @@ Notice that the DBMS is a commercial that have been already developed and
  can be used directly in the bottom-up approaches.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Sequence of Component/Function Integration
 \end_layout
@@ -523,13 +513,6 @@ Following the already mentioned bottom-up approach, we now describe how
  We enter only in the server’s subcomponents, because is our only non atomic
  subsystem.
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1105,13 +1088,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 At this point we need to integrate the 
 \series bold
 AccountManager
@@ -1373,13 +1349,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 And finally we can integrate the 
 \series bold
 CarHandler
@@ -1451,7 +1420,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset VSpace 2cm
 \end_inset
 
 
@@ -1463,7 +1432,7 @@ status open
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1480,9 +1449,9 @@ centerline{
 
 
 \begin_inset Graphics
-	filename immagini/ITDP/tuttissimo.png
+	filename immagini/ITDP/server.png
 	lyxscale 10
-	scale 45
+	scale 20
 
 \end_inset
 
@@ -1506,7 +1475,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -1543,9 +1512,36 @@ DBMS
 \end_layout
 
 \begin_layout Standard
-The Operator Application subsystem, the Client Application subsystem, the
- Car System subsystem and the DBMS subsystem are atomic subsystem, for this
- reason we do not enter in more details.
+The 
+\series bold
+Operator
+\series default
+ 
+\series bold
+Application
+\series default
+ subsystem, the 
+\series bold
+Client
+\series default
+ 
+\series bold
+Application
+\series default
+ subsystem, the 
+\series bold
+Car
+\series default
+ 
+\series bold
+System
+\series default
+ subsystem and the 
+\series bold
+DBMS
+\series default
+ subsystem are atomic subsystem, for this reason we do not enter in more
+ details.
  
 \end_layout
 
@@ -1567,8 +1563,19 @@ Only the server component is composed of different subcomponents, and only
 \begin_layout Standard
 Concerning the order of integration of subsystem, the server has to be integrate
 d to the DBMS at first.
- In specific the DBMS Manager subcomponent of the server subsystem has to
- be integrated to the DBMS.
+ In specific the 
+\series bold
+DBMS
+\series default
+ 
+\series bold
+Manager
+\series default
+ subcomponent of the server subsystem has to be integrated to the 
+\series bold
+DBMS
+\series default
+.
  
 \end_layout
 
@@ -1621,9 +1628,32 @@ status open
 \end_layout
 
 \begin_layout Standard
-Once the server is fully integrated, the Operator Application, Client Applicatio
-n and Car System will be integrate with the server component.
- The order is not significant.
+Once the server is fully integrated, the 
+\series bold
+Operator
+\series default
+ 
+\series bold
+Application
+\series default
+, 
+\series bold
+Client
+\series default
+ 
+\series bold
+Application
+\series default
+ and 
+\series bold
+Car
+\series default
+ 
+\series bold
+System
+\series default
+ will be integrate with the server component.
+ The order in which they will be integrated is not relevant.
  
 \end_layout
 
@@ -7795,11 +7825,49 @@ Tools and Test Equipment Required
 \end_layout
 
 \begin_layout Standard
-Identify all tools and test equipment needed to accomplish the integration.
- Refer to the tools presented during the lectures.
- Explain why and how you are going to use them.
- Note that you may also use manual testing for some part.
- Consider manual testing as one of the possible tools you have available.
+In order to test our component efficiently some automated tools are needed.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+JUnit
+\series default
+: is an open source framework designed for the purpose of writing and running
+ test.
+ The main purpose of JUnit is unit testing, but it could be used also for
+ testing the interaction between component.
+ JUnit allows the developer to incrementally build test suites to measure
+ progress and detect side effects.
+ Furthermore it can be used in conjunction with Mockito.
+ Mockito: is a popular mock framework which can be used in conjunction with
+ JUnit.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Mockito
+\series default
+ allows you to create and configure mock objects.
+ Using Mockito simplifies the development of tests for classes with external
+ dependencies significantly.
+ Mockito is useful for the generation of the stubs needed.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+JMeter
+\series default
+: is pure Java open source software used in performance testing.
+ Performance testing means testing a web application against heavy load,
+ multiple and concurrent user traffic.
+ JMeter simulates a group of users sending requests to a target server,
+ and return statistics information of target server.
  
 \end_layout
 
