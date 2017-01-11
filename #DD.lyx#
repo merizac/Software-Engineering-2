@@ -1270,7 +1270,8 @@ This sequence diagram shows how user starts a ride.
 ion sends a request to unlock a car to the ClientHandler and ClientHandler
  sends a validate request to ReservationManager, at the end ReservationManager
  sends the request to the DBMS Manager which return the reservation.
- If the timer has been expired, ClientApplication shows an error message.
+ If the user insert a wrong car code or the reservation doesn’t exist, ClientApp
+lication shows an error message.
  Otherwise the ReservationManager unlocks the car and as soon as the user
  start the engine the ride starts.
  Once the ride is started, the RideManager through the DBMS Manager creates
@@ -1451,10 +1452,6 @@ if the battery level of the car is low a chargingBatteryOperation is created
 if the car is parked at more than 3 km a movingCarOperation is created into
  the DataBase and a notification to the nearest operator is sended.
  
-\end_layout
-
-\begin_layout Itemize
-otherwise the car is marked as available again.
 \end_layout
 
 \begin_layout Standard
