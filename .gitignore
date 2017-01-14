@@ -4,3 +4,5 @@
 *.bak
 *.lyx~
 DD.lyx~
+
+*.lyx#
