@@ -1,0 +1,2759 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+\date{}
+\AtBeginDocument{\renewcommand\chaptername{}}
+ \usepackage{pdflscape}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size larger
+Design document
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/logo polimi.jpg
+	lyxscale 10
+	scale 45
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Logo Politecnico di Milano
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/logo.JPG
+	lyxscale 10
+	scale 60
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Logo PowerEnjoy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Maria Chiara Zaccardi
+\end_layout
+
+\begin_layout Itemize
+Nicola Sosio
+\end_layout
+
+\begin_layout Itemize
+Riccardo Redaelli
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Introduction
+\end_layout
+
+\begin_layout Section
+Purpose
+\end_layout
+
+\begin_layout Standard
+The purpose of this document is to give more technical details than the
+ RASD about PowerEnjoy system.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+This document is addressed to developers and aims to identify: 
+\end_layout
+
+\begin_layout Itemize
+The high level architecture 
+\end_layout
+
+\begin_layout Itemize
+The design patterns 
+\end_layout
+
+\begin_layout Itemize
+The main components and their interfaces provided
+\end_layout
+
+\begin_layout Itemize
+The runtime behavior 
+\end_layout
+
+\begin_layout Section
+Scope
+\end_layout
+
+\begin_layout Standard
+\noindent
+The service PowerEnjoy is based both on mobile application and web application
+ and has three different targets of people: 
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Visitor
+\end_layout
+
+\begin_layout Itemize
+User
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Operator 
+\end_layout
+
+\begin_layout Standard
+\noindent
+The system allows user to reserve a car via mobile or web app, using GPS
+ or inserting an address.
+ Furthermore the mobile app allows operators to know the operation that
+ they have to do through a notification.
+ As soon as operation has been done, the operator via mobile app could report
+ the completed operation.
+ Visitor has to sign up for the service and then login as user, while operators
+ already have credentials assigned by PowerEnjoy.
+ The system offers also a money saving option that users can enable inside
+ the car and the mobile app provides information about the power grid station
+ where to leave the car to get a discount.
+ 
+\end_layout
+
+\begin_layout Section
+Definitions, Acronyms, Abbreviations
+\end_layout
+
+\begin_layout Itemize
+\noindent
+RASD: Requirements Analysis and Specification Document
+\end_layout
+
+\begin_layout Itemize
+\noindent
+DD: Design Document
+\end_layout
+
+\begin_layout Itemize
+\noindent
+UX: User experience design
+\end_layout
+
+\begin_layout Itemize
+\noindent
+BCE: Boundary-Controller-Entity 
+\end_layout
+
+\begin_layout Itemize
+\noindent
+API: Application Programming Interface 
+\end_layout
+
+\begin_layout Itemize
+Client: application program that establish a connection in order to send
+ ‘request’ 
+\end_layout
+
+\begin_layout Itemize
+Server: application program that accept connections in order to receive
+ ‘request’ and to send specific ‘response’
+\end_layout
+
+\begin_layout Itemize
+TCP: Transmission Control Protocol is a standard that defines how to establish
+ and maintain a network conversation via which application programs can
+ exchange data
+\end_layout
+
+\begin_layout Itemize
+IP: Internet Protocol is the method or protocol by which data is sent from
+ one computer to another on the internet.
+\end_layout
+
+\begin_layout Itemize
+GUI: Graphical User Interface is a user interface that includes graphical
+ elements, such as windows, icons and buttons.
+\end_layout
+
+\begin_layout Section
+Reference Documents
+\end_layout
+
+\begin_layout Itemize
+\noindent
+RASD produced before v1.1
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Specification Document: Assignments AA 2016-2017.pdf 
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Example from last year: Sample Design Deliverable Discussed on Nov.
+ 2.pdf 
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Slides of lecture lesson from Beep: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\noindent
+Design Part I.pdf 
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Design Part II.pdf 
+\end_layout
+
+\begin_layout Itemize
+Architecture and Design in Practice.pdf
+\end_layout
+
+\begin_layout Itemize
+Examples of architectures.pdf 
+\end_layout
+
+\begin_layout Itemize
+Reasoning on design through an example.pdf
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+“Relocation Strategies and Algorithms for Free-Floating Car Sharing Systems”,
+ Simone Weikl, Klaus Bogenberger , IEEE Intelligent Transportation Systems
+ Magazine, Volume: 5, 2013 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Document Structure 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Introduction: 
+\series default
+This section aim to explain the scope and the purpose of this document.
+ Why it’s important and which parts are covered that are not covered by
+ RASD document.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Architecture Design
+\series default
+: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\shape slanted
+Overview
+\shape default
+: explanation of which architectural choice are been taken.
+ How many tiers there are, and how they are divided.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\shape slanted
+High level components and their interaction
+\shape default
+: Global view of the application component and how they communicate.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\shape slanted
+Component View
+\shape default
+: This section enter in a highest level of deeper.
+ Component of the application  are more detail.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\shape slanted
+Deploying view
+\shape default
+: This section shows the components that must be deployed to have 
+\end_layout
+
+\begin_layout Itemize
+
+\shape slanted
+Runtime view
+\shape default
+: This section shows sequence diagram of some of the most important activities
+ that user can do.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\shape slanted
+Component interfaces
+\shape default
+: This section shows the interfaces between the components 
+\end_layout
+
+\begin_layout Itemize
+
+\shape slanted
+Selected architectural styles and patterns
+\shape default
+: This section shows the architectural choices taken during the creation
+ of the application
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Other design decision:
+\emph default
+ In this section we talk about other decisions taken.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Algorithm Design
+\series default
+: This section shows how are implemented some functionality that can be
+ critical.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+User Interface Design
+\series default
+: Ux and BCE diagrams
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Requirements Traceability
+\series default
+: Describes how decision taken in the RASD are linked to design elements,
+ and through which components are satisfied
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Architectural design
+\end_layout
+
+\begin_layout Section
+Overview
+\end_layout
+
+\begin_layout Standard
+\noindent
+PowerEnJoy has a three tier architecture.
+ Three tiers are: client, server and database.
+ To each tier corresponds a logical layer that offers functionality to the
+ user.
+ 
+\end_layout
+
+\begin_layout Standard
+The system provide two different user interfaces: one from the web app and
+ one from the mobile application.
+ Users can log theirself from both interfaces, while operators have their
+ ad hoc application.
+ Operators uses mobile phone which are provided from the company and they
+ log in from the mobile phone.
+\end_layout
+
+\begin_layout Standard
+In the server there is the application logic, because of that the client
+ is a thin-client.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/3Tiers.png
+	lyxscale 10
+	width 14cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tiers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+High level components and their interaction
+\end_layout
+
+\begin_layout Standard
+\noindent
+The high level component architecture is composed of five different components.
+ The server component receives several types of request from: 
+\end_layout
+
+\begin_layout Itemize
+\noindent
+users
+\end_layout
+
+\begin_layout Itemize
+\noindent
+visitors
+\end_layout
+
+\begin_layout Itemize
+\noindent
+operators
+\end_layout
+
+\begin_layout Itemize
+\noindent
+car systems
+\end_layout
+
+\begin_layout Standard
+\noindent
+These components interact with the server through an interface for each
+ different component.
+ 
+\end_layout
+
+\begin_layout Standard
+Users and visitors communicate with the server by sending requests from
+ his/her mobile application or web application.
+ In addition users communicate through the CarSystem during the ride.
+ 
+\end_layout
+
+\begin_layout Standard
+While the communication between server and operator start from the server
+ that sends notification of operation through a PushGateway, and operators
+ reply with an operation report from their mobile application as soon as
+ the operation ends.
+ 
+\end_layout
+
+\begin_layout Standard
+Furthermore the server communicates with the DataBase to extract data needed.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/HighLevel Component.png
+	lyxscale 10
+	width 14cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+High level components
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Component view
+\end_layout
+
+\begin_layout Standard
+\noindent
+As described above the server is the central component of the system, so
+ we decide to describe with a more detailed description this component.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The server is mainly composed of different controllers which cover the functiona
+lities provided through interfaces to the high level component.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+The three different view handle the respective request and route them to
+ the right controller.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/Component View.png
+	lyxscale 10
+	width 14cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Component view
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+AccountManager
+\series default
+: manage login of client and operator and registration of new client 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+CarManager
+\series default
+: manage car state
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+CityManager
+\series default
+: manage power grid stations and safe areas
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+ReservationManager
+\series default
+: manage reservations
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+RideManager
+\series default
+: manage rides
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+OperationManager
+\series default
+: manage damage report and operation of operators
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+PushGateway
+\series default
+: manage notification to operators
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+PaymentManager
+\series default
+: manage computation of total cost of a ride included possible fees or discounts.
+ 
+\end_layout
+
+\begin_layout Section
+Database structure
+\end_layout
+
+\begin_layout Standard
+The following diagram show the database of PowerEnjoy, it contains the data
+ that the application need to know and modify.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/database.png
+	lyxscale 10
+	height 14cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Database structure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Deploying view
+\end_layout
+
+\begin_layout Standard
+This section shows how the system is composed in terms of hardware and software,
+ and how components communicate each other.
+ In the first tier, user can access to the service through mobile phone
+ or personal computer.
+ PowerEnJoy provide to each operator a smartphone, where the Operator App
+ is preinstalled and they access from there.
+ Computer needs a Web Server to run the Web Browser, so they are in communicatio
+n.
+ Furthermore all devices of the first tier need to communicate with the
+ PowerEnJoy Server, in which there is the application logic.
+ PowerEnJoy Server communicates with the database Server in order to collect
+ data and have access to the database.
+ Devices communicate among them using TCP/IP protocol.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/Deployment.png
+	lyxscale 10
+	width 12cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Deployment view
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Runtime view
+\end_layout
+
+\begin_layout Subsection
+Reservation
+\end_layout
+
+\begin_layout Standard
+This sequence diagram describes how user can reserve an available car.
+ First of all, user has to select a car from the available car that system
+ shows him.
+ Car informations request is sent to CarManager, from ClientApplication
+ through ClientHandler, and CarManager retrieves informations from the DataBase.
+ If car information satisfy user expectation, then user confirm the reservation:
+ ClientApplication sends the request to the ClientHandler that transfer
+ the request at the ReservationManager.
+ The Reservation Manager throught the Car Manager mark the car as unavailable;
+ after that Reservation Manager send a request to the DBMS Manager for create
+ a new tuple of reservation in the DataBase and start the timer of 1 hour.
+ 
+\end_layout
+
+\begin_layout Standard
+If the timer expires the Reservation Manager charges the user throught the
+ Payment Gateway, sets the value of the reservation's timerEnded at true
+ and the car as available.
+ 
+\end_layout
+
+\begin_layout Standard
+If the user delete the reservation the Client Application sends a request
+ to the ClientHandler that forward it to the ReservationManager.
+ As soon as the ReservationManager receive the request of deletion set the
+ value of the variable Deleted as true and set the car as available.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/sequence/Reservation.png
+	lyxscale 10
+	height 20cm
+	rotateAngle 90
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+See available car
+\end_layout
+
+\begin_layout Standard
+This sequence diagram shows how user can see available cars near him.
+ When user choose to see available cars, user application shows him a form,
+ in which the user has to choose if finds car by inserting an address or
+ by enabling gps.
+ 
+\end_layout
+
+\begin_layout Itemize
+If user choose to 
+\series bold
+insert an address
+\series default
+, ClientApplication checks if the inserted address is a correct one.
+ If the user has inserted a wrong address, the ClientApplication shows him
+ an error message.
+ Otherwise ClientApplication forwards the request to the DBMS Manager, passing
+ through ClientHandler and CarManager.
+ User application shows to the user the available cars near him.
+\end_layout
+
+\begin_layout Itemize
+If user chooses to 
+\series bold
+enable GPS
+\series default
+, ClientApplication forwards the request to DBMS Manager, passing through
+ ClientApplication and CarManager.
+ ClientApplication shows to the user the available cars near him.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/sequence/See available cars filtered by position.png
+	lyxscale 10
+	height 20cm
+	rotateAngle 90
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Start a ride
+\end_layout
+
+\begin_layout Standard
+This sequence diagram shows how user starts a ride.
+ A ride starts when the user inserts the car code in the app, the ClientApplicat
+ion sends a request to unlock a car to the ClientHandler and ClientHandler
+ sends a validate request to ReservationManager, at the end ReservationManager
+ sends the request to the DBMS Manager which return the reservation.
+<<<<<<< HEAD:#DD.lyx#~origin_master
+ If the user insert a wrong car code or the reservation doesn’t exist, ClientApp
+lication shows an error message.
+=======
+ If the timer has been expired, ClientApplication shows an error message.
+>>>>>>> origin/master:DD.lyx
+ Otherwise the ReservationManager unlocks the car and as soon as the user
+ start the engine the ride starts.
+ Once the ride is started, the RideManager through the DBMS Manager creates
+ the ride tuple.
+ 
+\end_layout
+
+\begin_layout Standard
+After that the user can enable the money saving option inserting a correct
+ final destination and the CarSystem shows the nearest power grid station.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/sequence/Start a ride.png
+	lyxscale 10
+	height 20cm
+	rotateAngle 90
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Report a damage
+\end_layout
+
+\begin_layout Standard
+This sequence diagram describes how user can report a damage of a car.
+ The client has to click on the ‘report damage’ button and ClientApplication
+ sends the request to ClienHandler.
+ ClientHandler sends a request for reporting a demage to the OperationManager.
+ As soon as the OperationManager receives the request finds the nearest
+ operator to the damaged car.
+ Then OperationManager sends a request to the DBMS Manager, which create
+ an operation tuple and NotificationManager take care of sending a notification
+ to the operator that the OperationManager has selected before.
+ 
+\end_layout
+
+\begin_layout Standard
+As soon as the operator end the 'to do' operation inform the OperatorHandler
+ through the OperatorApplication.
+ The OperationManager set the operation as ended, charge the last user of
+ the cost of the operation and set the car as available.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/sequence/Report damage.png
+	lyxscale 10
+	height 20cm
+	rotateAngle 90
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+End ride
+\end_layout
+
+\begin_layout Standard
+This sequence diagram shows how end ride functionality works.
+ User has to click on the ‘end ride’ button on the car screen and the CarSystem
+ will send a request of ending the ride to the RideManager passing through
+ CarHandler.
+ RideManager, through the DBMS Manager, checks if the car position is inside
+ of a safearea.
+ 
+\end_layout
+
+\begin_layout Itemize
+if the car is not in a safearea, CarSystem shows to the user an error message
+ 
+\end_layout
+
+\begin_layout Itemize
+if the car is in the safearea, DBMS Manager set the value of RideEnded equal
+ to true.
+ RideManager asks to PaymentManager to calculate the total cost of the ride.
+ PaymentManager will send this information to the payment gateway which
+ has to charge the user.
+ CarSystem shows the total cost to the user.
+ 
+\end_layout
+
+\begin_layout Standard
+After that the RideManager has to check if the battery level is low or if
+ the car is parked at more than 3 km from a power grid station.
+ 
+\end_layout
+
+\begin_layout Itemize
+if the battery level of the car is low a chargingBatteryOperation is created
+ into the DataBase and a notification to the nearest operator is sended.
+\end_layout
+
+\begin_layout Itemize
+if the car is parked at more than 3 km a movingCarOperation is created into
+ the DataBase and a notification to the nearest operator is sended.
+ 
+\end_layout
+
+<<<<<<< HEAD:#DD.lyx#~origin_master
+=======
+\begin_layout Itemize
+otherwise the car is marked as available again.
+\end_layout
+
+>>>>>>> origin/master:DD.lyx
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/sequence/End Ride.png
+	lyxscale 10
+	height 20cm
+	rotateAngle 90
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Component interfaces
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/Interface/ClientInterface.png
+	lyxscale 10
+	width 14cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Client interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/Interface/OperatorInterface.png
+	lyxscale 10
+	width 14cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Operator interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/Interface/CarInterface.png
+	lyxscale 10
+	width 14cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Car interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Selected architectural styles and patterns
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Client-Server
+\end_layout
+
+\begin_layout Standard
+Our application is based on a client-server communication model.
+ User’s mobile application, user’s web browser, operator’s mobile application
+ and car application are clients.
+ There is a thin-client in order to let the application run on low-resources
+ devices.
+ We choose for client-server communication model because: 
+\end_layout
+
+\begin_layout Itemize
+Data synchronization: there is only one application that manage datas 
+\end_layout
+
+\begin_layout Itemize
+Having one unique server application improves the maintainability of our
+ system
+\end_layout
+
+\begin_layout Itemize
+The application is independent from the number of clients connected.
+ Servers can play different roles for different clients.
+\end_layout
+
+\begin_layout Itemize
+Upgradation and scalability: changes can be made easily by just upgrading
+ the server.
+ Also new resources and systems can be added by making necessary changes
+ in server 
+\end_layout
+
+\begin_layout Itemize
+Improves the security between clients
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Three-tiers application
+\end_layout
+
+\begin_layout Standard
+Our architecture is divided in three tiers: 
+\end_layout
+
+\begin_layout Itemize
+Thin-client
+\end_layout
+
+\begin_layout Itemize
+Application Logic
+\end_layout
+
+\begin_layout Itemize
+Database
+\end_layout
+
+\begin_layout Standard
+Physical tiers are about where the code runs.
+ Three tiers architecture allows to each tier to be updated and replaced
+ independently of requirements or technology changes.
+ Each tier corresponds to a specific layer: 
+\end_layout
+
+\begin_layout Itemize
+Client → Presentation Layer
+\end_layout
+
+\begin_layout Itemize
+Application Logic → Application Logic Layer
+\end_layout
+
+\begin_layout Itemize
+Database → Resource Management Layer 
+\end_layout
+
+\begin_layout Standard
+Logical layers are about the organization of the code.
+ We choose a three-tiers architecture because of its numerous advantages,
+ such as : 
+\end_layout
+
+\begin_layout Itemize
+Layers are completely distinguished
+\end_layout
+
+\begin_layout Itemize
+Allows more scalability: in fact it’s possible to integrate more than one
+ server and manage more users at the same time 
+\end_layout
+
+\begin_layout Itemize
+Allows more portability 
+\end_layout
+
+\begin_layout Itemize
+Easier maintenance
+\end_layout
+
+\begin_layout Itemize
+More flexibility
+\end_layout
+
+\begin_layout Itemize
+More security 
+\end_layout
+
+\begin_layout Section
+Other design decision
+\end_layout
+
+\begin_layout Standard
+We integrate web application, mobile application and the car system with
+ a map service, and we choose to integrate with an open-map service.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Algorithm design
+\end_layout
+
+\begin_layout Section
+Relocation strategies
+\end_layout
+
+\begin_layout Standard
+The system that we are going to develop belongs to free-floating Car Sharing
+ Systems.
+ These system allow users to pick up a car and drop it off wherever the
+ user wants.
+ The main issue of those new systems is that vehicles sometimes could get
+ stuck in areas of lower demand while required in zones of higher demand.
+ There are different relocation strategies to solve this problem which could
+ be divided into operator-based strategies and user-based strategies.
+ Operator-based strategies are based on interventions made by an operator
+ while in user-based strategies the relocation process is carried out by
+ users.
+ The money saving option tries to relocate cars through an user-based strategies
+ encouraging users with discounts.
+ In 
+\begin_inset Quotes eld
+\end_inset
+
+Relocation Strategies and Algorithms for Free-Floating Car Sharing Systems
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Simone Weikl, Klaus Bogenberger , “Relocation Strategies and Algorithms
+ for Free-Floating Car Sharing Systems”, IEEE Intelligent Transportation
+ Systems Magazine, Volume: 5, 2013.
+\end_layout
+
+\end_inset
+
+ is presented a two-step model for the relocation of vehicles within free-floati
+ng Car Sharing Systems.
+ 
+\end_layout
+
+\begin_layout Chapter
+User interface design
+\end_layout
+
+\begin_layout Section
+Mockups
+\end_layout
+
+\begin_layout Standard
+We have already done mockups in RASD document.
+\end_layout
+
+\begin_layout Section
+UX diagrams 
+\end_layout
+
+\begin_layout Standard
+We insert UX (user experience) to show how our user performs his actions
+ and how interacts with the system
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/ux/uxvisitor.png
+	lyxscale 10
+	width 10cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+UX visitor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/ux/uxuser.png
+	lyxscale 10
+	width 10cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+UX user
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/ux/uxoperator.png
+	lyxscale 10
+	width 10cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+UX operator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/ux/uxcar.png
+	lyxscale 10
+	width 10cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+UX car
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+BCE diagrams
+\end_layout
+
+\begin_layout Standard
+BCE diagrams shows how user and operator actions are managed internally
+ from the system manager and how that managers interact with the database.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/DD/bce/BCEuser.png
+	lyxscale 10
+	width 10cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+BCE user
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Requirements traceability
+\end_layout
+
+\begin_layout Standard
+The design of this project was made aiming to satisfy the requirements and
+ goals specified in the RASD.
+ The reader can find here the list of these requirements and goals and the
+ design component of the application which will assure its fulfillment.
+\end_layout
+
+\begin_layout Section
+Visitor
+\end_layout
+
+\begin_layout Itemize
+[G1] Allow visitors to register in the system
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientHandler
+\end_layout
+
+\begin_layout Itemize
+AccountManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Section
+User
+\end_layout
+
+\begin_layout Itemize
+[G2] Allows users to login in the system 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientHandler
+\end_layout
+
+\begin_layout Itemize
+AccountManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G3] Users must be able to find the locations of available cars 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientHandler
+\end_layout
+
+\begin_layout Itemize
+CarManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G4] Allows users to request for the reservation of a car until one hour
+ before
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientHandler
+\end_layout
+
+\begin_layout Itemize
+ReservationManager
+\end_layout
+
+\begin_layout Itemize
+CarManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G5] Allows users to unlock the reserved car 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientHandler
+\end_layout
+
+\begin_layout Itemize
+ReservationManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G6] Allows users to know the current battery level of each available cars
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientHandler
+\end_layout
+
+\begin_layout Itemize
+CarManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G7] Allows users to know which are the “safe area” 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientHandler
+\end_layout
+
+\begin_layout Itemize
+CityManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G8] Users should enable the money saving option in the car 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientHandler
+\end_layout
+
+\begin_layout Itemize
+CarSystem
+\end_layout
+
+\begin_layout Itemize
+CarHandler
+\end_layout
+
+\begin_layout Itemize
+RideManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G9] Users should know where the power grid stations are 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientHandler
+\end_layout
+
+\begin_layout Itemize
+CityManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G10] Users can report if the reserved car has damage 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientHandler
+\end_layout
+
+\begin_layout Itemize
+OperationManager
+\end_layout
+
+\begin_layout Itemize
+PushGateway
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G11] Allows users to cancel a reservation 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ClientApplication
+\end_layout
+
+\begin_layout Itemize
+ClientHandler
+\end_layout
+
+\begin_layout Itemize
+ReservationManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G12] Allows users to have discount 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+RideManager
+\end_layout
+
+\begin_layout Itemize
+PaymentManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G13] Allows users to end the ride 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CarSystem
+\end_layout
+
+\begin_layout Itemize
+CarHandler
+\end_layout
+
+\begin_layout Itemize
+RideManager
+\end_layout
+
+\begin_layout Itemize
+PaymentManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Operator
+\end_layout
+
+\begin_layout Itemize
+[G14] Allows operators to login in the system 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OperatorApplication
+\end_layout
+
+\begin_layout Itemize
+OperatorHandler
+\end_layout
+
+\begin_layout Itemize
+AccountManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G15] Allows operators to know all the informations of damaged car
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OperatorApplication
+\end_layout
+
+\begin_layout Itemize
+OperatorHandler
+\end_layout
+
+\begin_layout Itemize
+CarManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G16] Allows operators to unlock cars 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OperatorApplication
+\end_layout
+
+\begin_layout Itemize
+OperatorHandler
+\end_layout
+
+\begin_layout Itemize
+OperationManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G17] Operators should receive a notification for incoming request of reparation
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OperatorApplication
+\end_layout
+
+\begin_layout Itemize
+OperatorHandler
+\end_layout
+
+\begin_layout Itemize
+OperationManager
+\end_layout
+
+\begin_layout Itemize
+PushGateway
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G18] Operators must be able to report the operation they have done 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OperatorApplication
+\end_layout
+
+\begin_layout Itemize
+OperatorHandler
+\end_layout
+
+\begin_layout Itemize
+OperationManager
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G19] Operators should receive a notification for moving a car
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OperatorApplication
+\end_layout
+
+\begin_layout Itemize
+OperatorHandler
+\end_layout
+
+\begin_layout Itemize
+OperationManager
+\end_layout
+
+\begin_layout Itemize
+PushGateway
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[G20] Operators should receive a notification for charging a car 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OperatorApplication
+\end_layout
+
+\begin_layout Itemize
+OperatorHandler
+\end_layout
+
+\begin_layout Itemize
+OperationManager
+\end_layout
+
+\begin_layout Itemize
+PushGateway
+\end_layout
+
+\begin_layout Itemize
+DBMS
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+References
+\end_layout
+
+\begin_layout Section
+Used tools
+\end_layout
+
+\begin_layout Standard
+The tools we used to create this DD document are:
+\end_layout
+
+\begin_layout Itemize
+Github: for version controller
+\end_layout
+
+\begin_layout Itemize
+Lyx: to format this document
+\end_layout
+
+\begin_layout Itemize
+Astah: for uml models
+\end_layout
+
+\begin_layout Itemize
+Google Doc: for write the document
+\end_layout
+
+\begin_layout Itemize
+Draw.io: for diagrams
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For redacting and writing this document we spent 25 hours per person
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
