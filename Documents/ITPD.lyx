@@ -229,6 +229,14 @@ Riccardo Redaelli
 \end_layout
 
 \begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+15/01/2017
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
@@ -246,7 +254,7 @@ Revision History
 \end_layout
 
 \begin_layout Section
-Purpose and Scope
+Purpose
 \end_layout
 
 \begin_layout Standard
@@ -256,6 +264,46 @@ This document represents the Integration Testing Plan Document for PowerEnJoy.
  Integration testing ensures that the unit-tested modules interact correctly.
  This document aims to explain to the development team what to test, in
  which order and which tools are needed for testing.
+ 
+\end_layout
+
+\begin_layout Section
+Scope
+\end_layout
+
+\begin_layout Standard
+\noindent
+The service PowerEnjoy is based both on mobile application and web application
+ and has three different targets of people: 
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Visitor
+\end_layout
+
+\begin_layout Itemize
+User
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Operator 
+\end_layout
+
+\begin_layout Standard
+\noindent
+The system allows user to reserve a car via mobile or web app, using GPS
+ or inserting an address.
+ Furthermore the mobile app allows operators to know the operation that
+ they have to do through a notification.
+ As soon as operation has been done, the operator via mobile app could report
+ the completed operation.
+ Visitor has to sign up for the service and then login as user, while operators
+ already have credentials assigned by PowerEnjoy.
+ The system offers also a money saving option that users can enable inside
+ the car and the mobile app provides information about the power grid station
+ where to leave the car to get a discount.
  
 \end_layout
 
@@ -467,6 +515,11 @@ Starting at the bottom of the hierarchy means that the critical components
  are generally tested first and therefore any errors or mistakes in these
  components are find out early in the process.
  
+\end_layout
+
+\begin_layout Standard
+Component will be tested starting from those without any dependencies, then
+ we will iteratively choose those with no dependencies.
 \end_layout
 
 \begin_layout Standard
@@ -1653,8 +1706,8 @@ Car
 System
 \series default
  will be integrate with the server component.
- The order in which they will be integrated is not relevant.
- 
+ The order in which they will be integrated is not relevant, so they could
+ be integrated with the server component in parallel.
 \end_layout
 
 \begin_layout Standard
