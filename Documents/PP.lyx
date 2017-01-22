@@ -235,7 +235,7 @@ Riccardo Redaelli
 \end_layout
 
 \begin_layout Standard
-22/01/2017
+01/22/17
 \end_layout
 
 \begin_layout Standard
@@ -249,10 +249,6 @@ LatexCommand tableofcontents
 
 \begin_layout Chapter
 Introduction
-\end_layout
-
-\begin_layout Section
-Revision History
 \end_layout
 
 \begin_layout Section
@@ -491,15 +487,10 @@ Example from last year: Project planning example document.pdf
 \end_layout
 
 \begin_layout Itemize
-Slides of lecture lessons from Beep: 
+Slides of lecture lessons from Beep: Project Management Basics+Advanced.pdf
+ 
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Project Management Basics+Advanced.pdf 
-\end_layout
-
-\end_deeper
 \begin_layout Chapter
 Project size, cost and effort estimation
 \end_layout
@@ -6515,7 +6506,7 @@ Process maturity
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -6748,7 +6739,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
+Process maturity scale factor for COCOMO II
 \end_layout
 
 \end_inset
@@ -7428,7 +7419,7 @@ This cost driver attempts to capture the effect large test data requirements
  of the effort required to generate the test data that will be used to exercise
  the program.
  Since our project does not foresee a large ammount of data test DATA rating
- level is setted to Nominal
+ level is setted to Nominal.
 \end_layout
 
 \begin_layout Standard
@@ -8092,7 +8083,7 @@ CPLEX Cost Drivers
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -8111,12 +8102,12 @@ centerline{
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="6">
 <features tabularvalignment="middle">
-<column alignment="left" valignment="middle" width="1cm">
+<column alignment="left" valignment="middle" width="1.3cm">
+<column alignment="left" valignment="middle" width="2.5cm">
+<column alignment="left" valignment="middle" width="3cm">
 <column alignment="left" valignment="middle" width="2.5cm">
 <column alignment="left" valignment="middle" width="2.5cm">
-<column alignment="left" valignment="middle" width="2.5cm">
-<column alignment="left" valignment="middle" width="2.5cm">
-<column alignment="left" valignment="middle" width="2.5cm">
+<column alignment="left" valignment="middle" width="2.3cm">
 <row>
 <cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -8479,7 +8470,7 @@ CPLX Ratings Levels
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -8500,10 +8491,10 @@ centerline{
 <features tabularvalignment="middle">
 <column alignment="left" valignment="middle" width="1.3cm">
 <column alignment="left" valignment="middle" width="2.5cm">
+<column alignment="left" valignment="middle" width="3cm">
 <column alignment="left" valignment="middle" width="2.5cm">
 <column alignment="left" valignment="middle" width="2.5cm">
-<column alignment="left" valignment="middle" width="2.5cm">
-<column alignment="left" valignment="middle" width="2.5cm">
+<column alignment="left" valignment="middle" width="2.3cm">
 <row>
 <cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -14298,12 +14289,444 @@ reference "eq:final E"
 Schedule
 \end_layout
 
+\begin_layout Standard
+In this section we are going to divide the project in different tasks.
+ Each task correspond to a document: RASD, DD, ITDP and PP.
+\end_layout
+
+\begin_layout Standard
+The last tasks is the development phase and testing phase.
+ The development phase will last 14 months as estimated in the Section 2.2.4
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TDEV"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/PP/Gantt1.png
+	scale 45
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/PP/Gantt2a.png
+	scale 45
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/PP/Gantt2c.png
+	scale 40
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Resource allocation
 \end_layout
 
+\begin_layout Standard
+In this section we are going to show how the tasks are divided.
+ Our team is composed of three members and for the majority of the tasks
+ that concerns important decision for the project we work together.
+ We divide the work only for task that are independent each other.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/PP/GanttResource1.png
+	scale 38
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/PP/GanttResource2.png
+	scale 38
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/PP/GanttResource3.png
+	scale 38
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Risk management
+\end_layout
+
+\begin_layout Standard
+In this section we have identified some potential risks that the project
+ development may face, we identify three category of potential risks: technical,
+ project and business issues.
+\end_layout
+
+\begin_layout Standard
+A first threat belonging to project issues come from the possibility that
+ committee change the requirements.
+ This could be a marginal problem if changes are little, but if changes
+ are important this may inevitably delay the overall project schedule.
+ We have also consider that we could had done a bad schedule, so that tasks
+ prevision may be unrealistic.
+ This will cause an unavoidable delay in the project schedule.
+ We have previously planned that each tasks must be always completed some
+ day before milestone, so that possible slight problems arising in the course
+ of the work may already have been budgeted.
+\end_layout
+
+\begin_layout Standard
+Another issue related to this category is the management of data and the
+ risk to corrupt or lost it.
+ To prevent this risk PowerEnjoy have to use a version control system for
+ tracking changes in computer files and coordinating work on those files
+ among multiple people, such as using Git.
+ Furthermore company should use also a backup services to prevent the loss
+ of any data.
+ 
+\end_layout
+
+\begin_layout Standard
+Another issue that must not be underestimated is related to our dependency
+ on external services.
+ A change in terms and conditions or a modification of their API could create
+ to PowerEnjoy services serious technical problems, and this could cause
+ also financial problems.
+ One example of this API is the mapping service.
+ A possible countermeasure is to design the code to be as portable as possible,
+ so that it could have great modularity and independence between components.
+ 
+\end_layout
+
+\begin_layout Standard
+The team must be sure that all sensor and equipment of the car are reliable
+ and easy to integrate.
+ The first problem we might have is the integration between sensors and
+ programming languages, to avoid this we must be sure before start the project
+ that they are compatible with our necessity, so that the hardware is integrated
+ with a full compatibility.
+ 
+\end_layout
+
+\begin_layout Standard
+Since the moment PowerEnjoy is a car sharing service we rent physical cars
+ to people that sometimes have unpredictable behaviour.
+ For this reason we need an advantageous policy to cope possible damage
+ to things and people, for example a fire and theft policy and also against
+ act of vandalism.
+ Anyway the company specified that during a ride the pending user take on
+ the responsibility of driving.
+ 
+\end_layout
+
+\begin_layout Standard
+We can identify other car sharing companies (other startup or companies
+ already existing in the same city) as an important business risk to the
+ success of PowerEnjoy because they reduce our business opportunities.
+ In fact existing company could constantly enhance their services by cutting
+ costs or improving or adding new functionalities on their system.
+ So PowerEnjoy must be prepared to be competitive, adding or revising some
+ policies, to make clients faithful customer.
+ Probably a friendly user interface and the ease of usage of the application
+ surely help the spreading of the service among citizens.
+ 
+\end_layout
+
+\begin_layout Standard
+Another business risk can be identified in sponsoring the new service.
+ It’s not certain that once the project is completed there are sufficient
+ user to have a profit.
+ This problem is mainly due to the fact that in the city there are already
+ other car sharing services.
+ 
+\end_layout
+
+\begin_layout Standard
+PowerEnjoy require an aggressive advertising campaign, which may include
+ discounts for new customers, advertising in the city and other conventions.
+ So PowerEnjoy could entrust the management to another specialized company
+ who could help it in promote and advertise the use of its service.
+\end_layout
+
+\begin_layout Chapter
+Used tools
+\end_layout
+
+\begin_layout Itemize
+Github: for version controller
+\end_layout
+
+\begin_layout Itemize
+Lyx: to format this document
+\end_layout
+
+\begin_layout Itemize
+Google doc: for write the document
+\end_layout
+
+\begin_layout Itemize
+GanttProject: for gantt diagrams
+\end_layout
+
+\begin_layout Chapter
+Effort Spent
+\end_layout
+
+\begin_layout Standard
+For redacting and writing this document we spent 25 hours per person.
 \end_layout
 
 \end_body
