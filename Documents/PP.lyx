@@ -275,7 +275,7 @@ Project planning is an iterative process that starts when you create an
 \end_layout
 
 \begin_layout Section
-Definitions and abbreviations
+Definitions
 \end_layout
 
 \begin_layout Itemize
@@ -296,6 +296,10 @@ Function
 point
 \series default
 : function point is a “unit of measurement” to express the software dimension
+\end_layout
+
+\begin_layout Section
+Abbreviations
 \end_layout
 
 \begin_layout Itemize
@@ -446,8 +450,143 @@ EQ
 \series bold
 GPS
 \series default
-: Global Positioning System.
- 
+: Global Positioning System
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+RELY: 
+\series default
+Required Software Reliability
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+DATA: 
+\series default
+Database Cost Driver
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+CPLEX: 
+\series default
+Product Complexity
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+RUSE: 
+\series default
+Required reusability
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+DOCU: 
+\series default
+Documentation match life-cycle needs
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+TIME: 
+\series default
+Execution time constraints
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+STOR: 
+\series default
+Storage constraints
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+PVOL: 
+\series default
+Platform volatility
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+ACAP: 
+\series default
+analyst capability
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+PCAP: 
+\series default
+Pragrammer capability
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+PCON: 
+\series default
+Personnel Continuity
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+APEX:
+\series default
+ Application experience
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+PLEX: 
+\series default
+Platform experience
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+LTEX: 
+\series default
+Language and tool experience
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+TOOL: 
+\series default
+Usage of software tools
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+SITE: 
+\series default
+Multisite development collocation
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+SCED: 
+\series default
+Required development schedule
 \end_layout
 
 \begin_layout Section
