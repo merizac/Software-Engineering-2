@@ -353,9 +353,9 @@ FP
 \begin_layout Itemize
 
 \series bold
-LOC
+SLOC
 \series default
-: lines of code 
+: source lines of code 
 \end_layout
 
 \begin_layout Itemize
@@ -373,14 +373,6 @@ AVC
 \series default
 : language-dependent factor varying from 200-300 for assembly language to
  2 - 40 for a 4GL 
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-#FP
-\series default
- : total number of function points 
 \end_layout
 
 \begin_layout Itemize
@@ -921,15 +913,15 @@ Function complexity of each function type
 \end_layout
 
 \begin_layout Standard
-Function points can be used to calculate LOC depending on the average number
- of LOC per FP for a given language.
+Function points can be used to calculate SLOC depending on the average number
+ of SLOC per FP for a given language.
  
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-LOC=AVC*FP
+SLOC=AVC*FP\label{eq: totsloc}
 \end{equation}
 
 \end_inset
@@ -968,7 +960,7 @@ visitor
 \begin_layout Itemize
 
 \series bold
-Registration
+[EI1] Registration
 \series default
 : This is an operation that needs to check a quite large number of parameters
  that the user has to insert.
@@ -1001,7 +993,7 @@ user
 \begin_layout Itemize
 
 \series bold
-Login
+[EI2] Login
 \series default
 : This operation needs to check just two parameters that the user has to
  insert: email and password.
@@ -1011,7 +1003,7 @@ Login
 \begin_layout Itemize
 
 \series bold
-Make
+[EI3] Make
 \series default
  
 \series bold
@@ -1031,7 +1023,7 @@ reservation
 \begin_layout Itemize
 
 \series bold
-Cancel
+[EI4] Cancel
 \series default
  
 \series bold
@@ -1045,7 +1037,7 @@ reservation
 \begin_layout Itemize
 
 \series bold
-Enable
+[EI5] Enable
 \series default
  
 \series bold
@@ -1071,7 +1063,7 @@ option
 \begin_layout Itemize
 
 \series bold
-Report
+[EI6] Report
 \series default
  
 \series bold
@@ -1088,7 +1080,7 @@ damage
 \begin_layout Itemize
 
 \series bold
-Plug
+[EI7] Plug
 \series default
  
 \series bold
@@ -1107,7 +1099,7 @@ car
 \begin_layout Itemize
 
 \series bold
-Unlock
+[EI8] Unlock
 \series default
  
 \series bold
@@ -1140,7 +1132,7 @@ operator
 \begin_layout Itemize
 
 \series bold
-Login
+[EI9] Login
 \series default
 : This operation needs to check just two parameters that the user has to
  insert: username and password.
@@ -1151,7 +1143,7 @@ Login
 \begin_layout Itemize
 
 \series bold
-Accept
+[EI10] Accept
 \series default
  
 \series bold
@@ -1169,7 +1161,7 @@ operation
 \begin_layout Itemize
 
 \series bold
-Report operation informations
+[EI11] Report operation informations
 \series default
 : This is also a simple operation that let the operator modify the information
  about the operation in order to add a description of what he had done and
@@ -1651,7 +1643,7 @@ External outputs are elementary operation that generates data for the external
 \begin_layout Itemize
 
 \series bold
-Notify an operator
+[EO1] Notify an operator
 \series default
  that there is an operation to do.
  This is a simple operation so it produces just 4 FPs.
@@ -1661,7 +1653,7 @@ Notify an operator
 \begin_layout Itemize
 
 \series bold
-Provide a password
+[EO2] Provide a password
 \series default
  for the login to the user when he/she has completed the registration phase.
  This is also a simple operation that contributes 4 FPs.
@@ -1670,7 +1662,7 @@ Provide a password
 \begin_layout Itemize
 
 \series bold
-Apply possible fee or discount
+[EO3] Apply possible fee or discount
 \series default
  to the user at the end of the ride.
  This is a quite complex operation because the system has to check an elevate
@@ -1680,7 +1672,11 @@ Apply possible fee or discount
 \end_layout
 
 \begin_layout Itemize
-Show 
+
+\series bold
+[EO4]
+\series default
+ Show 
 \series bold
 during the ride
 \series default
@@ -1693,7 +1689,11 @@ during the ride
 \end_layout
 
 \begin_layout Itemize
-Show
+
+\series bold
+[EO5]
+\series default
+ Show
 \series bold
  the total amount
 \series default
@@ -2012,7 +2012,7 @@ user
 \begin_layout Itemize
 
 \series bold
-Select a car
+[EQ1] Select a car
 \series default
 : When a user select a car from the available cars, the system shows the
  car informations as the battery level and the possibility of reservation.
@@ -2022,7 +2022,7 @@ Select a car
 \begin_layout Itemize
 
 \series bold
-See Reservation informations
+[EQ2] See Reservation informations
 \series default
 : Once the user has reserved a car, the system shows the information about
  user’s reservation with the position of the car, the time left and the
@@ -2034,7 +2034,7 @@ See Reservation informations
 \begin_layout Itemize
 
 \series bold
-See available car (by GPS)
+[EQ3] See available car (by GPS)
 \series default
 : User search for the available cars activating the GPS.
  Then the system shows the available cars around his position.
@@ -2044,7 +2044,7 @@ See available car (by GPS)
 \begin_layout Itemize
 
 \series bold
-See available car (by address)
+[EQ4] See available car (by address)
 \series default
 : This operation contributes the same FPs as the previous one.
  In fact this action involved the same component as the operation mentioned
@@ -2055,7 +2055,7 @@ See available car (by address)
 \begin_layout Itemize
 
 \series bold
-See Power Grid Station and their position
+[EQ5] See Power Grid Station and their position
 \series default
 : When user choose to see the power grid stations, the system shows him
  all power grid stations and their positions in the map of the city.
@@ -2065,7 +2065,7 @@ See Power Grid Station and their position
 \begin_layout Itemize
 
 \series bold
-Availability of each Power Grid Station in real time
+[EQ6] Availability of each Power Grid Station in real time
 \series default
 : For each power grid station the user can see the availability in order
  to know if he/she can leave the car at that power grid station.
@@ -2075,7 +2075,7 @@ Availability of each Power Grid Station in real time
 \begin_layout Itemize
 
 \series bold
-See Safe Area
+[EQ7] See Safe Area
 \series default
 : When user choose to see the safe area, the system shows him/her the outer
  limit.
@@ -2085,7 +2085,7 @@ See Safe Area
 \begin_layout Itemize
 
 \series bold
-Amount of the cost of the ride
+[EQ8] Amount of the cost of the ride
 \series default
 : During the ride the system shows to the user the amount of the total cost
  of the ride.
@@ -2104,7 +2104,7 @@ operator
 \begin_layout Itemize
 
 \series bold
-See unavailable cars that need an operation
+[EQ9] See unavailable cars that need an operation
 \series default
 : As users can see the available cars, operators can see the unavailable
  ones.
@@ -2517,7 +2517,11 @@ Internal logic files are data used and managed by the application.
 \end_layout
 
 \begin_layout Itemize
-The system has to manage the 
+
+\series bold
+[ILF1]
+\series default
+ The system has to manage the 
 \series bold
 information about the registered users
 \series default
@@ -2529,7 +2533,11 @@ information about the registered users
 \end_layout
 
 \begin_layout Itemize
-The system has to manage the
+
+\series bold
+[ILF2]
+\series default
+ The system has to manage the
 \series bold
  information about the registered operators
 \series default
@@ -2544,7 +2552,7 @@ The system has to manage the
 \begin_layout Itemize
 
 \series bold
-SafeArea
+[ILF3] SafeArea
 \series default
  is a set of positions as pairs of latitude and longitude points.
  So it contains a very large number of elements but they are all the same
@@ -2555,7 +2563,7 @@ SafeArea
 \begin_layout Itemize
 
 \series bold
-PowerGrid
+[ILF4] PowerGrid
 \series default
  
 \series bold
@@ -2568,7 +2576,7 @@ Station
 \begin_layout Itemize
 
 \series bold
-Map
+[ILF5] Map
 \series default
  entity contains a list of the availability cars, a list of power grid stations
  and the Safe Area.
@@ -2577,7 +2585,11 @@ Map
 \end_layout
 
 \begin_layout Itemize
-The system has to manage 
+
+\series bold
+[ILF6]
+\series default
+ The system has to manage 
 \series bold
 car
 \series default
@@ -2596,7 +2608,7 @@ informations
 \begin_layout Itemize
 
 \series bold
-Reservation
+[ILF7] Reservation
 \series default
  needs to store the user that take the reservation, the car associated,
  time in which the user reserve the car and the timer associated.
@@ -2607,7 +2619,7 @@ Reservation
 \begin_layout Itemize
 
 \series bold
-Ride
+[ILF8] Ride
 \series default
  needs to store the driver user, the car associated, number of passengers,
  the total time, starting time and a boolean that is true when the ride
@@ -2617,7 +2629,11 @@ Ride
 \end_layout
 
 \begin_layout Itemize
-The system has to manage also the 
+
+\series bold
+[ILF9]
+\series default
+ The system has to manage also the 
 \series bold
 operation
 \series default
@@ -3037,13 +3053,15 @@ External Logic Files
 \begin_layout Standard
 External interface files are data generated and maintained by other applications
  but they are sent to our application in order to use them.
+ Since those operations need to interface with external services and to
+ retrieve a large amount of data, they are considered as complex operations.
  
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-GPS
+[EIF1] GPS
 \series default
  
 \series bold
@@ -3057,7 +3075,7 @@ signal
 \begin_layout Itemize
 
 \series bold
-Reverse
+[EIF2] Reverse
 \series default
  
 \series bold
@@ -3070,7 +3088,7 @@ geocoding
 \begin_layout Itemize
 
 \series bold
-Map
+[EIF3] Map
 \series default
  
 \series bold
@@ -3091,7 +3109,7 @@ retrieval
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -3165,7 +3183,7 @@ GPS signal
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Complex
 \end_layout
 
 \end_inset
@@ -3174,7 +3192,7 @@ GPS signal
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10
 \end_layout
 
 \end_inset
@@ -3194,7 +3212,7 @@ Reverse geocoding
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Complex
 \end_layout
 
 \end_inset
@@ -3203,7 +3221,7 @@ Reverse geocoding
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10
 \end_layout
 
 \end_inset
@@ -3223,7 +3241,7 @@ Map data retrieval
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Complex
 \end_layout
 
 \end_inset
@@ -3232,7 +3250,7 @@ Map data retrieval
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10
 \end_layout
 
 \end_inset
@@ -3264,7 +3282,7 @@ Total
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+30
 \end_layout
 
 \end_inset
@@ -3466,7 +3484,7 @@ External Interface Files (EIF)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+30
 \end_layout
 
 \end_inset
@@ -3489,7 +3507,7 @@ Total
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+201
 \end_layout
 
 \end_inset
@@ -3530,6 +3548,36 @@ Function complexity of each function type
 
 \end_layout
 
+\begin_layout Standard
+Using Java EE as a development platform the total amount of SLOC are estimated
+ through the formula 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq: totsloc"
+
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+SLOC=46*201=9246
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Cost and effort estimation : COCOMO II
 \end_layout
@@ -3540,36 +3588,82 @@ In this section we’re going to use the COCOMO II approach to estimate the
 \end_layout
 
 \begin_layout Standard
-The COCOMO II effort estimation model is used for both the Early Design
- and Post- Architecture cost models to estimate the effort expressed in
- person month.
+Eary Design is aimed at an early estimation, since our project is not an
+ early phase of the we will use a Post-Architecture cost model.
 \end_layout
 
 \begin_layout Standard
-The inputs are the Size of software development, a constant, A, an exponent,
- E, and a number of values called effort
-\series bold
- 
-\series default
-multipliers (EM).
- The number of effort multipliers depends on the model.
- The Size
-\begin_inset Formula $^{E}$
+The COCOMO II effort estimation model is used to estimate the effort expressed
+ in person month.
+ The number of person-month in COCOMO II model is computed as follow:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+PM=A*Size^{E}*\stackrel[i=1]{n}{\prod}EM_{i}\label{eq: person-month}
+\end{equation}
+
 \end_inset
 
- has been estimated in the Section
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+Where:
+\end_layout
+
+\begin_layout Itemize
+
 \emph on
+\begin_inset Formula $A=2.94$
+\end_inset
+
  
 \emph default
-2.1.6
-\emph on
-.
+approximates a productivity constant in 
+\begin_inset Formula $\nicefrac{PM}{KSLOC}$
+\end_inset
 
-\emph default
- The constant, A, approximates a productivity constant in PM/KSLOC and for
- COCOMO II is set to 2.94.
- The exponent E is an aggregation of five scale factors (SF) and it is computed
- through the following formula:
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Size$
+\end_inset
+
+ has been estimated in the Section 2.1.6.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $EM_{i}$
+\end_inset
+
+ Effort Multiplier.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3584,15 +3678,51 @@ E=B+0.01*\stackrel[j=1]{5}{\sum}SF_{j}\label{eq: exponent E}
 \end_layout
 
 \begin_layout Standard
-The number of person-month in COCOMO II model is computed as follow:
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+Where:
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+\begin_inset Formula $B=0.91$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $SF_{j}$
+\end_inset
+
+ Scale Factor 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-PM=A*Size^{E}*\stackrel[i=1]{n}{\prod}EM_{i}\label{eq: person-month}
-\end{equation}
-
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -4109,6 +4239,18 @@ often (60%)
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{selection}
+\end_layout
+
+\end_inset
+
 generally (75%) 
 \end_layout
 
@@ -4181,6 +4323,18 @@ Sf
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{selection}
+\end_layout
+
+\end_inset
+
 2.83
 \end_layout
 
@@ -4567,13 +4721,6 @@ Scale Factors for COCOMO II Post-Architecture Models
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -5179,21 +5326,8 @@ Development flexibility scale factor for COCOMO II
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
 Risk resolution
-\end_layout
-
-\begin_layout Standard
-<<<<<<<<<<<<<<<<<<<<<
-\noun on
-MERIIIIIIII>>>>>>>>>>>>>>>>>>>>>>
 \end_layout
 
 \begin_layout Standard
@@ -5319,8 +5453,7 @@ Extra High
 
 \begin_layout Plain Layout
 Risk Management Plan identifies all critical risk items, establishes milestones
- for resolving them by PDR.
- 
+ for resolving them by PDR or LCA.
 \end_layout
 
 \end_inset
@@ -5365,6 +5498,18 @@ Generally
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{selection}
+\end_layout
+
+\end_inset
+
 Mostly
 \end_layout
 
@@ -5385,8 +5530,8 @@ Fully
 \begin_inset Text
 
 \begin_layout Plain Layout
-Schedule, budget, and internal milestones through PDR compatible with Risk
- Management Plan 
+Schedule, budget, and internal milestones through PDR or LCA compatible
+ with Risk Management Plan 
 \end_layout
 
 \end_inset
@@ -5422,6 +5567,18 @@ Some
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{selection}
+\end_layout
+
+\end_inset
+
 Generally
 \end_layout
 
@@ -5479,6 +5636,18 @@ Percent of development schedule devoted to establishing architecture, given
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{selection}
+\end_layout
+
+\end_inset
+
 17
 \end_layout
 
@@ -5553,6 +5722,18 @@ Percent of required top software architects available to project
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{selection}
+\end_layout
+
+\end_inset
+
 80
 \end_layout
 
@@ -5619,6 +5800,18 @@ Some
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{selection}
+\end_layout
+
+\end_inset
+
 Good
 \end_layout
 
@@ -5695,6 +5888,18 @@ Some
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{selection}
+\end_layout
+
+\end_inset
+
 Little
 \end_layout
 
@@ -5733,6 +5938,18 @@ Number and criticality of risk items
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{selection}
+\end_layout
+
+\end_inset
+
 5-10 Critical
 \end_layout
 
@@ -6564,6 +6781,17 @@ The result of the analysis of the scale drivers is the following:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\stackrel[j=1]{5}{\sum}SF_{j}=17.85
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \begin_inset Float table
 placement H
@@ -6707,7 +6935,7 @@ Risk resolution
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+High
 \end_layout
 
 \end_inset
@@ -6716,7 +6944,7 @@ Risk resolution
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.83
 \end_layout
 
 \end_inset
@@ -6810,7 +7038,7 @@ Total
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+17.85
 \end_layout
 
 \end_inset
@@ -13246,7 +13474,7 @@ Overall risult
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -13933,7 +14161,7 @@ reference "eq: person-month"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-E=B+0.01*\stackrel[j=1]{5}{\sum}SF_{j}=0.91+0.01*totscaledriver\label{eq:final E}
+E=B+0.01*\stackrel[j=1]{5}{\sum}SF_{j}=0.91+0.01*17.85=1.0885\label{eq:final E}
 \end{equation}
 
 \end_inset
@@ -13941,7 +14169,7 @@ E=B+0.01*\stackrel[j=1]{5}{\sum}SF_{j}=0.91+0.01*totscaledriver\label{eq:final E
 
 \begin_inset Formula 
 \begin{equation}
-PM=A*Size^{E}*\stackrel[i=1]{n}{\prod}EM_{i}=2.94*Size^{E}*0.81\label{eq: final PM}
+PM=A*Size^{E}*\stackrel[i=1]{n}{\prod}EM_{i}=2.94*9246^{1.0885}*0.81\backsimeq27PM\label{eq: final PM}
 \end{equation}
 
 \end_inset
@@ -13960,7 +14188,7 @@ Finally we can estimate the Time to Develop by using the following formula:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-TDEV=[C*PM^{F}]*\frac{SCED\%}{100}=3.67*PM*\frac{130}{100}=\label{eq:TDEV}
+TDEV=[C*PM^{F}]*\frac{SCED\%}{100}=3.67*27^{0.3157}*\frac{130}{100}\simeq14months\label{eq:TDEV}
 \end{equation}
 
 \end_inset
@@ -13971,7 +14199,7 @@ TDEV=[C*PM^{F}]*\frac{SCED\%}{100}=3.67*PM*\frac{130}{100}=\label{eq:TDEV}
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-F=D+0.2*(E-B)=0.28+0.2*(E-0.91)=\label{eq:F}
+F=D+0.2*(E-B)=0.28+0.2*(1.86-0.91)=0.3157\label{eq:F}
 \end{equation}
 
 \end_inset
@@ -13980,15 +14208,42 @@ F=D+0.2*(E-B)=0.28+0.2*(E-0.91)=\label{eq:F}
 \end_layout
 
 \begin_layout Standard
-In the formula 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:TDEV"
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
 
+\begin_layout Plain Layout
+Where:
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+\begin_inset Formula $C=3.67$
 \end_inset
 
- C is a coefficient whose value is equal to 3.67 for COCOMO II, PM is the
- estimated person-month(
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $PM$
+\end_inset
+
+ is the estimated person-month (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq: final PM"
@@ -13996,25 +14251,47 @@ reference "eq: final PM"
 \end_inset
 
 ).
- D is a TDEV scaling base-exponent whose value for COCOMO II is equal to
- 0.28, in formula 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:F"
+\end_layout
 
+\begin_layout Itemize
+\begin_inset Formula $D=0.28$
 \end_inset
 
- E is the effort scaling exponent (
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E$
+\end_inset
+
+ is the effort scaling exponent (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:final E"
 
 \end_inset
 
-) derived as the sum of project scale factors and B as the calibrated scale
- factor base-exponent and it is equal to 0.91 for COCOMO II.
- SCED% is the compression/expansion percentage in the SCED effort multiplier
- rating scale discussed in Section 2.2.2.17.
+) derived as the sum of project scale factors.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $B=0.91$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $SCED\%$
+\end_inset
+
+ is the compression/expansion percentage in the SCED effort multiplier rating
+ scale discussed in Section 2.2.2.17.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
