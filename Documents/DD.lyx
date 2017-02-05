@@ -242,6 +242,14 @@ Riccardo Redaelli
 \end_layout
 
 \begin_layout Standard
+\begin_inset space \hspace{}
+\length 45text%
+\end_inset
+
+15/01/2017
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
@@ -3532,11 +3540,8 @@ Google Doc: for write the document
 Draw.io: for diagrams
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
+\begin_layout Chapter
+Effort spent
 \end_layout
 
 \begin_layout Standard
