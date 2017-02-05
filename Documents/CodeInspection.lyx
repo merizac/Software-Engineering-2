@@ -1,0 +1,548 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+\date{}
+\AtBeginDocument{\renewcommand\chaptername{}}
+ \usepackage{pdflscape}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size larger
+Code Inspection
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/logo polimi.jpg
+	lyxscale 10
+	scale 45
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Logo Politecnico di Milano
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Maria Chiara Zaccardi
+\end_layout
+
+\begin_layout Itemize
+Nicola Sosio
+\end_layout
+
+\begin_layout Itemize
+Riccardo Redaelli
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Code inspection
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+The purpose of this document is to report on the quality status of selected
+ code from the Apache OFBiz project, an open source product for the automation
+ of enterprise processes that includes framework components and business
+ applications for ERP (Enterprise Resource Planning), CRM (Customer Relationship
+ Management) and other business-oriented functionalities.
+ The inspection is based on using the checklist for Java code inspection,
+ a document that deal with of all possible issues that could be found in
+ a java code.
+ 
+\end_layout
+
+\begin_layout Section
+Assigned class
+\end_layout
+
+\begin_layout Standard
+This is the path of the assigned class: 
+\end_layout
+
+\begin_layout Standard
+../apache-ofbiz-16.11.01/framework/webapp/src/main/java/org/
+\end_layout
+
+\begin_layout Standard
+apache/ofbiz/webapp/stats/ServerHitBin.java 
+\end_layout
+
+\begin_layout Section
+Functional role of assigned set of classes 
+\end_layout
+
+\begin_layout Section
+List of issues found by applying the checklist 
+\end_layout
+
+\begin_layout Standard
+Following all the issues found in ServerHitBin.java class: 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C1
+\series default
+ The function “count” at L.74, L.78, L.82, L.86, L.90, L.94 are misleading: from
+ a count function we expect an int instead of a void return.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C11
+\series default
+ There are a number of if statements with only one statement to execute
+ which aren’t surrounded by curly braces: at L.96, at L.112, at L.114, at L.460,
+ at L.462.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C12
+\series default
+ Blank line at L.26, L.28, L.40, L.51, L.57, L.59, L.66, L.121, L.129, L.133, L.332,
+ L.363 are not useful.
+ At L.469, L.492, L.494, L.520 we think that a blank line is needed.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C13
+\series default
+ There are a number of occurrences in which the line length exceeds the
+ 80 character limit but doesn’t exceed 120 character limit: at L.96, at L.109,
+ at L.140, at L.144, at L.257, at L.263, at L.271, at L.338, at L.493, at L.519,
+ at L.522.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C14
+\series default
+ There are a number of occurrences in which the line length exceeds the
+ 120 character limit: between L61 and L65, between L.68 and L.72, at L.74,
+ at L.78, at L.82, at L.86, at L.90, at L.94, at L.137, at L.216, at L.466, at L.469,
+ at L.479, at L.482, at L.489, at L.469, at L.500, at L.519.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C23
+\series default
+ Javadoc is not complete.
+ In particular, the following public methods are not documented: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+public static void countRequest(String id, HttpServletRequest request, long
+ startTime, long runningTime, GenericValue userLogin) at L.74.
+ 
+\end_layout
+
+\begin_layout Itemize
+public static void countEvent(String id, HttpServletRequest request, long
+ startTime, long runningTime, GenericValue userLogin) at L.78.
+\end_layout
+
+\begin_layout Itemize
+public static void countView(String id, HttpServletRequest request, long
+ startTime, long runningTime, GenericValue userLogin) at L.82.
+\end_layout
+
+\begin_layout Itemize
+public static void countEntity(String id, HttpServletRequest request, long
+ startTime, long runningTime, GenericValue userLogin) at L.86.
+\end_layout
+
+\begin_layout Itemize
+public static void countService(String id, HttpServletRequest request, long
+ startTime, long runningTime, GenericValue userLogin) at L.90.
+\end_layout
+
+\begin_layout Itemize
+public Delegator getDelegator() at L.377.
+ 
+\end_layout
+
+\begin_layout Itemize
+public String getId() at L.381.
+ 
+\end_layout
+
+\begin_layout Itemize
+public int getType() at L.385.
+ 
+\end_layout
+
+\begin_layout Itemize
+public synchronized long getNumberHits() at L.420.
+ 
+\end_layout
+
+\begin_layout Itemize
+public synchronized long getMinTime() at L.424.
+ 
+\end_layout
+
+\begin_layout Itemize
+public synchronized long getMaxTime() at L.428.
+\end_layout
+
+\begin_layout Itemize
+public synchronized long getTotalRunningTime() at L.432.
+ 
+\end_layout
+
+\begin_layout Itemize
+public double getMinTimeSeconds() at L.436.
+\end_layout
+
+\begin_layout Itemize
+public double getMaxTimeSeconds() at L.440.
+ 
+\end_layout
+
+\begin_layout Itemize
+public synchronized double getAvgTime() at L.444.
+ 
+\end_layout
+
+\begin_layout Itemize
+public double getAvgTimeSeconds() at L.448.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+C25
+\series default
+ The variable typeIds at L.58 is declared before the end of public static
+ variable declaration.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C25
+\series default
+ The variables delegator at L.325, id at L.326, type at L.327, limitLenght
+ at L.328, binLenght at L.329, startTime at L.330, endTime at L.331, numberHits
+ at L.333, totalRunningTime at L.334, minTime at L.335 and maxTime at L.331
+ should have been declared after public static variable declaration.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C25
+\series default
+ The class declarations at L.338 and at L.357 should have been after the class
+ variables declaration.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C26
+\series default
+ Methods are not grouped by functionality rather than by accessibility.
+ They should be reordered following for example accessibility listing at
+ first all the public methods and then private methods.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C27
+\series default
+ There are mainly two methods which are too long and should be splitted:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+private static void countHit(String baseId, int type, HttpServletRequest
+ request, long startTime, long runningTime, GenericValue userLogin, boolean
+ isOriginal) at L.137.
+\end_layout
+
+\begin_layout Itemize
+private void saveHit(HttpServletRequest request, long startTime, long runningTim
+e, GenericValue userLogin) at L.466.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+C33
+\series default
+ There are several occurrences of variable declarations which are not at
+ the beginning of blocks: at L.147, at L.149, at L.150, at L.208, at L.477, at
+ L.486, at L.492, at L.502, at L.509, at L.517 and at L.520.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C43
+\series default
+: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In line 234 "Could not save ServerHitBin:" a space is missing after colon.
+ 
+\end_layout
+
+\begin_layout Itemize
+"Visit delegatorName=" and ", ServerHitBin delegatorName=" is missing a
+ space after the equal.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+C44
+\series default
+: Between L.52 and L.56 constants are defined as static final int.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C44
+\series default
+ At L.96 UtilProperties.propertyValueEquals(String resource, String name,
+ String compareString) is a boolean function that returns a boolean value,
+ so it doesn't need to be compared to true in order to produce a boolean
+ expression.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C46
+\series default
+: At L.130 a cal.getTime().getTime() < (curTime - binLength) the use of parentheses
+ on the right-side of the relational operator is useless.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C47
+\series default
+: At L.445 it is not checked if numberHits is equal to zero.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C47
+\series default
+: At L.445 it is not checked if getNumberHits() is equal to zero.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C55
+\series default
+: The switch at L.152, at L.177, at L.274 and at L.299 don’t have a default
+ branch.
+\end_layout
+
+\begin_layout Section
+Other problems highlighted 
+\end_layout
+
+\begin_layout Itemize
+There are several occurrences of switch at L.152, at L.177, at L.274 and at
+ L.299 which could be handled in a different properly way.
+ 
+\end_layout
+
+\begin_layout Itemize
+Between L.74 and L.90 several methods that invoke the same function countHit(Strin
+g id, int type, HttpServletRequest request, long startTime, long runningTime,
+ GenericValue userLogin) where the only difference is the input type 
+\end_layout
+
+\end_body
+\end_document
