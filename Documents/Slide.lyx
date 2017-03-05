@@ -11,13 +11,13 @@
 {
   \leavevmode%
   \hbox{%
-  \begin{beamercolorbox}[wd=.3333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
     \usebeamerfont{author in head/foot}\insertshortauthor\hspace*{3em}
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.3333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
     \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
   \end{beamercolorbox}
-  \begin{beamercolorbox}[wd=.3333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+   \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
     \usebeamerfont{date in head/foot}\insertshortdate\hspace*{3em}
   \end{beamercolorbox}}%
   \vskip0pt%
@@ -160,6 +160,22 @@ status open
 Introduzione
 \end_layout
 
+\begin_layout PlainFrame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+\color blue
+\lang american
+Introduzione
+\end_layout
+
+\end_deeper
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -182,9 +198,8 @@ PowerEnjoy
 \end_layout
 
 \begin_layout Frame
-Permette inoltre agli utenti di noleggiare una macchina per brevi viaggi
- e invia notifiche agli operatori con le richieste di riparazione o di assistenz
-a.
+Permette agli utenti di noleggiare una macchina per brevi viaggi e invia
+ notifiche agli operatori con le richieste di riparazione o di assistenza.
  
 \end_layout
 
@@ -201,6 +216,22 @@ PowerEnjoy
 Analisi dei requisiti
 \end_layout
 
+\begin_layout PlainFrame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+\color blue
+\lang american
+Analisi dei requisiti
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -688,6 +719,22 @@ status open
 Design
 \end_layout
 
+\begin_layout PlainFrame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+\color blue
+\lang american
+Design
+\end_layout
+
+\end_deeper
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -1211,7 +1258,46 @@ status open
 status open
 
 \begin_layout Plain Layout
-UX User
+Scenario 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+ Aenean commodo ligula eget dolor.
+ Aenean massa.
+ Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+ ridiculus mus.
+ Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+ Nulla consequat massa quis enim.
+ Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+ In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+ Nullam dictum felis eu pede mollis pretium.
+ Integer tincidunt.
+ Cras dapibus.
+ Vivamus elementum semper nisi.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+UX Login
 \end_layout
 
 \end_inset
@@ -1243,7 +1329,7 @@ centerline{
 
 
 \begin_inset Graphics
-	filename immagini/Presentazione/uxuser.png
+	filename immagini/Presentazione/ux-login.jpg
 	lyxscale 10
 	height 7.5cm
 
@@ -1281,7 +1367,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-BCE User 1/2
+BCE Login
 \end_layout
 
 \end_inset
@@ -1313,7 +1399,7 @@ centerline{
 
 
 \begin_inset Graphics
-	filename immagini/Presentazione/BCEUser1.png
+	filename immagini/Presentazione/bce-login.png
 	lyxscale 10
 	height 7.5cm
 
@@ -1351,7 +1437,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-BCE User 2/2
+UX Pagina personale
 \end_layout
 
 \end_inset
@@ -1383,7 +1469,7 @@ centerline{
 
 
 \begin_inset Graphics
-	filename immagini/Presentazione/BCEUser2.png
+	filename immagini/Presentazione/ux-personalpage.jpg
 	lyxscale 10
 	height 7.5cm
 
@@ -1410,6 +1496,360 @@ status open
 
 \end_deeper
 \begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+UX Ricerca macchine disponibili
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/Presentazione/ux-seeavailablecar.jpg
+	lyxscale 10
+	height 7.5cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+BCE Ricerca macchine disponibili
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/Presentazione/bce-seeavailablecar.jpg
+	lyxscale 10
+	height 7.5cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+UX Macchina selezionata
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/Presentazione/ux-selectedcar.jpg
+	lyxscale 10
+	height 7.5cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+UX Prenotazione
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/Presentazione/ux-reservation.jpg
+	lyxscale 10
+	height 7.5cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+BCE Prenotazione
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename immagini/Presentazione/bce-reservation.jpg
+	lyxscale 10
+	height 7.5cm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
 \begin_inset Separator plain
 \end_inset
 
@@ -1418,6 +1858,31 @@ status open
 
 \begin_layout Section*
 Test plan
+\end_layout
+
+\begin_layout PlainFrame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+\color blue
+\lang american
+Test Plan
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\lang american
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
@@ -1863,6 +2328,22 @@ status open
 Project plan
 \end_layout
 
+\begin_layout PlainFrame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+\color blue
+\lang american
+Project plan
+\end_layout
+
+\end_deeper
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -2691,18 +3172,50 @@ II
 \series default
  è stato utilizzato per stimare l'effort e il tempo necessari allo sviluppo
  di PowerEnjoy 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+1-
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
 Post-architecture model 
+\series default
+
+\begin_inset Argument item:2
+status open
+
+\begin_layout Plain Layout
+2-
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 Per il calcolo dell'effort, ad ogni Scale Driver e Cost Driver è stato assegnato
  uno rating level tenendo in considerazione le caratteristiche del software
- che verrà sviluppato
+ che verrà sviluppato 
+\begin_inset Argument item:2
+status open
+
+\begin_layout Plain Layout
+3-
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
