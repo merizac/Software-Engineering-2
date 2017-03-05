@@ -32,9 +32,9 @@ Test
 Project plan
 
 - function point Meri
-- cocomo II, post-architecture  Meri
-- risultati 
-- allocazione risorse
-- rischi
+- cocomo II, post-architecture  Nico
+- risultati Nico
+- allocazione risorse Reda
+- rischi Reda
 
 
