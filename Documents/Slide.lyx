@@ -178,7 +178,7 @@ Introduzione
 \series bold
 PowerEnjoy
 \series default
- è una società di car sharing che offre soltanto macchine elettriche.
+ è una società di car sharing che offre il solo utilizzo di macchine elettriche.
 \end_layout
 
 \begin_layout Frame
@@ -202,6 +202,114 @@ Analisi dei requisiti
 \end_layout
 
 \begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Attori
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Visitor
+\series default
+: persone che devono registrarsi per usufruire del servizio.
+ Possono visualizzare i form per accedere o registrarsi e una breve descrizione
+ del servizio offerto.
+ 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+1-
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+User
+\series default
+: utenti che, dopo aver eseguito il login, sono abilitate ai servizi offerti.
+ 
+\begin_inset Argument item:2
+status open
+
+\begin_layout Plain Layout
+2-
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Operator
+\series default
+: dipendenti della società che, dopo il login, possono visualizzare la macchina
+ sulla quale devono effettuare l'operazione.
+ 
+\begin_inset Argument item:2
+status open
+
+\begin_layout Plain Layout
+3-
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+PayPal
+\series default
+: è un attore passivo, utilizzato dal sistema per il pagamento delle corse.
+ 
+\begin_inset Argument item:2
+status open
+
+\begin_layout Plain Layout
+4-
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
@@ -220,8 +328,8 @@ Assunzioni 1/2
 
 \begin_deeper
 \begin_layout Itemize
-Gli operatori ricevono le credenziali di accesso al momento della loro assunzion
-e.
+Gli operatori ricevono le credenziali di accesso al momento del loro conferiment
+o d'incarico.
  
 \begin_inset Argument 1
 status open
@@ -306,8 +414,8 @@ Assunzioni 2/2
 
 \begin_deeper
 \begin_layout Itemize
-L’account viene bloccato se l’utente effettua un noleggio per cui non può
- pagare.
+L’account viene bloccato se l’utente effettua un noleggio per cui non si
+ verifica disponibilità di pagamento.
 \begin_inset Argument 1
 status open
 
@@ -322,7 +430,7 @@ status open
 
 \begin_layout Itemize
 Il parcheggio è consentito solo all’interno di una Safe Area, fuori da essa
- il noleggio non può terminare.
+ il noleggio non si interrompe.
 \begin_inset Argument item:2
 status open
 
@@ -352,109 +460,8 @@ status open
 \end_layout
 
 \begin_layout Itemize
-Una macchina in carica, ricompare fra le macchine disponibili soltant a
- carica completa.
- 
-\begin_inset Argument item:2
-status open
-
-\begin_layout Plain Layout
-4-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Attori
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\series bold
-Visitor
-\series default
-: persone che devono registrarsi per usufruire del servizio.
- Possono visualizzare i form per accedere o registrarsi e una breve descrizione
- del servizio offerto.
- 
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-1-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-User
-\series default
-: persone che dopo aver eseguito il login, sono abilitate ai servizi offerti.
- 
-\begin_inset Argument item:2
-status open
-
-\begin_layout Plain Layout
-2-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Operator
-\series default
-: dipendenti della società, che dopo il login, possono visualizzare la macchina
- sulla quale devono effettuare l'operazione.
- 
-\begin_inset Argument item:2
-status open
-
-\begin_layout Plain Layout
-3-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-PayPal
-\series default
-: è un attore passivo, utilizzato dal sistema per il pagamento delle corse.
+Una macchina in carica ricompare fra le macchine disponibili solo a carica
+ completa.
  
 \begin_inset Argument item:2
 status open
