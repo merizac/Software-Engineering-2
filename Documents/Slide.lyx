@@ -533,7 +533,7 @@ Use case 1/2
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -602,7 +602,7 @@ Use case 2/2
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -672,7 +672,7 @@ Diagramma a stati
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -849,7 +849,7 @@ High level components
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -919,7 +919,7 @@ Component view
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -989,7 +989,7 @@ Struttura database
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1059,7 +1059,7 @@ Sequence diagram - Prenotazione 1/2
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1133,7 +1133,7 @@ Sequence diagram - Prenotazione 2/2
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1203,7 +1203,7 @@ Alloy - Cancellazione prenotazione
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1268,6 +1268,9 @@ Scenario
 
 \begin_deeper
 \begin_layout Quote
+\begin_inset Quotes eld
+\end_inset
+
 Francesco è uscito alla sera con gli amici e ha fatto tardi, quindi accede
  all'applicazione di PowerEnJoy e attiva il gps per vedere se ci sono macchine
  nelle vicinanze.
@@ -1278,6 +1281,10 @@ Francesco è uscito alla sera con gli amici e ha fatto tardi, quindi accede
 Francesco ne trova una poco distante dalla sua posizione e la prenota.
  Una volta avvicinato la sblocca inserendo il codice presente sul cruscotto
  dell'automobile e inizia il suo noleggio.
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -1308,7 +1315,7 @@ UX Login
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1378,7 +1385,7 @@ BCE Login
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1448,7 +1455,7 @@ UX Pagina personale
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1522,7 +1529,7 @@ UX Ricerca macchine disponibili
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1592,7 +1599,7 @@ BCE Ricerca macchine disponibili
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1662,7 +1669,7 @@ UX Macchina selezionata
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1732,7 +1739,7 @@ UX Prenotazione
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1802,7 +1809,7 @@ BCE Prenotazione
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1895,6 +1902,11 @@ Prerequisiti
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+Affinchè sia possibile delineare una strategia di integrazione è necessario
+ che:
+\end_layout
+
 \begin_layout Itemize
 
 \series bold
@@ -1904,7 +1916,7 @@ RASD
 \series bold
 DD
 \series default
- devono essere stati precedentemente redatti.
+ siano stati precedentemente redatti.
  
 \begin_inset Argument 1
 status open
@@ -1919,7 +1931,7 @@ status open
 \end_layout
 
 \begin_layout Itemize
-Tutte le classi di ogni component devono essere correttamente 
+tutte le classi di ogni component siano correttamente 
 \series bold
 documentate
 \series default
@@ -1938,7 +1950,7 @@ status open
 \end_layout
 
 \begin_layout Itemize
-Ogni classe deve essere stata testata attraverso i 
+ogni classe sia stata testata attraverso i 
 \series bold
 test d'unità
 \series default
@@ -1982,23 +1994,16 @@ Strategia di Integrazione
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-Bottom-up approach 
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-1-
+\begin_layout Standard
+Nei test di integrazione abbiamo utilizzato l'approcio 
+\series bold
+Bottom-up
+\series default
+, nel quale
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
 \begin_layout Itemize
-I componenti vengono testati a partire da quelli senza dipendenze
+i componenti indipendenti devono essere già stati sviluppati 
 \begin_inset Argument item:2
 status open
 
@@ -2012,7 +2017,7 @@ status open
 \end_layout
 
 \begin_layout Itemize
-Gli stubs non sono necessari
+gli stubs non sono necessari
 \begin_inset Argument item:2
 status open
 
@@ -2026,7 +2031,7 @@ status open
 \end_layout
 
 \begin_layout Itemize
-Driver temporanei 
+i driver sono temporaneamente indispendabili
 \begin_inset Argument item:2
 status open
 
@@ -2039,7 +2044,6 @@ status open
 
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Frame
 
@@ -3695,11 +3699,12 @@ Rischi
 
 \end_layout
 
-\begin_layout Frame
-
+\begin_deeper
+\begin_layout Standard
+I principali rischi che possono incorrere durante lo sviluppo del progetto
+ sono i seguenti:
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 cambiamento nei requirements 
 \begin_inset Argument 1
