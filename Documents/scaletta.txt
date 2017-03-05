@@ -14,7 +14,7 @@ Architettura
 - struttura database Nico
 - sequence Nico 
 - alloy Meri
-- ux Meri
+- ux Reda
 - bce Reda
 - mokup Reda
 
@@ -22,10 +22,10 @@ Architettura
 
 Test
 
-- prerequisiti Reda
-- strategia Reda
+- prerequisiti Nico
+- strategia Nico
 - integrazione Nico
-- tool Nico 
+- tool Reda
 
 -----------------------
 
@@ -34,7 +34,7 @@ Project plan
 - function point Meri
 - cocomo II, post-architecture  Nico
 - risultati Nico
-- allocazione risorse Reda
+- allocazione risorse Nico
 - rischi Reda
 
 
