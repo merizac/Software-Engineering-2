@@ -27,6 +27,14 @@ Test
 - integrazione Nico
 - tool Nico 
 
-4
+-----------------------
+
+Project plan
+
+- function point Meri
+- cocomo II, post-architecture  Meri
+- risultati 
+- allocazione risorse
+- rischi
 
 
