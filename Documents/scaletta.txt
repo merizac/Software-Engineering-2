@@ -1,0 +1,43 @@
+RASD
+
+- assunzioni Reda
+- attori Reda
+- use case Nico	
+- state chart Nico
+
+-----------------------
+Architettura
+
+- intro Meri
+- high level component Meri 
+- component view Nico
+- struttura database Nico
+- sequence Nico 
+- alloy Meri
+- ux Meri
+- bce Reda
+- mokup Reda
+
+-----------------------
+
+Test
+
+- prerequisiti Reda
+- strategia Reda
+- integrazione Nico
+- tool Nico 
+
+-----------------------
+
+Project plan
+
+- function point Meri
+- cocomo II, post-architecture  Meri
+- risultati 
+- allocazione risorse
+- rischi
+
+-----------------------
+
+
+
