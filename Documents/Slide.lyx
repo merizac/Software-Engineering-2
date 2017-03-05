@@ -198,8 +198,9 @@ PowerEnjoy
 \end_layout
 
 \begin_layout Frame
-Permette agli utenti di noleggiare una macchina per brevi viaggi e invia
- notifiche agli operatori con le richieste di riparazione o di assistenza.
+Il sistema che andremo a sviluppare deve permettere agli utenti di noleggiare
+ una macchina per brevi viaggi e di inviare notifiche agli operatori con
+ le richieste di riparazione o di assistenza.
  
 \end_layout
 
@@ -318,7 +319,7 @@ status open
 \series bold
 PayPal
 \series default
-: è un attore passivo, utilizzato dal sistema per il pagamento delle corse.
+: è un attore passivo, utilizzato dal sistema per il pagamento dei noleggi.
  
 \begin_inset Argument item:2
 status open
@@ -2017,7 +2018,8 @@ status open
 \end_layout
 
 \begin_layout Itemize
-gli stubs non sono necessari
+l'unico stub necessario è quello che simula il comportamento del Payment
+ Gateway
 \begin_inset Argument item:2
 status open
 
@@ -2515,7 +2517,7 @@ Internal Logic File
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -2647,7 +2649,7 @@ Safe area
 \begin_inset Text
 
 \begin_layout Plain Layout
-Complex
+Medium
 \end_layout
 
 \end_inset
